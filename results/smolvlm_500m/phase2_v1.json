@@ -1,0 +1,138 @@
+{
+  "experiment": "phase2_v1",
+  "model": "HuggingFaceTB/SmolVLM-500M-Instruct (dual-crop, vision+text LoRA)",
+  "source": {
+    "notebook": "notebooks/04_finetuning_smolvlm_500m/02_phase2_extended_data_v1.ipynb",
+    "config": "configs/smolvlm500m_phase2_v1.yaml",
+    "extracted_from": "saved cell outputs (evaluation cell)"
+  },
+  "reported_in_interim_report": false,
+  "data": {
+    "train_rows": 27872,
+    "validation_rows": 5761,
+    "test_rows": 5558
+  },
+  "lora_trainable_parameters": {
+    "trainable": "4,456,448",
+    "adapted_model_total": "511,938,752",
+    "trainable_pct": 0.8705
+  },
+  "test": {
+    "accuracy_pct": 85.44,
+    "balanced_accuracy_pct": 83.0,
+    "macro_f1_pct": 79.56,
+    "unsafe_miss_rate_pct": 20.78,
+    "false_alarm_rate_pct": 10.22,
+    "exact_label_validity_pct": 100.0,
+    "parser_failure_pct": 0.0
+  },
+  "per_class": {
+    "NORMAL": {
+      "precision": 0.906,
+      "recall": 0.898,
+      "f1": 0.902,
+      "support": 3277
+    },
+    "DROWSY": {
+      "precision": 0.785,
+      "recall": 0.813,
+      "f1": 0.799,
+      "support": 1021
+    },
+    "LOOKING_AWAY": {
+      "precision": 0.504,
+      "recall": 0.861,
+      "f1": 0.636,
+      "support": 302
+    },
+    "PHONE_USAGE": {
+      "precision": 0.973,
+      "recall": 0.748,
+      "f1": 0.846,
+      "support": 958
+    }
+  },
+  "confusion_matrix": {
+    "labels_true_rows_pred_cols": [
+      "NORMAL",
+      "DROWSY",
+      "LOOKING_AWAY",
+      "PHONE_USAGE",
+      "INVALID"
+    ],
+    "matrix": [
+      [
+        2942,
+        222,
+        108,
+        5,
+        0
+      ],
+      [
+        167,
+        830,
+        16,
+        8,
+        0
+      ],
+      [
+        34,
+        1,
+        260,
+        7,
+        0
+      ],
+      [
+        105,
+        4,
+        132,
+        717,
+        0
+      ]
+    ]
+  },
+  "gpu_server_single_image_generate": {
+    "mean_latency_ms": 315.42,
+    "p95_latency_ms": 448.72,
+    "peak_gpu_memory_mb": 2279.24,
+    "device": "NVIDIA A16 (university server) - not the Jetson Nano"
+  },
+  "validation_epoch_history": [
+    {
+      "epoch": 1.0,
+      "macro_f1": 0.7942,
+      "per_class_f1": {
+        "NORMAL": 0.708,
+        "DROWSY": 0.78,
+        "LOOKING_AWAY": 0.8,
+        "PHONE_USAGE": 0.889
+      }
+    },
+    {
+      "epoch": 2.0,
+      "macro_f1": 0.7874,
+      "per_class_f1": {
+        "NORMAL": 0.677,
+        "DROWSY": 0.767,
+        "LOOKING_AWAY": 0.815,
+        "PHONE_USAGE": 0.89
+      }
+    },
+    {
+      "epoch": 3.0,
+      "macro_f1": 0.7603,
+      "per_class_f1": {
+        "NORMAL": 0.68,
+        "DROWSY": 0.761,
+        "LOOKING_AWAY": 0.757,
+        "PHONE_USAGE": 0.843
+      }
+    }
+  ],
+  "notes": [
+    "Extended dataset: the test set (5,558 images, 1,021 DROWSY) differs from Phase 1's (3,579 images, 168 DROWSY); results are not directly comparable to Phase 1.",
+    "Notebook 03 (v2) carries identical saved outputs to this run; it is a code snapshot, not a separate result.",
+    "Validation-epoch per-class values are per-class F1."
+  ],
+  "validation_check_subset_images": 320
+}

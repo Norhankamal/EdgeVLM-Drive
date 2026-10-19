@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Secrets / local config
+.env
+.env.*
+*.key
+
+# Interim report: the header lists student IDs and university e-mail addresses.
+# Kept out of Git by default. To publish it after removing those details:
+#   git add -f docs/reports/<file>
+docs/reports/*.pdf
+docs/reports/*.docx
+
+# Data (never commit - identifiable drivers, dataset licence)
+data/*
+!data/README.md
+*.csv
+!results/**/*.csv
+*.jpg
+*.jpeg
+*.png
+!docs/**/*.png
+!demo/**/*.png
+
+# Model weights, checkpoints, run outputs
+models/*
+!models/README.md
+model_cache/
+runs/
+export/
+checkpoint-*/
+*.safetensors
+*.pt
+*.pth
+*.bin
+*.ckpt
+*.onnx
+*.gguf
+*.zip
+training_progress.log
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

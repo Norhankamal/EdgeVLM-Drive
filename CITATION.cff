@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "EdgeVLM-Drive: Resource-Aware Vision-Language Driver Monitoring on NVIDIA Jetson Nano"
+type: software
+version: 0.1.0
+date-released: "2026-10-19"
+license: MIT
+repository-code: "https://github.com/Norhankamal/EdgeVLM-Drive"
+authors:
+  - given-names: "Sherouk Mohammed Mahmoud"
+    family-names: "Rashed"
+  - given-names: "Norhan Kamal Hosny"
+    family-names: "Mahmoud"
+  - given-names: "Nehal Mohamed"
+    family-names: "Abd El Ghani"
+  - given-names: "Salma Essam Mohamed"
+    family-names: "Hamad"
+keywords:
+  - driver monitoring
+  - vision-language models
+  - LoRA
+  - edge AI
+  - NVIDIA Jetson Nano

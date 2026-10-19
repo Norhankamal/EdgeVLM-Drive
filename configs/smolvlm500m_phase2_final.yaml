@@ -1,0 +1,27 @@
+# Phase 2 final - extended dataset, current preprocessing (v2) and extended prompt.
+# Result: macro-F1 80.18 %, balanced accuracy 80.08 % on 5,558 test images.
+name: smolvlm500m_phase2_final
+description: Extended data, LoRA r=16, sqrt-damped sampler, 600-image macro-F1 check, resumable.
+
+paths:
+  data_root: ${EDGEVLM_DATA_ROOT}
+  splits_dir: phase2-tain-val-test-splits
+  train_csv: phase2-tain-val-test-splits/final_train.csv
+  val_csv: phase2-tain-val-test-splits/final_val.csv
+  test_csv: phase2-tain-val-test-splits/final_test.csv
+  output_root: runs
+  model_cache: model_cache
+
+data: {preprocessing: v2, instruction: v2}
+lora: {r: 16, alpha: 32, dropout: 0.05}
+
+training:
+  epochs: 4
+  weight_decay: 0.01
+  save_strategy: steps
+  save_steps: 100
+  save_total_limit: 3
+  sampler_weight_power: 0.5
+  warm_start_from_best: true
+
+validation_check: {samples_per_class: 150, patience: 3, batch_size: 8, seed: 0}

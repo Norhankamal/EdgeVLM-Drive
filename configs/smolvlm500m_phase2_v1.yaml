@@ -1,0 +1,27 @@
+# Phase 2 v1 - extended dataset, larger LoRA. Result: macro-F1 79.56 % on 5,558 test images
+# (test set differs from Phase 1; not directly comparable).
+name: smolvlm500m_phase2_v1
+description: Extended dataset, LoRA r=16, macro-F1 selection on 320 images, full inverse-frequency sampler.
+
+paths:
+  data_root: ${EDGEVLM_DATA_ROOT}
+  splits_dir: phase2-tain-val-test-splits   # folder name as on the original server
+  train_csv: phase2-tain-val-test-splits/final_train.csv
+  val_csv: phase2-tain-val-test-splits/final_val.csv
+  test_csv: phase2-tain-val-test-splits/final_test.csv
+  output_root: runs
+  model_cache: model_cache
+
+data: {preprocessing: v1, instruction: v1}
+lora: {r: 16, alpha: 32, dropout: 0.05}
+
+training:
+  epochs: 8
+  weight_decay: 0.01
+  save_strategy: epoch
+  save_total_limit: 2
+  sampler_weight_power: 1.0
+  trainer_loads_best_by_eval_loss: false
+  warm_start_from_best: false
+
+validation_check: {samples_per_class: 80, patience: 2, batch_size: 8, seed: 0}

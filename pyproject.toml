@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "edgevlm"
+version = "0.1.0"
+description = "EdgeVLM-Drive: resource-aware vision-language driver monitoring on NVIDIA Jetson Nano"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "numpy",
+    "pandas",
+    "pillow",
+    "pyyaml",
+    "scikit-learn",
+    "opencv-python-headless==4.10.0.84",
+    "langgraph",
+]
+
+[project.optional-dependencies]
+# Fine-tuning / evaluation / export (versions pinned to the ones used for the reported runs)
+train = [
+    "torch",
+    "transformers==4.46.3",
+    "tokenizers==0.20.3",
+    "peft>=0.13",
+    "accelerate>=1.0",
+    "safetensors>=0.4",
+    "sentencepiece",
+    "tqdm",
+    "psutil",
+]
+dev = ["pytest", "ruff", "nbformat"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+# The two LangGraph pipeline modules are kept byte-identical to the versions the experiments used.
+extend-exclude = ["src/edgevlm/pipeline/langgraph_pipeline.py", "src/edgevlm/pipeline/legacy/langgraph_pipeline_v1.py"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B"]
+ignore = ["E701", "E702", "E731", "B008", "B905"]
+
+[tool.ruff.lint.per-file-ignores]
+"scripts/*" = ["E402"]
+"tests/*" = ["E401", "E402", "B011"]

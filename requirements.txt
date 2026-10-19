@@ -1,0 +1,19 @@
+# Versions used for the reported runs (Python 3.12, CUDA 12.6, NVIDIA A16).
+# Install the PyTorch build matching your CUDA version first (pytorch.org).
+torch>=2.1
+transformers==4.46.3
+tokenizers==0.20.3
+peft>=0.13
+accelerate>=1.0
+safetensors>=0.4
+sentencepiece
+opencv-python-headless==4.10.0.84
+langgraph
+numpy
+pandas
+pillow
+pyyaml
+scikit-learn
+tqdm
+psutil
+matplotlib   # notebooks only

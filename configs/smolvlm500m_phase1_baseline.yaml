@@ -1,0 +1,36 @@
+# Phase 1 baseline - the run reported in the interim report (Sec. VII-C).
+# Reported result: macro-F1 74.13 %, balanced accuracy 74.84 % on 3,579 test images.
+# Original server layout (kept as comments): frames in /home/jovyan, splits in /home/jovyan/splits,
+# augmented training CSV in /home/jovyan/splits_augmented_v2.
+name: smolvlm500m_phase1_baseline
+description: Dual-crop, vision+text LoRA (r=8), macro-F1 selection on 160 images, full inverse-frequency sampler.
+
+paths:
+  data_root: ${EDGEVLM_DATA_ROOT}          # directory the frame_path columns are relative to
+  splits_dir: splits
+  augmented_dir: splits_augmented_v2
+  train_csv: splits_augmented_v2/train_augmented_deduplicated.csv
+  val_csv: splits/val.csv
+  test_csv: splits/test.csv
+  output_root: runs
+  model_cache: model_cache
+
+data:
+  preprocessing: v1      # legacy pipeline (no face-crop texture check)
+  instruction: v1
+
+lora: {r: 8, alpha: 16, dropout: 0.05}
+
+training:
+  epochs: 8
+  learning_rate: 1.0e-4
+  warmup_ratio: 0.05
+  weight_decay: 0.0
+  gradient_accumulation_steps: 8
+  save_strategy: epoch
+  save_total_limit: 2
+  sampler_weight_power: 1.0
+  trainer_loads_best_by_eval_loss: true
+  warm_start_from_best: false
+
+validation_check: {samples_per_class: 40, patience: 2, batch_size: 8, seed: 0}
