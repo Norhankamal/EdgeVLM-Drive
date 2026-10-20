@@ -1,0 +1,228 @@
+{
+  "notebooks": [
+    {
+      "repository_file": "notebooks/finetuning_smolvlm256/01_initial_single_image.ipynb",
+      "original_filename": "EdgeVLM_finetuning_fixed.ipynb",
+      "original_sha256": "be07ccd4a30c15b908e2f16bcafcb004ac66a10d9a96d607634f5e6ebb4a7226",
+      "repository_sha256": "8a2d4745bfe2014e4a4d6eaf87954fef61c4ebc079280e987ecdeabe6f23cf9c",
+      "executed_code_cells": 20,
+      "code_cells": 22,
+      "error_output_count": 0,
+      "removed_rich_output_items": 4,
+      "credential_redactions": 0,
+      "notes": "Initial single-image language-only LoRA; smoke test and full training are separate cells."
+    },
+    {
+      "repository_file": "notebooks/finetuning_smolvlm256/02_augmented_sampling.ipynb",
+      "original_filename": "EdgeVLM_finetuning_augmented_complete (1).ipynb",
+      "original_sha256": "1b38e42f9bcea2aec3629b629e86e737d2c8e5f3a836c8d5c9c4b9c065935dda",
+      "repository_sha256": "408dfc776531c333736e31f4af737c509de7aaa74c5c15c3967a63b9e028303c",
+      "executed_code_cells": 19,
+      "code_cells": 21,
+      "error_output_count": 0,
+      "removed_rich_output_items": 2,
+      "credential_redactions": 0,
+      "notes": "Offline augmentation and inverse-frequency sampling; historical direct-evaluation outputs."
+    },
+    {
+      "repository_file": "notebooks/finetuning_smolvlm256/03_augmented_classweighted.ipynb",
+      "original_filename": "EdgeVLM_finetuning_augmented_complete_classweighted.ipynb",
+      "original_sha256": "a87caed3eed35e90f81f12577224a33e21eabca7a38d68166be7461aa3acfef2",
+      "repository_sha256": "530764e3802c6fe7f7404de5f35e5280ac197a8e447908d23221aa85e9652e5e",
+      "executed_code_cells": 21,
+      "code_cells": 26,
+      "error_output_count": 0,
+      "removed_rich_output_items": 3,
+      "credential_redactions": 0,
+      "notes": "Weighted-loss alternative; two historical training cells write to the same adapter location."
+    },
+    {
+      "repository_file": "notebooks/finetuning_smolvlm256/04_sampling_langgraph.ipynb",
+      "original_filename": "EdgeVLM_finetuning_vlm256_langgraph (1).ipynb",
+      "original_sha256": "2ec33c900741b6259fc9770c45e8a01d0d5858012664f65e22d2a062fdf8050b",
+      "repository_sha256": "a3b8fbda727186d92a22b0a478301024d22459162829178abf3b2531b75d0e80",
+      "executed_code_cells": 23,
+      "code_cells": 27,
+      "error_output_count": 0,
+      "removed_rich_output_items": 2,
+      "credential_redactions": 0,
+      "notes": "Sampling configuration followed by single-image graph evaluation."
+    },
+    {
+      "repository_file": "notebooks/finetuning_smolvlm256/05_classweighted_langgraph.ipynb",
+      "original_filename": "EdgeVLM_finetuning_vlm256_classweighted (2).ipynb",
+      "original_sha256": "3f414ce7fe729aa8639b4d5e44ac0382ccb6a1b6c0e18ec0094b7a9b0cf32639",
+      "repository_sha256": "0ea60e2753203c77d4cc087faf5cb6b9eb9344937b77234558d39ba99990fd75",
+      "executed_code_cells": 24,
+      "code_cells": 30,
+      "error_output_count": 0,
+      "removed_rich_output_items": 1,
+      "credential_redactions": 0,
+      "notes": "Weighted-loss configuration and graph evaluation after disk adapter reload."
+    },
+    {
+      "repository_file": "notebooks/finetuning_smolvlm256/06_extended_data_single_gpu.ipynb",
+      "original_filename": "EdgeVLM_256M_Phase2_Finetuning_singleGPU_output.ipynb",
+      "original_sha256": "e868b9345aa196848210ff69e12f9173df1f169d2ddb3378447c77c26b6a8aa6",
+      "repository_sha256": "fcf1921a09e5da9dda5891bff8183b0f8951855df118630008e5765c0ff727be",
+      "executed_code_cells": 13,
+      "code_cells": 13,
+      "error_output_count": 0,
+      "removed_rich_output_items": 1,
+      "credential_redactions": 0,
+      "notes": "Intermediate extended-data experiment; not assigned a new headline result without a matching prediction export."
+    },
+    {
+      "repository_file": "notebooks/finetuning_smolvlm256/07_extended_data_eta.ipynb",
+      "original_filename": "EdgeVLM_256M_Phase2_Finetuning_with_ETA_output.ipynb",
+      "original_sha256": "e6ee62e3ac6360b987e0c718d17c826359ab4115e20c1a486fb31fbb1c4366e7",
+      "repository_sha256": "34acac777a91f8f15f154a3b0f27e63fce049cebd3d0925e0a7d3746d408874f",
+      "executed_code_cells": 8,
+      "code_cells": 13,
+      "error_output_count": 0,
+      "removed_rich_output_items": 0,
+      "credential_redactions": 0,
+      "notes": "Intermediate ETA variant with partial saved execution; not counted as an independent completed evaluation."
+    },
+    {
+      "repository_file": "notebooks/finetuning_smolvlm256/08_dual_crop_baseline.ipynb",
+      "original_filename": "V2_EdgeVLM_256M_Phase2_All_Techniques_output.ipynb",
+      "original_sha256": "43e2f9768690069cf8ba98f3a37b21034eedf5559eadd4348166afe6930fa492",
+      "repository_sha256": "e8bcbb00a76b6721c15d004911643cc6e4206dbf55d88dca605dde07b891e12a",
+      "executed_code_cells": 13,
+      "code_cells": 13,
+      "error_output_count": 0,
+      "removed_rich_output_items": 1,
+      "credential_redactions": 0,
+      "notes": "Executed paired scene-and-face baseline with vision-and-text LoRA."
+    },
+    {
+      "repository_file": "notebooks/finetuning_smolvlm256/09_revised_no_mediapipe.ipynb",
+      "original_filename": "V3_EdgeVLM_256M_Phase2_Improved_NoMediaPipe_run.ipynb",
+      "original_sha256": "f88642b0cd1a68c7433f1557dea343c1e7cc012082e13df589a6b98e7c6531dd",
+      "repository_sha256": "bc399f9b8853036216a91e4849b0b63f471c4251e11a167f0e526d05bea1e059",
+      "executed_code_cells": 0,
+      "code_cells": 13,
+      "error_output_count": 0,
+      "removed_rich_output_items": 0,
+      "credential_redactions": 0,
+      "notes": "Training implementation has no saved executed outputs; results come from the prediction export and scoring notebook."
+    },
+    {
+      "repository_file": "notebooks/finetuning_smolvlm256/10_no_mediapipe_evaluation.ipynb",
+      "original_filename": "V3_EdgeVLM_256M_Phase2_NoMediaPipe_EvaluationOnly_run.ipynb",
+      "original_sha256": "597e079aec61436fede9036629869716ec9c21231f4de79e27199858b9e2bd1e",
+      "repository_sha256": "e84fb22f9bf5d388b1ebee8a9852f463fee8831c9b5de17cb7ffcccea06896da",
+      "executed_code_cells": 4,
+      "code_cells": 5,
+      "error_output_count": 0,
+      "removed_rich_output_items": 2,
+      "credential_redactions": 0,
+      "notes": "Executed scoring of saved predictions, not a second training run."
+    },
+    {
+      "repository_file": "notebooks/finetuning_smolvlm256/11_mediapipe_training.ipynb",
+      "original_filename": "V3_EdgeVLM_256M_Phase2_MediaPipe_Enhanced_resume16100.ipynb",
+      "original_sha256": "4bc81bc9438715e6986fe59bd8e833bd872e746e943a36fcbf9b1431c5e3ab4b",
+      "repository_sha256": "fc18750623767cc8638d901d9a8d46aa32c178615d35720cc31dc87bccf1a753",
+      "executed_code_cells": 0,
+      "code_cells": 14,
+      "error_output_count": 0,
+      "removed_rich_output_items": 0,
+      "credential_redactions": 0,
+      "notes": "Landmark-guided crop and facial cue text; resumed source has no saved executed cell outputs."
+    },
+    {
+      "repository_file": "notebooks/finetuning_smolvlm256/12_mediapipe_evaluation.ipynb",
+      "original_filename": "V3_EdgeVLM_256M_MediaPipe_PostTraining_Results.ipynb",
+      "original_sha256": "88457e8b1ceddb3a445ac7f3336cb42b1c3ddd1a353e48273ea208b26bbf9a38",
+      "repository_sha256": "3c90c40e166916e4802229dcdcd20ebd212456a50c15dcd0bd02f1ce7648f4c6",
+      "executed_code_cells": 10,
+      "code_cells": 11,
+      "error_output_count": 0,
+      "removed_rich_output_items": 12,
+      "credential_redactions": 0,
+      "notes": "Executed post-training scoring; optional fresh inference and export are distinct modes."
+    },
+    {
+      "repository_file": "notebooks/finetuning_smolvlm256/archive/dual_crop_baseline_source.ipynb",
+      "original_filename": "V2_EdgeVLM_256M_Phase2_All_Techniques.ipynb",
+      "original_sha256": "9cf89541a2908304b8ec14c593bdeb4096efcb0b1103c9c602e037fc6c051f2b",
+      "repository_sha256": "32ce36347230fc2ad6a0d113d75ceeee04bb925298047503818f7622fc3846ca",
+      "executed_code_cells": 0,
+      "code_cells": 13,
+      "error_output_count": 0,
+      "removed_rich_output_items": 0,
+      "credential_redactions": 0,
+      "notes": "Source variant, not another scored experiment."
+    },
+    {
+      "repository_file": "notebooks/finetuning_smolvlm256/archive/no_mediapipe_source.ipynb",
+      "original_filename": "V3_EdgeVLM_256M_Phase2_Improved_NoMediaPipe.ipynb",
+      "original_sha256": "f7aef3d051862fcaf17ec51791490d5056061abd4f93163eceb805aef3739632",
+      "repository_sha256": "03e2a2e778405b77efde58776b2d2d6fc2a16ac5eccb1176b0a6c94b8cb898cc",
+      "executed_code_cells": 0,
+      "code_cells": 13,
+      "error_output_count": 0,
+      "removed_rich_output_items": 0,
+      "credential_redactions": 0,
+      "notes": "Original source variant; preserved separately from the downloaded run copy."
+    },
+    {
+      "repository_file": "notebooks/finetuning_smolvlm256/archive/mediapipe_source.ipynb",
+      "original_filename": "V3_EdgeVLM_256M_Phase2_MediaPipe_Enhanced.ipynb",
+      "original_sha256": "aa4675abe10c393302f1bc927430116f8cf96ebc2c42c5767941d1ac8dc582c9",
+      "repository_sha256": "42e115292bdac4ac3fbf0c262c843561597af1d51fd16d4ac88903c18fc2716d",
+      "executed_code_cells": 0,
+      "code_cells": 14,
+      "error_output_count": 0,
+      "removed_rich_output_items": 0,
+      "credential_redactions": 0,
+      "notes": "Original source variant, not a separate result."
+    },
+    {
+      "repository_file": "notebooks/finetuning_smolvlm256/archive/extended_data_eta_source.ipynb",
+      "original_filename": "EdgeVLM_256M_Phase2_Finetuning_with_ETA.ipynb",
+      "original_sha256": "c345a537488bfc5b1ca145086ab417c4fb79fb6ea02298be990c28963c72c9a9",
+      "repository_sha256": "f97925494cd571183ead75be6720833ed48d710bbad6e5887b82fb9a99c7ddfa",
+      "executed_code_cells": 0,
+      "code_cells": 13,
+      "error_output_count": 0,
+      "removed_rich_output_items": 0,
+      "credential_redactions": 0,
+      "notes": "ETA source variant; partial execution is recorded in notebook 07."
+    },
+    {
+      "repository_file": "notebooks/finetuning_smolvlm256/archive/prompt_benchmark.ipynb",
+      "original_filename": "EdgeVLM_prompting_langgraph_full_test.ipynb",
+      "original_sha256": "4e3c00ab0af44be96bfd46b7b4d9ca7df99a83512df4230c4be71f6318f35aab",
+      "repository_sha256": "622d1400338b056367b3581cbf34408e0c62f6c74c58333e84b6389a16cadd1f",
+      "executed_code_cells": 4,
+      "code_cells": 8,
+      "error_output_count": 0,
+      "removed_rich_output_items": 0,
+      "credential_redactions": 0,
+      "notes": "Prompt-benchmark source; no headline scores inferred from a filename or unexecuted cell."
+    }
+  ],
+  "helpers": [
+    {
+      "repository_file": "notebooks/finetuning_smolvlm256/support/langgraph_pipeline.py",
+      "original_filename": "langgraph_pipeline.py",
+      "original_sha256": "b1e258d9c7ec8c3df03374c198b9a8384854392ea700fd1ae70dfed28fdd64f2",
+      "status": "Downloaded source snapshot; its historical identity at every training run is not independently verified."
+    },
+    {
+      "repository_file": "notebooks/finetuning_smolvlm256/support/langgraph_pipeline_v1.py",
+      "original_filename": "langgraph_pipelineV1.py",
+      "original_sha256": "6f1f65227f63abd9f6447a1ff3aba017491d520b43f5aa5778771c068d63c464",
+      "status": "Downloaded source snapshot; its historical identity at every training run is not independently verified."
+    },
+    {
+      "repository_file": "notebooks/finetuning_smolvlm256/support/class_weights_utils.py",
+      "original_filename": "class_weights_utils (1).py",
+      "original_sha256": "c298a00822c66c2862541a76486ccd743d3688f83f45b332afbb5a782dd91e76",
+      "status": "Downloaded source snapshot; its historical identity at every training run is not independently verified."
+    }
+  ]
+}
