@@ -242,15 +242,122 @@ Code: [MIT](LICENSE). The DMD dataset and the SmolVLM weights are governed by th
 
 ## SmolVLM 256M contribution
 
-For the 256M model, we first explored initial adaptation, then augmentation and weighting,
-followed by LangGraph evaluation. We next introduced paired inputs and revised the training
-configuration before testing MediaPipe-guided crops and facial cues.
+This contribution develops `HuggingFaceTB/SmolVLM-256M-Instruct` for NORMAL, DROWSY,
+LOOKING_AWAY and PHONE_USAGE classification. It covers model preparation, fine-tuning and
+saved-prediction evaluation; dataset preparation belongs to a separate project contribution.
 
-- [Experiment narrative](docs/smolvlm256m_experiments.md)
-- [Notebooks and source mapping](notebooks/finetuning_smolvlm256/README.md)
-- [Verified results and shared-path comparison](results/smolvlm_256m/README.md)
+### Development sequence and techniques
+
+We first adapted the language decoder with LoRA and investigated label formatting. We then
+tested augmented training data, inverse-frequency sampling and a separate class-weighted-loss
+alternative. Single-image LangGraph evaluation produced valid labels but continued to miss
+many drowsy examples. This motivated paired scene and face inputs, adaptation of both model
+branches, revised training, and finally a MediaPipe crop-and-cue experiment.
+
+- **Paired inputs:** the full-scene view retains hands, phone and cabin context; the face crop
+  provides eye and head detail. The later notebooks reuse preprocessing helpers for training
+  and inference. No-MediaPipe uses Haar-based face extraction; the MediaPipe experiment uses
+  landmarks to guide the face box and retains fallback behavior.
+- **Efficient adaptation:** the initial experiments use text-attention LoRA with rank 8 and
+  alpha 16. The later dual-crop models use vision-and-text attention LoRA with rank 16,
+  alpha 32 and dropout 0.05. Their training uses FP16, gradient checkpointing, batch size 1,
+  eight accumulation steps, AdamW, cosine scheduling, 5% warm-up and weight decay 0.01.
+  Prompt and padding tokens are masked so the loss targets the answer tokens.
+- **Prompt design:** revised label instructions require visible phone evidence for PHONE_USAGE
+  rather than inferring it from gaze alone. The two views provide complementary evidence.
+- **Imbalance and augmentation:** the revised runs use square-root inverse-frequency sampling.
+  Mild brightness/contrast augmentation is applied during training to LOOKING_AWAY in the
+  revised No-MediaPipe run, and to DROWSY and LOOKING_AWAY in the MediaPipe run. Validation
+  and test images are not augmented.
+- **Model selection:** generated-label validation macro F1 selects the best adapter, with
+  early stopping and checkpoint recovery. Maximum epochs are limits, not completed-epoch claims.
+- **MediaPipe cues:** cached facial blendshape scores supply blink, gaze and jaw-opening text
+  hints in addition to guiding the face crop. This experiment uses MediaPipe during input
+  preparation, not as an inference gate that decides whether to call the VLM.
+
+| Later configuration | Starting weights | Learning rate | Validation examples per class | Patience / maximum epochs |
+|---|---|---:|---:|---:|
+| Dual-crop baseline | Base with an earlier adapter merged | 1e-4 | Up to 80 | 2 / 8 |
+| Revised No-MediaPipe | Pretrained instruction base | 5e-5 | Up to 150 | 2 / 6 |
+| MediaPipe crop and cues | Base with an earlier adapter merged | 1e-4 | Up to 150 | 3 / 8 |
+
+### Results on the expanded test population
+
+The following scores were recalculated from the saved prediction exports, each containing
+**5,558 images**. They are not new training or inference runs.
+
+| Experiment | Accuracy % | Balanced accuracy % | Macro F1 % | DROWSY recall % |
+|---|---:|---:|---:|---:|
+| Dual-crop baseline | 83.68 | 82.80 | 78.16 | 87.07 |
+| Revised No-MediaPipe | 85.16 | 81.89 | 79.63 | 86.88 |
+| MediaPipe crop and cues | 85.98 | 82.46 | 80.61 | 85.01 |
+
+Higher aggregate scores do not mean fewer errors in every category. On this full population,
+unsafe examples predicted NORMAL number 254 for the baseline, 305 for revised No-MediaPipe
+and 316 for MediaPipe. The [256M results guide](results/smolvlm_256m/README.md) provides metric
+definitions and links to the full per-class results and confusion matrices in the JSON records.
+
+### Comparison on shared test paths
+
+To reduce the effect of the expanded test population, we also scored the later predictions on
+the **3,579 paths shared with the earlier graph exports**, with matching true labels.
+
+| Experiment | Accuracy % | Balanced accuracy % | Macro F1 % | DROWSY recall % |
+|---|---:|---:|---:|---:|
+| Earlier single-image sampling graph | 79.46 | 48.81 | 50.78 | 0.00 |
+| Earlier single-image weighted-loss graph | 78.90 | 58.90 | 55.51 | 2.38 |
+| Dual-crop baseline | 84.07 | 78.01 | 73.08 | 63.10 |
+| Revised No-MediaPipe | 84.94 | 75.13 | 73.43 | 55.36 |
+| MediaPipe crop and cues | 86.31 | 75.08 | 74.87 | 50.60 |
+
+The expanded population adds 1,126 NORMAL and 853 DROWSY paths. Drowsiness recall on the
+shared population is lower than on the full later population. Matching paths and labels does
+not verify unchanged image contents, and training, initialization and prompts differ between
+runs. These results describe development, not a controlled measurement of MediaPipe's effect.
+
+### Finding the notebooks and evaluating saved predictions
+
+The [notebook guide](notebooks/finetuning_smolvlm256/README.md) maps repository copies to their
+original filenames and records saved execution status.
+
+| Task | Notebook |
+|---|---|
+| Dual-crop baseline | [08_dual_crop_baseline.ipynb](notebooks/finetuning_smolvlm256/08_dual_crop_baseline.ipynb) |
+| Revised No-MediaPipe training | [09_revised_no_mediapipe.ipynb](notebooks/finetuning_smolvlm256/09_revised_no_mediapipe.ipynb) |
+| No-MediaPipe result display | [10_no_mediapipe_evaluation.ipynb](notebooks/finetuning_smolvlm256/10_no_mediapipe_evaluation.ipynb) |
+| MediaPipe training | [11_mediapipe_training.ipynb](notebooks/finetuning_smolvlm256/11_mediapipe_training.ipynb) |
+| MediaPipe result display | [12_mediapipe_evaluation.ipynb](notebooks/finetuning_smolvlm256/12_mediapipe_evaluation.ipynb) |
+
+Review server paths, dependencies and adapter initialization before executing a training
+notebook. The revised training copies lack saved executed cell outputs; the prediction exports
+and executed scoring notebooks provide their result evidence. The configuration JSONs are
+provenance records, **not runnable inputs to the existing training CLI**.
+
+From the repository root, score an existing prediction CSV without loading a model or training:
+
+```bash
+python scripts/evaluate_256m_saved.py --predictions "/path/to/predictions.csv" --output "/path/to/new_metrics.json"
+```
+
+To restrict scoring to the earlier reference paths and matching labels:
+
+```bash
+python scripts/evaluate_256m_saved.py --predictions "/path/to/later_predictions.csv" --reference "/path/to/earlier_predictions.csv" --output "/path/to/new_shared_metrics.json"
+```
+
+Replace the example paths with local files. The scorer needs Python only, rejects missing or
+duplicate paths and mismatched labels, and refuses to overwrite an existing output file.
+
+### Scope and supporting records
+
+Split manifests and image contents were not independently audited in this repository update.
+Saved exports do not establish the producing checkpoint for every cached prediction. Recorded
+generation and graph latency use different measurement boundaries. No new GPU run, Jetson
+benchmark, model export or quantization was performed while preparing the 256M repository files.
+
+- [Experiment narrative](docs/smalvlm256/smolvlm256m_experiments.md)
+- [Verified results and source hashes](results/smolvlm_256m/README.md)
 - [Configuration records](configs/smolvlm256m/README.md)
-- [Model dependencies](docs/smolvlm256m_model_loading.md)
-- [Added file index](docs/smolvlm256m_file_index.md)
-
-The 256M configurations are notebook provenance records, not inputs to the existing 500M training CLI. Use the 256M notebooks for training implementation and `scripts/evaluate_256m_saved.py` to score saved CSVs without a GPU. No dataset, weights or quantization are added.
+- [256M model loading requirements](models/README.md#smolvlm-256m)
+- [Model dependency notes](docs/smalvlm256/smolvlm256m_model_loading.md)
+- [Added file index](docs/smalvlm256/smolvlm256m_file_index.md)
