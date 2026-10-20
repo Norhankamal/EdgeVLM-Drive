@@ -1,0 +1,182 @@
+{
+  "kind": "historical_notebook_configuration_record",
+  "runnable_by_scripts_train_py": false,
+  "notebook": "notebooks/finetuning_smolvlm256/03_augmented_classweighted.ipynb",
+  "source_sha256": "a87caed3eed35e90f81f12577224a33e21eabca7a38d68166be7461aa3acfef2",
+  "note": "Static source expressions, not evaluated defaults. Multiple calls may include smoke tests or alternate cells. The notebook is authoritative.",
+  "source_settings": [
+    {
+      "source_cell_index": 1,
+      "assignment": "PROJECT_ROOT = Path(\"/home/jovyan/EdgeVLM_finetune\")"
+    },
+    {
+      "source_cell_index": 1,
+      "assignment": "FRAME_ROOT = Path(\"/home/jovyan\")"
+    },
+    {
+      "source_cell_index": 1,
+      "assignment": "SPLITS_DIR = Path(\"/home/jovyan/splits\")"
+    },
+    {
+      "source_cell_index": 1,
+      "assignment": "AUGMENTED_SPLITS_DIR = Path(\"/home/jovyan/splits_augmented_v2\")"
+    },
+    {
+      "source_cell_index": 1,
+      "assignment": "TRAIN_CSV = AUGMENTED_SPLITS_DIR / \"train_augmented_deduplicated.csv\""
+    },
+    {
+      "source_cell_index": 1,
+      "assignment": "VAL_CSV = SPLITS_DIR / \"val.csv\""
+    },
+    {
+      "source_cell_index": 1,
+      "assignment": "TEST_CSV = SPLITS_DIR / \"test.csv\""
+    },
+    {
+      "source_cell_index": 1,
+      "assignment": "LABELS = [\n    \"NORMAL\",\n    \"DROWSY\",\n    \"LOOKING_AWAY\",\n    \"PHONE_USAGE\",\n]"
+    },
+    {
+      "source_cell_index": 5,
+      "assignment": "AUGMENTED_IMAGE_DIRS = {\n    \"DROWSY\": AUGMENTED_SPLITS_DIR / \"augmented_drowsy_images\",\n    \"LOOKING_AWAY\": AUGMENTED_SPLITS_DIR / \"augmented_looking_away_images\",\n}"
+    },
+    {
+      "source_cell_index": 5,
+      "assignment": "_AUGMENTED_SUFFIX_INDEX = build_augmented_suffix_index()"
+    },
+    {
+      "source_cell_index": 13,
+      "assignment": "CLEAN_TRAIN_CSV = (\n    AUGMENTED_SPLITS_DIR / \"train_augmented_deduplicated.csv\"\n)"
+    },
+    {
+      "source_cell_index": 20,
+      "assignment": "MODEL_ID = \"HuggingFaceTB/SmolVLM-256M-Instruct\""
+    },
+    {
+      "source_cell_index": 20,
+      "assignment": "MODEL_CACHE = PROJECT_ROOT / \"model_cache\""
+    },
+    {
+      "source_cell_index": 22,
+      "assignment": "INSTRUCTION = (\n    \"Classify the driver's visible state. \"\n    \"Return exactly one label from: NORMAL, DROWSY, LOOKING_AWAY, or PHONE_USAGE. \"\n    \"Do not provide an explanation or punctuation.\"\n)"
+    },
+    {
+      "source_cell_index": 24,
+      "assignment": "CLASS_WEIGHTS = compute_class_weights(TRAIN_CSV)"
+    },
+    {
+      "source_cell_index": 24,
+      "assignment": "CLASS_TO_IDX = {label: index for index, label in enumerate(LABELS)}"
+    },
+    {
+      "source_cell_index": 29,
+      "call": "LoraConfig",
+      "arguments": {
+        "r": "8",
+        "lora_alpha": "16",
+        "lora_dropout": "0.05",
+        "bias": "'none'",
+        "task_type": "TaskType.CAUSAL_LM",
+        "target_modules": "text_attention_targets"
+      }
+    },
+    {
+      "source_cell_index": 31,
+      "assignment": "RUN_SMOKE_TEST = False"
+    },
+    {
+      "source_cell_index": 31,
+      "call": "TrainingArguments",
+      "arguments": {
+        "output_dir": "str(smoke_output)",
+        "per_device_train_batch_size": "1",
+        "gradient_accumulation_steps": "4",
+        "max_steps": "3",
+        "learning_rate": "0.0001",
+        "fp16": "torch.cuda.is_available()",
+        "logging_steps": "1",
+        "save_strategy": "'no'",
+        "eval_strategy": "'no'",
+        "report_to": "'none'",
+        "remove_unused_columns": "False",
+        "dataloader_num_workers": "0",
+        "optim": "'adamw_torch'"
+      }
+    },
+    {
+      "source_cell_index": 33,
+      "assignment": "FINAL_OUTPUT = PROJECT_ROOT / \"smolvlm_256m_lora_augmented_classweighted\""
+    },
+    {
+      "source_cell_index": 33,
+      "call": "TrainingArguments",
+      "arguments": {
+        "output_dir": "str(FINAL_OUTPUT)",
+        "overwrite_output_dir": "True",
+        "num_train_epochs": "1",
+        "per_device_train_batch_size": "1",
+        "per_device_eval_batch_size": "1",
+        "gradient_accumulation_steps": "8",
+        "learning_rate": "0.0001",
+        "warmup_ratio": "0.05",
+        "lr_scheduler_type": "'cosine'",
+        "fp16": "torch.cuda.is_available()",
+        "logging_steps": "25",
+        "eval_strategy": "'steps'",
+        "eval_steps": "250",
+        "save_strategy": "'steps'",
+        "save_steps": "250",
+        "save_total_limit": "2",
+        "load_best_model_at_end": "True",
+        "metric_for_best_model": "'eval_loss'",
+        "greater_is_better": "False",
+        "remove_unused_columns": "False",
+        "dataloader_num_workers": "0",
+        "optim": "'adamw_torch'",
+        "report_to": "'none'"
+      }
+    },
+    {
+      "source_cell_index": 34,
+      "assignment": "FINAL_OUTPUT = PROJECT_ROOT / \"smolvlm_256m_lora_augmented_classweighted\""
+    },
+    {
+      "source_cell_index": 34,
+      "call": "TrainingArguments",
+      "arguments": {
+        "output_dir": "str(FINAL_OUTPUT)",
+        "overwrite_output_dir": "True",
+        "num_train_epochs": "1",
+        "per_device_train_batch_size": "1",
+        "per_device_eval_batch_size": "1",
+        "gradient_accumulation_steps": "8",
+        "learning_rate": "0.0001",
+        "warmup_ratio": "0.05",
+        "lr_scheduler_type": "'cosine'",
+        "fp16": "torch.cuda.is_available()",
+        "logging_steps": "25",
+        "eval_strategy": "'steps'",
+        "eval_steps": "250",
+        "save_strategy": "'steps'",
+        "save_steps": "250",
+        "save_total_limit": "2",
+        "load_best_model_at_end": "True",
+        "metric_for_best_model": "'eval_loss'",
+        "greater_is_better": "False",
+        "remove_unused_columns": "False",
+        "dataloader_num_workers": "0",
+        "optim": "'adamw_torch'",
+        "report_to": "'none'"
+      }
+    },
+    {
+      "source_cell_index": 36,
+      "assignment": "LABEL_ORDER = [\n    \"NORMAL\",\n    \"DROWSY\",\n    \"LOOKING_AWAY\",\n    \"PHONE_USAGE\",\n]"
+    },
+    {
+      "source_cell_index": 36,
+      "assignment": "UNSAFE_LABELS = {\n    \"DROWSY\",\n    \"LOOKING_AWAY\",\n    \"PHONE_USAGE\",\n}"
+    }
+  ]
+}

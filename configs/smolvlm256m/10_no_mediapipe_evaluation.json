@@ -1,0 +1,29 @@
+{
+  "kind": "historical_notebook_configuration_record",
+  "runnable_by_scripts_train_py": false,
+  "notebook": "notebooks/finetuning_smolvlm256/10_no_mediapipe_evaluation.ipynb",
+  "source_sha256": "597e079aec61436fede9036629869716ec9c21231f4de79e27199858b9e2bd1e",
+  "note": "Static source expressions, not evaluated defaults. Multiple calls may include smoke tests or alternate cells. The notebook is authoritative.",
+  "source_settings": [
+    {
+      "source_cell_index": 2,
+      "assignment": "HOME = Path('/home/jovyan')"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "OUTPUT_ROOT = HOME / 'EdgeVLM_finetune vlm256' / 'phase2_256m_improved_sqrt_lookawayaug_1_lr5e-05'"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "PREDICTIONS_CSV = OUTPUT_ROOT / 'phase2_256m_all_techniques_test_predictions.csv'"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "TEST_CSV = HOME / 'phase2-tain-val-test-splits' / 'final_test.csv'"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "LABELS = ['NORMAL', 'DROWSY', 'LOOKING_AWAY', 'PHONE_USAGE']"
+    }
+  ]
+}

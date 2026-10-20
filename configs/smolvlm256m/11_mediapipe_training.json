@@ -1,0 +1,221 @@
+{
+  "kind": "historical_notebook_configuration_record",
+  "runnable_by_scripts_train_py": false,
+  "notebook": "notebooks/finetuning_smolvlm256/11_mediapipe_training.ipynb",
+  "source_sha256": "4bc81bc9438715e6986fe59bd8e833bd872e746e943a36fcbf9b1431c5e3ab4b",
+  "note": "Static source expressions, not evaluated defaults. Multiple calls may include smoke tests or alternate cells. The notebook is authoritative.",
+  "source_settings": [
+    {
+      "source_cell_index": 2,
+      "assignment": "HOME = Path(\"/home/jovyan\")"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "SPLIT_DIR = HOME / \"phase2-tain-val-test-splits\""
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "TRAIN_CSV = SPLIT_DIR / \"final_train.csv\""
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "VAL_CSV = SPLIT_DIR / \"final_val.csv\""
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "TEST_CSV = SPLIT_DIR / \"final_test.csv\""
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "PROJECT_ROOT = HOME / \"EdgeVLM_finetune vlm256\""
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "OUTPUT_ROOT = PROJECT_ROOT / \"phase2_256m_mediapipe_targetaug_sqrt_150_per_class_patience3\""
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "CHECKPOINT_DIR = OUTPUT_ROOT / \"checkpoints\""
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "LAST_ADAPTER_DIR = OUTPUT_ROOT / \"last_adapter\""
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "BEST_ADAPTER_DIR = OUTPUT_ROOT / \"best_by_macro_f1\""
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "MODEL_ID = \"HuggingFaceTB/SmolVLM-256M-Instruct\""
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "MODEL_CACHE_CANDIDATES = [\n    PROJECT_ROOT / \"model_cache\",\n    HOME / \"EdgeVLM_finetune\" / \"model_cache\",\n]"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "MODEL_CACHE = next((p for p in MODEL_CACHE_CANDIDATES if p.exists()), MODEL_CACHE_CANDIDATES[0])"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "PREVIOUS_ADAPTER_CANDIDATES = [\n    PROJECT_ROOT / \"smolvlm_256m_lora_augmented_classweighted\",\n    HOME / \"EdgeVLM_finetune_vlm256\" / \"smolvlm_256m_lora_augmented_classweighted\",\n    HOME / \"EdgeVLM_finetune\" / \"smolvlm_256m_lora_augmented_classweighted\",\n]"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "PREVIOUS_ADAPTER_DIR = next(\n    (p for p in PREVIOUS_ADAPTER_CANDIDATES if (p / \"adapter_model.safetensors\").is_file()),\n    None,\n)"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "START_FROM_PREVIOUS_ADAPTER = True"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "LABELS = [\"NORMAL\", \"DROWSY\", \"LOOKING_AWAY\", \"PHONE_USAGE\"]"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "IMAGE_SIZE = 512"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "MAX_EPOCHS = 8"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "EARLY_STOPPING_PATIENCE = 3"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "MACRO_F1_SAMPLES_PER_CLASS = 150"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "SEED = 42"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "TARGETED_AUGMENTATION_PROBABILITY = 0.50"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "TARGETED_AUGMENTATION_LABELS = {\"DROWSY\", \"LOOKING_AWAY\"}"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "SAMPLER_POWER = 0.50"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "LANGGRAPH_MODULE_PATH = HOME / \"EdgeVLM_finetune\" / \"langgraph_pipeline.py\""
+    },
+    {
+      "source_cell_index": 9,
+      "assignment": "MEDIAPIPE_CACHE = PROJECT_ROOT / \"phase2_256m_all_techniques_mediapipe_phone_prompt\" / \"mediapipe_cache\""
+    },
+    {
+      "source_cell_index": 9,
+      "assignment": "FACE_LANDMARKER_TASK = HOME / \".cache\" / \"mediapipe\" / \"face_landmarker.task\""
+    },
+    {
+      "source_cell_index": 9,
+      "assignment": "FACE_LANDMARKER_URL = (\n    \"https://storage.googleapis.com/mediapipe-models/face_landmarker/\"\n    \"face_landmarker/float16/latest/face_landmarker.task\"\n)"
+    },
+    {
+      "source_cell_index": 9,
+      "assignment": "MEDIAPIPE_CUES_CSV = MEDIAPIPE_CACHE / \"face_blendshape_cues.csv\""
+    },
+    {
+      "source_cell_index": 9,
+      "assignment": "FACE_BOXES_CSV = MEDIAPIPE_CACHE / \"face_landmark_boxes.csv\""
+    },
+    {
+      "source_cell_index": 9,
+      "assignment": "CUE_BY_PATH = cue_cache"
+    },
+    {
+      "source_cell_index": 9,
+      "assignment": "FACE_BBOX_BY_PATH = face_bbox_by_path"
+    },
+    {
+      "source_cell_index": 9,
+      "assignment": "BBOX_PROCESSED_PATHS = bbox_processed"
+    },
+    {
+      "source_cell_index": 9,
+      "assignment": "LIVE_FACE_LANDMARKER = mp_vision.FaceLandmarker.create_from_options(_mp_options)"
+    },
+    {
+      "source_cell_index": 9,
+      "assignment": "RUN_PREPROCESSING_SANITY_CHECK = True"
+    },
+    {
+      "source_cell_index": 14,
+      "assignment": "ATTENTION_SUFFIXES = (\"q_proj\", \"k_proj\", \"v_proj\", \"o_proj\", \"out_proj\")"
+    },
+    {
+      "source_cell_index": 14,
+      "call": "LoraConfig",
+      "arguments": {
+        "r": "16",
+        "lora_alpha": "32",
+        "lora_dropout": "0.05",
+        "bias": "'none'",
+        "task_type": "TaskType.CAUSAL_LM",
+        "target_modules": "sorted(text_targets + vision_targets)"
+      }
+    },
+    {
+      "source_cell_index": 16,
+      "assignment": "INSTRUCTION = (\n    \"You are shown two images from the same in-cabin driver-camera frame. \"\n    \"The first is the full available frame; the second is the face-focused crop. \"\n    \"Use both images and the optional MediaPipe facial measurements below as \"\n    \"additional visual evidence. The measurements are cues, not ground-truth labels \"\n    \"or guaranteed diagnoses. Distinguish the two labels carefully: choose \"\n    \"PHONE_USAGE when visible evidence shows the driver holding or interacting \"\n    \"with a phone, even if the driver is also looking away. Choose LOOKING_AWAY \"\n    \"when the driver's gaze or head is directed away from the road and there is \"\n    \"no clear evidence of phone use. Do not infer phone use from gaze alone. Use \"\n    \"the full frame for phone/hand context and the face crop for eye/head direction. \"\n    \"Return exactly one label from NORMAL, DROWSY, LOOKING_AWAY, or PHONE_USAGE. \"\n    \"Do not explain or add punctuation.\"\n)"
+    },
+    {
+      "source_cell_index": 20,
+      "assignment": "PROGRESS_FILE = OUTPUT_ROOT / \"training_progress.txt\""
+    },
+    {
+      "source_cell_index": 20,
+      "assignment": "PROGRESS_HISTORY = OUTPUT_ROOT / \"training_progress_history.log\""
+    },
+    {
+      "source_cell_index": 22,
+      "call": "TrainingArguments",
+      "arguments": {
+        "output_dir": "str(CHECKPOINT_DIR)",
+        "num_train_epochs": "MAX_EPOCHS",
+        "per_device_train_batch_size": "1",
+        "per_device_eval_batch_size": "1",
+        "gradient_accumulation_steps": "8",
+        "learning_rate": "0.0001",
+        "warmup_ratio": "0.05",
+        "lr_scheduler_type": "'cosine'",
+        "weight_decay": "0.01",
+        "fp16": "True",
+        "logging_steps": "50",
+        "disable_tqdm": "True",
+        "eval_strategy": "'epoch'",
+        "save_strategy": "'steps'",
+        "save_steps": "100",
+        "save_total_limit": "3",
+        "load_best_model_at_end": "False",
+        "remove_unused_columns": "False",
+        "dataloader_num_workers": "0",
+        "optim": "'adamw_torch'",
+        "report_to": "'none'",
+        "seed": "SEED"
+      }
+    },
+    {
+      "source_cell_index": 26,
+      "assignment": "PREDICTIONS_CSV = OUTPUT_ROOT / \"phase2_256m_all_techniques_mediapipe_test_predictions.csv\""
+    },
+    {
+      "source_cell_index": 26,
+      "assignment": "SAVE_EVERY = 250"
+    },
+    {
+      "source_cell_index": 30,
+      "assignment": "CREATE_MERGED_FP32 = False"
+    }
+  ]
+}

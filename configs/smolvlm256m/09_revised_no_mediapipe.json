@@ -1,0 +1,192 @@
+{
+  "kind": "historical_notebook_configuration_record",
+  "runnable_by_scripts_train_py": false,
+  "notebook": "notebooks/finetuning_smolvlm256/09_revised_no_mediapipe.ipynb",
+  "source_sha256": "f88642b0cd1a68c7433f1557dea343c1e7cc012082e13df589a6b98e7c6531dd",
+  "note": "Static source expressions, not evaluated defaults. Multiple calls may include smoke tests or alternate cells. The notebook is authoritative.",
+  "source_settings": [
+    {
+      "source_cell_index": 2,
+      "assignment": "HOME = Path(\"/home/jovyan\")"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "SPLIT_DIR = HOME / \"phase2-tain-val-test-splits\""
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "TRAIN_CSV = SPLIT_DIR / \"final_train.csv\""
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "VAL_CSV = SPLIT_DIR / \"final_val.csv\""
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "TEST_CSV = SPLIT_DIR / \"final_test.csv\""
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "PROJECT_ROOT = HOME / \"EdgeVLM_finetune vlm256\""
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "SAMPLER_MODE = \"sqrt\""
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "AUGMENT_LOOKING_AWAY_TRAIN = True"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "START_FROM_PREVIOUS_ADAPTER = False"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "LEARNING_RATE = 5e-5"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "MAX_EPOCHS = 6"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "EARLY_STOPPING_PATIENCE = 2"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "MACRO_F1_SAMPLES_PER_CLASS = 150"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "OUTPUT_ROOT = PROJECT_ROOT / (\n    f\"phase2_256m_improved_{SAMPLER_MODE}_\"\n    f\"lookawayaug_{int(AUGMENT_LOOKING_AWAY_TRAIN)}_lr{LEARNING_RATE:g}\"\n)"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "CHECKPOINT_DIR = OUTPUT_ROOT / \"checkpoints\""
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "LAST_ADAPTER_DIR = OUTPUT_ROOT / \"last_adapter\""
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "BEST_ADAPTER_DIR = OUTPUT_ROOT / \"best_by_macro_f1\""
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "MODEL_ID = \"HuggingFaceTB/SmolVLM-256M-Instruct\""
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "MODEL_CACHE_CANDIDATES = [\n    PROJECT_ROOT / \"model_cache\",\n    HOME / \"EdgeVLM_finetune\" / \"model_cache\",\n]"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "MODEL_CACHE = next((p for p in MODEL_CACHE_CANDIDATES if p.exists()), MODEL_CACHE_CANDIDATES[0])"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "PREVIOUS_ADAPTER_CANDIDATES = [\n    PROJECT_ROOT / \"smolvlm_256m_lora_augmented_classweighted\",\n    HOME / \"EdgeVLM_finetune_vlm256\" / \"smolvlm_256m_lora_augmented_classweighted\",\n    HOME / \"EdgeVLM_finetune\" / \"smolvlm_256m_lora_augmented_classweighted\",\n]"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "PREVIOUS_ADAPTER_DIR = next(\n    (p for p in PREVIOUS_ADAPTER_CANDIDATES if (p / \"adapter_model.safetensors\").is_file()),\n    None,\n)"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "LABELS = [\"NORMAL\", \"DROWSY\", \"LOOKING_AWAY\", \"PHONE_USAGE\"]"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "IMAGE_SIZE = 512"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "SEED = 42"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "LANGGRAPH_MODULE_PATH = HOME / \"EdgeVLM_finetune\" / \"langgraph_pipeline.py\""
+    },
+    {
+      "source_cell_index": 6,
+      "assignment": "RUN_PREPROCESSING_SANITY_CHECK = True"
+    },
+    {
+      "source_cell_index": 6,
+      "assignment": "AUDIT_SAMPLES_PER_CLASS = 100"
+    },
+    {
+      "source_cell_index": 11,
+      "assignment": "ATTENTION_SUFFIXES = (\"q_proj\", \"k_proj\", \"v_proj\", \"o_proj\", \"out_proj\")"
+    },
+    {
+      "source_cell_index": 11,
+      "call": "LoraConfig",
+      "arguments": {
+        "r": "16",
+        "lora_alpha": "32",
+        "lora_dropout": "0.05",
+        "bias": "'none'",
+        "task_type": "TaskType.CAUSAL_LM",
+        "target_modules": "sorted(text_targets + vision_targets)"
+      }
+    },
+    {
+      "source_cell_index": 13,
+      "assignment": "INSTRUCTION = (\n    \"You are shown two views from the same in-cabin driver-camera moment. The first is the full available frame; the second is a close-up of the driver's face. Choose exactly one label. \"\n    \"NORMAL: no clear drowsiness, sustained looking away, or visible phone interaction. \"\n    \"DROWSY: visible sleepiness such as heavy/closed eyes or a head nod. \"\n    \"LOOKING_AWAY: the driver's gaze or head is directed away from the road, without clear visible phone interaction. \"\n    \"PHONE_USAGE: the driver is visibly holding, viewing, or interacting with a phone; do not infer phone use from gaze direction alone. \"\n    \"Use the full frame for phone/hand evidence and the face crop for eye/head cues. If evidence is unclear, choose the best-supported label and do not invent details. \"\n    \"Return exactly one label from NORMAL, DROWSY, LOOKING_AWAY, or PHONE_USAGE, with no explanation or punctuation.\"\n)"
+    },
+    {
+      "source_cell_index": 17,
+      "assignment": "PROGRESS_FILE = OUTPUT_ROOT / \"training_progress.txt\""
+    },
+    {
+      "source_cell_index": 17,
+      "assignment": "PROGRESS_HISTORY = OUTPUT_ROOT / \"training_progress_history.log\""
+    },
+    {
+      "source_cell_index": 19,
+      "call": "TrainingArguments",
+      "arguments": {
+        "output_dir": "str(CHECKPOINT_DIR)",
+        "num_train_epochs": "MAX_EPOCHS",
+        "per_device_train_batch_size": "1",
+        "per_device_eval_batch_size": "1",
+        "gradient_accumulation_steps": "8",
+        "learning_rate": "LEARNING_RATE",
+        "warmup_ratio": "0.05",
+        "lr_scheduler_type": "'cosine'",
+        "weight_decay": "0.01",
+        "fp16": "True",
+        "logging_steps": "50",
+        "disable_tqdm": "True",
+        "eval_strategy": "'epoch'",
+        "save_strategy": "'epoch'",
+        "save_total_limit": "2",
+        "load_best_model_at_end": "False",
+        "remove_unused_columns": "False",
+        "dataloader_num_workers": "0",
+        "optim": "'adamw_torch'",
+        "report_to": "'none'",
+        "seed": "SEED"
+      }
+    },
+    {
+      "source_cell_index": 23,
+      "assignment": "PREDICTIONS_CSV = OUTPUT_ROOT / \"phase2_256m_all_techniques_test_predictions.csv\""
+    },
+    {
+      "source_cell_index": 23,
+      "assignment": "SAVE_EVERY = 250"
+    },
+    {
+      "source_cell_index": 25,
+      "assignment": "ERROR_REVIEW_CSV = OUTPUT_ROOT / \"test_misclassification_review.csv\""
+    },
+    {
+      "source_cell_index": 27,
+      "assignment": "CREATE_MERGED_FP32 = False"
+    }
+  ]
+}

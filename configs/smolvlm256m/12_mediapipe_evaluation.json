@@ -1,0 +1,57 @@
+{
+  "kind": "historical_notebook_configuration_record",
+  "runnable_by_scripts_train_py": false,
+  "notebook": "notebooks/finetuning_smolvlm256/12_mediapipe_evaluation.ipynb",
+  "source_sha256": "88457e8b1ceddb3a445ac7f3336cb42b1c3ddd1a353e48273ea208b26bbf9a38",
+  "note": "Static source expressions, not evaluated defaults. Multiple calls may include smoke tests or alternate cells. The notebook is authoritative.",
+  "source_settings": [
+    {
+      "source_cell_index": 1,
+      "assignment": "RERUN_TEST_INFERENCE = False"
+    },
+    {
+      "source_cell_index": 1,
+      "assignment": "CREATE_MERGED_FP32 = False"
+    },
+    {
+      "source_cell_index": 1,
+      "assignment": "HOME = Path('/home/jovyan')"
+    },
+    {
+      "source_cell_index": 1,
+      "assignment": "PROJECT_ROOT = HOME / 'EdgeVLM_finetune vlm256'"
+    },
+    {
+      "source_cell_index": 1,
+      "assignment": "OUTPUT_ROOT = Path(os.environ.get('EDGEVLM_RESULTS_ROOT', str(\n    PROJECT_ROOT / 'phase2_256m_mediapipe_targetaug_sqrt_150_per_class_patience3')))"
+    },
+    {
+      "source_cell_index": 1,
+      "assignment": "PREDICTIONS_CSV = OUTPUT_ROOT / 'phase2_256m_all_techniques_mediapipe_test_predictions.csv'"
+    },
+    {
+      "source_cell_index": 1,
+      "assignment": "BEST_ADAPTER_DIR = OUTPUT_ROOT / 'best_by_macro_f1'"
+    },
+    {
+      "source_cell_index": 1,
+      "assignment": "TEST_CSV = HOME / 'phase2-tain-val-test-splits' / 'final_test.csv'"
+    },
+    {
+      "source_cell_index": 1,
+      "assignment": "LABELS = ['NORMAL', 'DROWSY', 'LOOKING_AWAY', 'PHONE_USAGE']"
+    },
+    {
+      "source_cell_index": 1,
+      "assignment": "EXPECTED_TEST_IMAGES = 5558"
+    },
+    {
+      "source_cell_index": 1,
+      "assignment": "REPORT_BASE = Path(os.environ.get('EDGEVLM_REPORT_BASE', str(OUTPUT_ROOT / 'evaluation_only_reports')))"
+    },
+    {
+      "source_cell_index": 1,
+      "assignment": "REPORT_DIR = REPORT_BASE / datetime.now().strftime('%Y%m%d_%H%M%S_%f')"
+    }
+  ]
+}

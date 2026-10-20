@@ -1,0 +1,173 @@
+{
+  "kind": "historical_notebook_configuration_record",
+  "runnable_by_scripts_train_py": false,
+  "notebook": "notebooks/finetuning_smolvlm256/01_initial_single_image.ipynb",
+  "source_sha256": "be07ccd4a30c15b908e2f16bcafcb004ac66a10d9a96d607634f5e6ebb4a7226",
+  "note": "Static source expressions, not evaluated defaults. Multiple calls may include smoke tests or alternate cells. The notebook is authoritative.",
+  "source_settings": [
+    {
+      "source_cell_index": 4,
+      "assignment": "PROJECT_ROOT = Path(\"/home/jovyan/EdgeVLM_finetune\")"
+    },
+    {
+      "source_cell_index": 4,
+      "assignment": "SPLITS_DIR = Path(\"/home/jovyan/splits\")"
+    },
+    {
+      "source_cell_index": 4,
+      "assignment": "TRAIN_CSV = SPLITS_DIR / \"train.csv\""
+    },
+    {
+      "source_cell_index": 4,
+      "assignment": "VAL_CSV = SPLITS_DIR / \"val.csv\""
+    },
+    {
+      "source_cell_index": 4,
+      "assignment": "TEST_CSV = SPLITS_DIR / \"test.csv\""
+    },
+    {
+      "source_cell_index": 7,
+      "assignment": "FRAME_ROOT = Path(\"/home/jovyan\")"
+    },
+    {
+      "source_cell_index": 16,
+      "assignment": "PROJECT_ROOT = Path(\"/home/jovyan/EdgeVLM_finetune\")"
+    },
+    {
+      "source_cell_index": 16,
+      "assignment": "MODEL_ID = \"HuggingFaceTB/SmolVLM-256M-Instruct\""
+    },
+    {
+      "source_cell_index": 16,
+      "assignment": "MODEL_CACHE = PROJECT_ROOT / \"model_cache\""
+    },
+    {
+      "source_cell_index": 18,
+      "assignment": "FRAME_ROOT = Path(\"/home/jovyan\")"
+    },
+    {
+      "source_cell_index": 20,
+      "assignment": "INSTRUCTION = (\n    \"Classify the driver's visible state. \"\n    \"Return exactly one label from: NORMAL, DROWSY, LOOKING_AWAY, or PHONE_USAGE. \"\n    \"Do not provide an explanation or punctuation.\"\n)"
+    },
+    {
+      "source_cell_index": 26,
+      "call": "LoraConfig",
+      "arguments": {
+        "r": "8",
+        "lora_alpha": "16",
+        "lora_dropout": "0.05",
+        "bias": "'none'",
+        "task_type": "TaskType.CAUSAL_LM",
+        "target_modules": "text_attention_targets"
+      }
+    },
+    {
+      "source_cell_index": 28,
+      "assignment": "PROJECT_ROOT = Path(\"/home/jovyan/EdgeVLM_finetune\")"
+    },
+    {
+      "source_cell_index": 28,
+      "assignment": "SMOKE_OUTPUT = PROJECT_ROOT / \"lora_smoke_test\""
+    },
+    {
+      "source_cell_index": 28,
+      "call": "TrainingArguments",
+      "arguments": {
+        "output_dir": "str(SMOKE_OUTPUT)",
+        "per_device_train_batch_size": "1",
+        "gradient_accumulation_steps": "4",
+        "max_steps": "3",
+        "learning_rate": "0.0001",
+        "fp16": "torch.cuda.is_available()",
+        "logging_steps": "1",
+        "save_strategy": "'no'",
+        "evaluation_strategy": "'no'",
+        "report_to": "'none'",
+        "remove_unused_columns": "False",
+        "dataloader_num_workers": "0",
+        "optim": "'adamw_torch'"
+      }
+    },
+    {
+      "source_cell_index": 30,
+      "assignment": "PROJECT_ROOT = Path(\"/home/jovyan/EdgeVLM_finetune\")"
+    },
+    {
+      "source_cell_index": 30,
+      "assignment": "MODEL_ID = \"HuggingFaceTB/SmolVLM-256M-Instruct\""
+    },
+    {
+      "source_cell_index": 30,
+      "assignment": "MODEL_CACHE = PROJECT_ROOT / \"model_cache\""
+    },
+    {
+      "source_cell_index": 30,
+      "call": "LoraConfig",
+      "arguments": {
+        "r": "8",
+        "lora_alpha": "16",
+        "lora_dropout": "0.05",
+        "bias": "'none'",
+        "task_type": "TaskType.CAUSAL_LM",
+        "target_modules": "sorted(text_attention_targets)"
+      }
+    },
+    {
+      "source_cell_index": 32,
+      "assignment": "FINAL_OUTPUT = PROJECT_ROOT / \"smolvlm_256m_lora\""
+    },
+    {
+      "source_cell_index": 32,
+      "call": "TrainingArguments",
+      "arguments": {
+        "output_dir": "str(FINAL_OUTPUT)",
+        "overwrite_output_dir": "True",
+        "num_train_epochs": "1",
+        "per_device_train_batch_size": "1",
+        "per_device_eval_batch_size": "1",
+        "gradient_accumulation_steps": "8",
+        "learning_rate": "0.0001",
+        "warmup_ratio": "0.05",
+        "lr_scheduler_type": "'cosine'",
+        "fp16": "torch.cuda.is_available()",
+        "logging_steps": "25",
+        "evaluation_strategy": "'steps'",
+        "eval_steps": "250",
+        "save_strategy": "'steps'",
+        "save_steps": "250",
+        "save_total_limit": "2",
+        "load_best_model_at_end": "True",
+        "metric_for_best_model": "'eval_loss'",
+        "greater_is_better": "False",
+        "remove_unused_columns": "False",
+        "dataloader_num_workers": "0",
+        "optim": "'adamw_torch'",
+        "report_to": "'none'"
+      }
+    },
+    {
+      "source_cell_index": 36,
+      "assignment": "FRAME_ROOT = Path(\"/home/jovyan\")"
+    },
+    {
+      "source_cell_index": 36,
+      "assignment": "PROJECT_ROOT = Path(\"/home/jovyan/EdgeVLM_finetune\")"
+    },
+    {
+      "source_cell_index": 36,
+      "assignment": "LABEL_ORDER = [\n    \"NORMAL\",\n    \"DROWSY\",\n    \"LOOKING_AWAY\",\n    \"PHONE_USAGE\",\n]"
+    },
+    {
+      "source_cell_index": 36,
+      "assignment": "UNSAFE_LABELS = {\n    \"DROWSY\",\n    \"LOOKING_AWAY\",\n    \"PHONE_USAGE\",\n}"
+    },
+    {
+      "source_cell_index": 36,
+      "assignment": "EVAL_LIMIT = None"
+    },
+    {
+      "source_cell_index": 36,
+      "assignment": "MATRIX_LABELS = LABEL_ORDER + [\"INVALID\"]"
+    }
+  ]
+}

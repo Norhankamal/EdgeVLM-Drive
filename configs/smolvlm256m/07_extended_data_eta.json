@@ -1,0 +1,127 @@
+{
+  "kind": "historical_notebook_configuration_record",
+  "runnable_by_scripts_train_py": false,
+  "notebook": "notebooks/finetuning_smolvlm256/07_extended_data_eta.ipynb",
+  "source_sha256": "e6ee62e3ac6360b987e0c718d17c826359ab4115e20c1a486fb31fbb1c4366e7",
+  "note": "Static source expressions, not evaluated defaults. Multiple calls may include smoke tests or alternate cells. The notebook is authoritative.",
+  "source_settings": [
+    {
+      "source_cell_index": 2,
+      "assignment": "HOME = Path(\"/home/jovyan\")"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "SPLIT_DIR = next((p for p in split_candidates if p.is_dir()), split_candidates[0])"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "TRAIN_CSV = SPLIT_DIR / \"final_train.csv\""
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "VAL_CSV = SPLIT_DIR / \"final_val.csv\""
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "TEST_CSV = SPLIT_DIR / \"final_test.csv\""
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "PROJECT_ROOT = next((p for p in project_candidates if p.is_dir()), project_candidates[0])"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "OUTPUT_ROOT = PROJECT_ROOT / \"phase2_smolvlm_256m\""
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "CHECKPOINT_DIR = OUTPUT_ROOT / \"checkpoints\""
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "FINAL_ADAPTER_DIR = OUTPUT_ROOT / \"final_adapter\""
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "LABELS = [\"NORMAL\", \"DROWSY\", \"LOOKING_AWAY\", \"PHONE_USAGE\"]"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "MODEL_ID = \"HuggingFaceTB/SmolVLM-256M-Instruct\""
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "IMAGE_LONGEST_EDGE = 512"
+    },
+    {
+      "source_cell_index": 2,
+      "assignment": "SEED = 42"
+    },
+    {
+      "source_cell_index": 12,
+      "assignment": "PREVIOUS_ADAPTER_DIR = next(\n    (p for p in adapter_candidates if (p / \"adapter_model.safetensors\").is_file()),\n    None,\n)"
+    },
+    {
+      "source_cell_index": 14,
+      "assignment": "MODEL_CACHE_CANDIDATES = [\n    PROJECT_ROOT / \"model_cache\",\n    HOME / \"EdgeVLM_finetune\" / \"model_cache\",\n]"
+    },
+    {
+      "source_cell_index": 14,
+      "assignment": "MODEL_CACHE = next((p for p in MODEL_CACHE_CANDIDATES if p.exists()), MODEL_CACHE_CANDIDATES[0])"
+    },
+    {
+      "source_cell_index": 16,
+      "assignment": "INSTRUCTION = (\n    \"Classify the driver's visible state. \"\n    \"Return exactly one label from: NORMAL, DROWSY, LOOKING_AWAY, or PHONE_USAGE. \"\n    \"Do not provide an explanation or punctuation.\"\n)"
+    },
+    {
+      "source_cell_index": 20,
+      "assignment": "PROGRESS_FILE = OUTPUT_ROOT / \"training_progress.txt\""
+    },
+    {
+      "source_cell_index": 20,
+      "assignment": "PROGRESS_HISTORY_FILE = OUTPUT_ROOT / \"training_progress_history.log\""
+    },
+    {
+      "source_cell_index": 20,
+      "call": "TrainingArguments",
+      "arguments": {
+        "output_dir": "str(CHECKPOINT_DIR)",
+        "num_train_epochs": "1",
+        "per_device_train_batch_size": "1",
+        "per_device_eval_batch_size": "1",
+        "gradient_accumulation_steps": "8",
+        "learning_rate": "5e-05",
+        "warmup_ratio": "0.05",
+        "lr_scheduler_type": "'cosine'",
+        "fp16": "True",
+        "logging_steps": "25",
+        "disable_tqdm": "True",
+        "eval_strategy": "'steps'",
+        "eval_steps": "500",
+        "save_strategy": "'steps'",
+        "save_steps": "500",
+        "save_total_limit": "2",
+        "load_best_model_at_end": "True",
+        "metric_for_best_model": "'eval_loss'",
+        "greater_is_better": "False",
+        "remove_unused_columns": "False",
+        "dataloader_num_workers": "0",
+        "optim": "'adamw_torch'",
+        "report_to": "'none'",
+        "seed": "SEED"
+      }
+    },
+    {
+      "source_cell_index": 24,
+      "assignment": "PREDICTIONS_CSV = OUTPUT_ROOT / \"phase2_test_predictions.csv\""
+    },
+    {
+      "source_cell_index": 24,
+      "assignment": "SAVE_EVERY = 250"
+    },
+    {
+      "source_cell_index": 28,
+      "assignment": "CREATE_MERGED_FP32 = False"
+    }
+  ]
+}
