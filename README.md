@@ -11,9 +11,7 @@ EdgeVLM-Drive classifies a driver's state from a single in-cabin camera frame in
 model (SmolVLM) that is small enough to run on a 4 GB Jetson Nano. Everything runs on the
 device: no cloud round-trip, no driver-facing video leaving the cabin.
 
-> **Project status.** This repository currently contains the **SmolVLM-500M fine-tuning**
-> work (training, evaluation, export, experiment records). The data-preparation, prompt-engineering,
-> SmolVLM-256M and Jetson/ROS integration parts are being added; see [Roadmap](#roadmap).
+> **Project status.** This repository contains the **SmolVLM-500M fine-tuning** work (training, evaluation, export and experiment records) and the **SmolVLM-256M experiment notebooks, configuration records and saved-result evaluation**. Data-preparation, prompt-engineering and Jetson/ROS integration contributions are still being added; see [Roadmap](#roadmap). The 256M section distinguishes historical notebooks from newly tested scoring code.
 
 ---
 
@@ -38,7 +36,7 @@ Fine-tuning `HuggingFaceTB/SmolVLM-500M-Instruct` rests on three design choices:
    preprocessing functions of the deployed pipeline, so the model is trained on the pixels it will
    see at inference.
 2. **LoRA on the vision encoder *and* the text decoder** (attention projections, r = 8 in the
-   baseline and r = 16 in Phase 2). Adapting the vision encoder lets the model learn a *new visual
+   initial baseline and r = 16 in the later extended-data experiments). Adapting the vision encoder lets the model learn a *new visual
    cue* such as eye closure, instead of only re-mapping cues it could already see.
 3. **Checkpoint selection by validation macro-F1, not `eval_loss`.** With heavy class imbalance a
    model can reach a low loss by favouring NORMAL while DROWSY recall collapses. A callback runs
@@ -59,7 +57,9 @@ All numbers below come from the executed notebooks or the interim report and are
 [`results/`](results/smolvlm_500m). Accuracy alone is misleading here (NORMAL is ~60 % of the test
 sets), so balanced accuracy, macro-F1 and DROWSY recall are given as well.
 
-### Phase 1 — baseline (reported in the interim report)
+### Initial baseline (reported in the interim report)
+
+We first established the 500M dual-crop baseline and evaluated it on the original test set.
 
 Test set: **3,579 images**, subject-disjoint split of DMD. GPU-server evaluation, 100 % valid label outputs.
 
@@ -74,7 +74,9 @@ Test set: **3,579 images**, subject-disjoint split of DMD. GPU-server evaluation
 | LOOKING_AWAY | 0.608 | 0.785 | 0.685 | 302 |
 | PHONE_USAGE | 0.966 | 0.737 | 0.836 | 958 |
 
-### On-device validation (Jetson Nano 4 GB, Phase 1 model)
+### Validation of the baseline on Jetson Nano 4 GB
+
+We then evaluated the baseline model on the target device using a smaller diagnostic subset.
 
 Merged FP16 SmolVLM-500M (~968 MB), JetPack 4.6.6, PyTorch 1.13.0; the 500M model needs a 4 GB swap
 partition. Measured on a **120-image balanced diagnostic subset** (30 per class), so accuracy is not
@@ -84,20 +86,25 @@ comparable to the full-test numbers.
 |---:|---:|---:|---:|---:|
 | 80.00 % | 4,659 ms | 5,623 ms | 36.67 % (11/30) | 19/30 |
 
-### Phase 2 — extended dataset (not in the interim report)
+### Expanded dataset and revised training (not in the interim report)
 
-Test set: **5,558 images** — a *different, larger* test set than Phase 1 (1,021 DROWSY frames
-instead of 168), so **these numbers are not directly comparable to Phase 1**.
+Next, we extended the dataset and increased the LoRA rank. A subsequent experiment revised
+preprocessing, the prompt, sampling strength and the validation check.
+
+Test set: **5,558 images** — a *different, larger* test set than the initial baseline (1,021 DROWSY frames
+instead of 168), so **these numbers are not directly comparable to the initial baseline results**.
 
 | Run | Changes vs. previous | Macro-F1 | Balanced acc. | DROWSY recall | False-alarm rate |
 |---|---|---:|---:|---:|---:|
 | `phase2_v1` | extended data, LoRA r = 16 | 79.56 % | 83.00 % | 81.3 % | 10.22 % |
 | `phase2_final` | + current preprocessing, extended prompt, damped sampler, larger validation check | 80.18 % | 80.08 % | 80.9 % | 7.75 % |
 
-Several factors changed at once between Phase 1, `phase2_v1` and `phase2_final`, and the final prompt
+The original run identifiers in the table are retained in filenames and commands for reproducibility.
+
+Several factors changed at once between the initial baseline, `phase2_v1` and `phase2_final`, and the final prompt
 was refined after looking at a test-set confusion matrix, so the improvements cannot be attributed to
 a single change and should be read as optimistic. Details and open questions:
-[`docs/experiment_log.md`](docs/experiment_log.md). Phase 2 models have not been run on the Jetson.
+[`docs/experiment_log.md`](docs/experiment_log.md). The later extended-data models have not been run on the Jetson.
 
 ## Limitations
 
@@ -107,7 +114,7 @@ a single change and should be read as optimistic. Details and open questions:
 - DROWSY labels are derived from DMD eye-state annotations (a ≥ 0.8 s closure episode); the class is
   rare and drawn from few subjects, so subject/lighting diversity is limited.
 - Reported latency is single-image `generate()` on a GPU server, or on the Jetson for the 120-image
-  subset. Memory, quantisation and the Phase 2 models on-device remain to be measured.
+  subset. Memory, quantisation and the later extended-data models on-device remain to be measured.
 - Single runs, no confidence intervals or statistical tests.
 - The `scripts/` entry points are a refactor of the notebooks and have **not yet been executed
   end-to-end on a GPU**; the notebooks are the executed record. Unit tests cover the logic that does
@@ -185,7 +192,7 @@ newest readable checkpoint (`--no-resume` to start fresh).
 pytest
 ```
 
-The suite checks, among other things, that the metric code reproduces the published Phase 1 numbers
+The suite checks, among other things, that the metric code reproduces the published initial baseline numbers
 (74.13 % macro-F1, 27.66 % miss rate, 6.37 % false-alarm rate) from the confusion matrix, that the
 prompts equal the ones in the notebooks, and that the notebooks contain no embedded images or
 credentials. GPU-dependent code (model loading, `Trainer`, export) is not covered.
@@ -212,7 +219,7 @@ credentials. GPU-dependent code (model loading, `Trainer`, export) is not covere
 | SmolVLM-500M fine-tuning, evaluation, export | in this repository |
 | Data preparation and labelling pipeline (DMD) | to be added |
 | Prompt-engineering experiments | to be added |
-| SmolVLM-256M fine-tuning | to be added |
+| SmolVLM-256M experiment notebooks and saved-result evaluation | added; see the 256M contribution below |
 | Jetson benchmark scripts and ROS integration | to be added |
 | MediaPipe landmark gating to reduce VLM calls | planned (not tested) |
 | Demo video | to be added (`demo/`) |
@@ -232,3 +239,18 @@ Transformers and LangGraph projects.
 ## License
 
 Code: [MIT](LICENSE). The DMD dataset and the SmolVLM weights are governed by their own licences.
+
+## SmolVLM 256M contribution
+
+For the 256M model, we first explored initial adaptation, then augmentation and weighting,
+followed by LangGraph evaluation. We next introduced paired inputs and revised the training
+configuration before testing MediaPipe-guided crops and facial cues.
+
+- [Experiment narrative](docs/smolvlm256m_experiments.md)
+- [Notebooks and source mapping](notebooks/finetuning_smolvlm256/README.md)
+- [Verified results and shared-path comparison](results/smolvlm_256m/README.md)
+- [Configuration records](configs/smolvlm256m/README.md)
+- [Model dependencies](docs/smolvlm256m_model_loading.md)
+- [Added file index](docs/smolvlm256m_file_index.md)
+
+The 256M configurations are notebook provenance records, not inputs to the existing 500M training CLI. Use the 256M notebooks for training implementation and `scripts/evaluate_256m_saved.py` to score saved CSVs without a GPU. No dataset, weights or quantization are added.
