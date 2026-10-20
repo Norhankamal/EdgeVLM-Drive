@@ -26,8 +26,52 @@ Base model: [`HuggingFaceTB/SmolVLM-500M-Instruct`](https://huggingface.co/Huggi
 
 ## SmolVLM 256M
 
-The 256M experiments progress from initial adaptation through revised training to the
-MediaPipe crop-and-cue configuration. When a later experiment starts from an earlier adapted
-model, that earlier-adapter initialization must be preserved when loading its weights.
-See [256M model dependencies](../docs/smolvlm256m_model_loading.md) for the loading requirements
-of each configuration. Weights remain outside Git. No quantization is added.
+Base model: `HuggingFaceTB/SmolVLM-256M-Instruct`. The experiments progress from initial
+language-decoder adaptation to vision-and-text adaptation with paired inputs and, later,
+MediaPipe-guided crops and facial cues. Loading must reproduce the starting weights of the
+specific experiment; an adapter is not a standalone full model.
+
+### Loading order by configuration
+
+| Configuration | Required loading order |
+|---|---|
+| Initial single-image experiment | Pretrained instruction base, then that experiment's language-decoder adapter |
+| Dual-crop baseline | Pretrained base, merge the exact earlier adapter used for initialization, then load the selected vision-and-text adapter |
+| Revised No-MediaPipe | Pretrained instruction base, then the selected revised adapter; do not add the earlier initialization adapter |
+| MediaPipe crop and cues | Pretrained base, merge the exact earlier initialization adapter, then load the selected MediaPipe experiment adapter |
+
+The baseline and MediaPipe loading chains must not be replaced by loading only their final
+adapter on an untouched base. Preserve the identity and hash of the earlier adapter rather
+than relying on a mutable folder name. The original notebook code records how that adapter
+was selected; the current exports do not independently prove every historical weight version.
+
+### Files and preprocessing to preserve
+
+- Keep `adapter_model.safetensors` and `adapter_config.json` from the selected experiment.
+- Keep its matching processor/tokenizer files and chat template, including
+  `preprocessor_config.json`, `processor_config.json`, `tokenizer_config.json`, tokenizer
+  vocabulary files and special-token settings where present.
+- Preserve the exact prompt and full-scene/face-crop preprocessing. For MediaPipe, also retain
+  the face-landmarker task version and matching crop/cue cache or reproducible extraction setup.
+- Use the selected `best_by_macro_f1` adapter for the reported selected-model workflow.
+  `last_adapter` holds the terminal model and may differ; optimizer-resume checkpoints serve
+  a separate purpose.
+
+Use [baseline notebook 08](../notebooks/finetuning_smolvlm256/08_dual_crop_baseline.ipynb),
+[revised notebook 09](../notebooks/finetuning_smolvlm256/09_revised_no_mediapipe.ipynb) and
+[MediaPipe notebook 11](../notebooks/finetuning_smolvlm256/11_mediapipe_training.ipynb) for the
+configuration-specific initialization and preprocessing code. Historical server paths need
+review before execution.
+
+### Availability and export status
+
+Weights are not committed, and no public 256M weight-download URL is supplied here. The
+saved-prediction scorer does not need weights. No quantization is added.
+
+The optional FP32 export code in the notebooks is distinct from the existing shared export CLI.
+That CLI is not verified for the chained 256M initialization described above. No new export
+or inference-equivalence test was run during repository preparation; no 256M package size
+or Jetson performance is inferred from the other model's measurements.
+
+See the [256M model dependency notes](../docs/smalvlm256/smolvlm256m_model_loading.md) and
+[results guide](../results/smolvlm_256m/README.md) for provenance and evaluation details.
