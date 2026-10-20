@@ -1,0 +1,146 @@
+{
+  "experiment": "dual_crop_baseline",
+  "source": {
+    "archive": "phase2_selected.tar.gz",
+    "archive_sha256": "701ad8298aad059d3e5589af7a7d6d71edd5226d910771a17e026eb0355488fa",
+    "member": "phase2_256m_all_techniques/phase2_256m_all_techniques_test_predictions.csv",
+    "sha256": "d58ffee906bb1263e7e79ee75f5097cc8c9168aa094b671466abf45dece38873"
+  },
+  "status": "Recomputed from downloaded saved predictions; no new training or inference.",
+  "metrics": {
+    "images": 5558,
+    "correct_predictions": 4651,
+    "accuracy_percent": 83.6811802806765,
+    "balanced_accuracy_percent": 82.80141353433112,
+    "macro_f1_percent": 78.16261837381127,
+    "macro_f1_definition": "Unweighted mean across the four fixed target labels",
+    "unsafe_to_safe_miss_count": 254,
+    "unsafe_to_safe_miss_rate_percent": 11.135466900482244,
+    "unsafe_class_error_rate_percent": 18.851380973257342,
+    "false_alarm_count": 477,
+    "false_alarm_rate_percent": 14.555996338114129,
+    "invalid_prediction_count": 0,
+    "per_class": {
+      "NORMAL": {
+        "precision": 0.91683038637852,
+        "recall": 0.8544400366188587,
+        "f1": 0.8845364081503712,
+        "support": 3277
+      },
+      "DROWSY": {
+        "precision": 0.7016574585635359,
+        "recall": 0.8707149853085211,
+        "f1": 0.7770979020979021,
+        "support": 1021
+      },
+      "LOOKING_AWAY": {
+        "precision": 0.48582230623818523,
+        "recall": 0.8509933774834437,
+        "f1": 0.618531889290012,
+        "support": 302
+      },
+      "PHONE_USAGE": {
+        "precision": 0.9957627118644068,
+        "recall": 0.7359081419624217,
+        "f1": 0.8463385354141657,
+        "support": 958
+      }
+    },
+    "confusion_matrix": {
+      "true_labels": [
+        "NORMAL",
+        "DROWSY",
+        "LOOKING_AWAY",
+        "PHONE_USAGE"
+      ],
+      "predicted_labels": [
+        "NORMAL",
+        "DROWSY",
+        "LOOKING_AWAY",
+        "PHONE_USAGE",
+        "INVALID"
+      ],
+      "matrix": [
+        [
+          2800,
+          332,
+          143,
+          2,
+          0
+        ],
+        [
+          123,
+          889,
+          8,
+          1,
+          0
+        ],
+        [
+          39,
+          6,
+          257,
+          0,
+          0
+        ],
+        [
+          92,
+          40,
+          121,
+          705,
+          0
+        ]
+      ]
+    },
+    "exact_label_valid_percent": 100.0,
+    "recorded_latency": {
+      "latency_ms": {
+        "mean_ms": 299.0319156247121,
+        "p95_ms": 420.24551797658205
+      }
+    }
+  },
+  "validation_history": [
+    {
+      "epoch": 0.9999226305609284,
+      "macro_f1": 0.814247955818067,
+      "per_class_f1": {
+        "NORMAL": 0.7608695652173914,
+        "DROWSY": 0.9044585987261147,
+        "LOOKING_AWAY": 0.7975460122699386,
+        "PHONE_USAGE": 0.7941176470588235
+      },
+      "improved": true,
+      "seconds": 104.97943257167935
+    },
+    {
+      "epoch": 1.999845261121857,
+      "macro_f1": 0.7828515282310419,
+      "per_class_f1": {
+        "NORMAL": 0.7085714285714285,
+        "DROWSY": 0.8266666666666667,
+        "LOOKING_AWAY": 0.8135593220338984,
+        "PHONE_USAGE": 0.782608695652174
+      },
+      "improved": false,
+      "seconds": 104.50562764331698
+    },
+    {
+      "epoch": 2.9997678916827852,
+      "macro_f1": 0.7790134050157438,
+      "per_class_f1": {
+        "NORMAL": 0.7272727272727273,
+        "DROWSY": 0.8082191780821918,
+        "LOOKING_AWAY": 0.7926829268292683,
+        "PHONE_USAGE": 0.7878787878787878
+      },
+      "improved": false,
+      "seconds": 104.26984965242445
+    }
+  ],
+  "validation_history_note": "Recorded evaluations, not necessarily unique epochs. Resumed evaluations may repeat an epoch.",
+  "limitations": [
+    "Image contents and producing checkpoint hashes are not verified.",
+    "Split manifests were not supplied for this repository task; no independent train/test leakage claim.",
+    "Recorded latency columns retain their original timing boundaries, not an end-to-end speed benchmark."
+  ]
+}

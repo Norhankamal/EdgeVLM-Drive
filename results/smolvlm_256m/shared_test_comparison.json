@@ -1,0 +1,738 @@
+{
+  "method": "Exact full path match after stripping only /home/jovyan/. No basename or fuzzy match.",
+  "reference_experiment": "single_image_sampling_graph",
+  "identity_limit": "Paths and true labels match; unchanged image bytes and training provenance are not established.",
+  "causal_limit": "Training, preprocessing, prompts and initialization differ; this is not a controlled ablation.",
+  "experiments": {
+    "single_image_sampling_direct": {
+      "source": {
+        "original_filename": "finetuned_augmented_test_predictions.csv",
+        "sha256": "2f544873f86228aa1132a81af503d02d026db4cfd82830657a7a2a3f89903ad7"
+      },
+      "metrics": {
+        "images": 3579,
+        "correct_predictions": 2795,
+        "accuracy_percent": 78.09443978765019,
+        "balanced_accuracy_percent": 51.305008155981604,
+        "macro_f1_percent": 51.91821736783021,
+        "macro_f1_definition": "Unweighted mean across the four fixed target labels",
+        "unsafe_to_safe_miss_count": 524,
+        "unsafe_to_safe_miss_rate_percent": 36.69467787114846,
+        "unsafe_class_error_rate_percent": 40.7563025210084,
+        "false_alarm_count": 202,
+        "false_alarm_rate_percent": 9.390980939098094,
+        "invalid_prediction_count": 0,
+        "per_class": {
+          "NORMAL": {
+            "precision": 0.7881116053376466,
+            "recall": 0.9060901906090191,
+            "f1": 0.8429930795847751,
+            "support": 2151
+          },
+          "DROWSY": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 168
+          },
+          "LOOKING_AWAY": {
+            "precision": 0.5132743362831859,
+            "recall": 0.3841059602649007,
+            "f1": 0.4393939393939394,
+            "support": 302
+          },
+          "PHONE_USAGE": {
+            "precision": 0.8295454545454546,
+            "recall": 0.7620041753653445,
+            "f1": 0.794341675734494,
+            "support": 958
+          }
+        },
+        "confusion_matrix": {
+          "true_labels": [
+            "NORMAL",
+            "DROWSY",
+            "LOOKING_AWAY",
+            "PHONE_USAGE"
+          ],
+          "predicted_labels": [
+            "NORMAL",
+            "DROWSY",
+            "LOOKING_AWAY",
+            "PHONE_USAGE",
+            "INVALID"
+          ],
+          "matrix": [
+            [
+              1949,
+              0,
+              86,
+              116,
+              0
+            ],
+            [
+              162,
+              0,
+              4,
+              2,
+              0
+            ],
+            [
+              154,
+              0,
+              116,
+              32,
+              0
+            ],
+            [
+              208,
+              0,
+              20,
+              730,
+              0
+            ]
+          ]
+        },
+        "exact_label_valid_percent": 99.86029617211511,
+        "recorded_latency": {
+          "latency_ms": {
+            "mean_ms": 228.8199726962642,
+            "p95_ms": 352.58120261132717
+          }
+        }
+      },
+      "full_rows": 3579,
+      "matched_rows": 3579,
+      "missing_reference_paths": 0,
+      "label_mismatches": 0
+    },
+    "single_image_weighted_direct": {
+      "source": {
+        "original_filename": "finetuned_classweighted_augmented_test_predictions.csv",
+        "sha256": "f05661547bb9d21b2f057cdfbe701d6ee9c6cc00bd237d9494f939c79bc2eb07"
+      },
+      "metrics": {
+        "images": 3579,
+        "correct_predictions": 2572,
+        "accuracy_percent": 71.86364906398435,
+        "balanced_accuracy_percent": 58.585549543165506,
+        "macro_f1_percent": 52.903144917967815,
+        "macro_f1_definition": "Unweighted mean across the four fixed target labels",
+        "unsafe_to_safe_miss_count": 247,
+        "unsafe_to_safe_miss_rate_percent": 17.296918767507,
+        "unsafe_class_error_rate_percent": 30.742296918767508,
+        "false_alarm_count": 568,
+        "false_alarm_rate_percent": 26.406322640632265,
+        "invalid_prediction_count": 0,
+        "per_class": {
+          "NORMAL": {
+            "precision": 0.8650273224043716,
+            "recall": 0.7359367735936774,
+            "f1": 0.7952775684501382,
+            "support": 2151
+          },
+          "DROWSY": {
+            "precision": 1.0,
+            "recall": 0.05952380952380952,
+            "f1": 0.11235955056179775,
+            "support": 168
+          },
+          "LOOKING_AWAY": {
+            "precision": 0.2914572864321608,
+            "recall": 0.7682119205298014,
+            "f1": 0.4225865209471767,
+            "support": 302
+          },
+          "PHONE_USAGE": {
+            "precision": 0.792152704135737,
+            "recall": 0.7797494780793319,
+            "f1": 0.7859021567596002,
+            "support": 958
+          }
+        },
+        "confusion_matrix": {
+          "true_labels": [
+            "NORMAL",
+            "DROWSY",
+            "LOOKING_AWAY",
+            "PHONE_USAGE"
+          ],
+          "predicted_labels": [
+            "NORMAL",
+            "DROWSY",
+            "LOOKING_AWAY",
+            "PHONE_USAGE",
+            "INVALID"
+          ],
+          "matrix": [
+            [
+              1583,
+              0,
+              391,
+              177,
+              0
+            ],
+            [
+              112,
+              10,
+              45,
+              1,
+              0
+            ],
+            [
+              52,
+              0,
+              232,
+              18,
+              0
+            ],
+            [
+              83,
+              0,
+              128,
+              747,
+              0
+            ]
+          ]
+        },
+        "exact_label_valid_percent": 99.91617770326907,
+        "recorded_latency": {
+          "latency_ms": {
+            "mean_ms": 267.6371640366244,
+            "p95_ms": 374.19429812580347
+          }
+        }
+      },
+      "full_rows": 3579,
+      "matched_rows": 3579,
+      "missing_reference_paths": 0,
+      "label_mismatches": 0
+    },
+    "single_image_sampling_graph": {
+      "source": {
+        "original_filename": "langgraph_test_predictions.csv",
+        "sha256": "ebf7c8419a9c5e2aefe7bffe663b0fc142db3886a47977d4c425cea366b25007"
+      },
+      "metrics": {
+        "images": 3579,
+        "correct_predictions": 2844,
+        "accuracy_percent": 79.46353730092204,
+        "balanced_accuracy_percent": 48.805005970606224,
+        "macro_f1_percent": 50.77513308566514,
+        "macro_f1_definition": "Unweighted mean across the four fixed target labels",
+        "unsafe_to_safe_miss_count": 612,
+        "unsafe_to_safe_miss_rate_percent": 42.857142857142854,
+        "unsafe_class_error_rate_percent": 46.00840336134454,
+        "false_alarm_count": 78,
+        "false_alarm_rate_percent": 3.6262203626220364,
+        "invalid_prediction_count": 0,
+        "per_class": {
+          "NORMAL": {
+            "precision": 0.7720670391061453,
+            "recall": 0.9637377963737797,
+            "f1": 0.8573200992555832,
+            "support": 2151
+          },
+          "DROWSY": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 168
+          },
+          "LOOKING_AWAY": {
+            "precision": 0.5912408759124088,
+            "recall": 0.2682119205298013,
+            "f1": 0.3690205011389522,
+            "support": 302
+          },
+          "PHONE_USAGE": {
+            "precision": 0.9114927344782034,
+            "recall": 0.7202505219206681,
+            "f1": 0.8046647230320699,
+            "support": 958
+          }
+        },
+        "confusion_matrix": {
+          "true_labels": [
+            "NORMAL",
+            "DROWSY",
+            "LOOKING_AWAY",
+            "PHONE_USAGE"
+          ],
+          "predicted_labels": [
+            "NORMAL",
+            "DROWSY",
+            "LOOKING_AWAY",
+            "PHONE_USAGE",
+            "INVALID"
+          ],
+          "matrix": [
+            [
+              2073,
+              0,
+              39,
+              39,
+              0
+            ],
+            [
+              166,
+              0,
+              1,
+              1,
+              0
+            ],
+            [
+              194,
+              0,
+              81,
+              27,
+              0
+            ],
+            [
+              252,
+              0,
+              16,
+              690,
+              0
+            ]
+          ]
+        },
+        "exact_label_valid_percent": 100.0,
+        "parser_failure_percent": 0.0,
+        "recorded_latency": {
+          "vlm_latency_ms": {
+            "mean_ms": 222.61101543668113,
+            "p95_ms": 283.3686925470829
+          },
+          "graph_latency_ms": {
+            "mean_ms": 316.022111950731,
+            "p95_ms": 418.8673507422208
+          }
+        }
+      },
+      "full_rows": 3579,
+      "matched_rows": 3579,
+      "missing_reference_paths": 0,
+      "label_mismatches": 0
+    },
+    "single_image_weighted_graph": {
+      "source": {
+        "original_filename": "langgraph_classweighted_test_predictions.csv",
+        "sha256": "3be269296925d54840e11f13365a344c29c8817ed2ddf5cb0004131ec0451486"
+      },
+      "metrics": {
+        "images": 3579,
+        "correct_predictions": 2824,
+        "accuracy_percent": 78.90472198938251,
+        "balanced_accuracy_percent": 58.90265416208832,
+        "macro_f1_percent": 55.51102878011572,
+        "macro_f1_definition": "Unweighted mean across the four fixed target labels",
+        "unsafe_to_safe_miss_count": 332,
+        "unsafe_to_safe_miss_rate_percent": 23.249299719887954,
+        "unsafe_class_error_rate_percent": 35.15406162464986,
+        "false_alarm_count": 253,
+        "false_alarm_rate_percent": 11.761971176197118,
+        "invalid_prediction_count": 0,
+        "per_class": {
+          "NORMAL": {
+            "precision": 0.8511210762331839,
+            "recall": 0.8823802882380288,
+            "f1": 0.8664688427299704,
+            "support": 2151
+          },
+          "DROWSY": {
+            "precision": 0.8,
+            "recall": 0.023809523809523808,
+            "f1": 0.046242774566473986,
+            "support": 168
+          },
+          "LOOKING_AWAY": {
+            "precision": 0.36134453781512604,
+            "recall": 0.7119205298013245,
+            "f1": 0.4793756967670011,
+            "support": 302
+          },
+          "PHONE_USAGE": {
+            "precision": 0.9439252336448598,
+            "recall": 0.7379958246346555,
+            "f1": 0.8283538371411834,
+            "support": 958
+          }
+        },
+        "confusion_matrix": {
+          "true_labels": [
+            "NORMAL",
+            "DROWSY",
+            "LOOKING_AWAY",
+            "PHONE_USAGE"
+          ],
+          "predicted_labels": [
+            "NORMAL",
+            "DROWSY",
+            "LOOKING_AWAY",
+            "PHONE_USAGE",
+            "INVALID"
+          ],
+          "matrix": [
+            [
+              1898,
+              1,
+              228,
+              24,
+              0
+            ],
+            [
+              118,
+              4,
+              46,
+              0,
+              0
+            ],
+            [
+              69,
+              0,
+              215,
+              18,
+              0
+            ],
+            [
+              145,
+              0,
+              106,
+              707,
+              0
+            ]
+          ]
+        },
+        "exact_label_valid_percent": 100.0,
+        "parser_failure_percent": 0.0,
+        "recorded_latency": {
+          "vlm_latency_ms": {
+            "mean_ms": 267.236357499627,
+            "p95_ms": 390.7861275598407
+          },
+          "graph_latency_ms": {
+            "mean_ms": 364.5499862530655,
+            "p95_ms": 547.0249572768807
+          }
+        }
+      },
+      "full_rows": 3579,
+      "matched_rows": 3579,
+      "missing_reference_paths": 0,
+      "label_mismatches": 0
+    },
+    "dual_crop_baseline": {
+      "source": {
+        "archive": "phase2_selected.tar.gz",
+        "archive_sha256": "701ad8298aad059d3e5589af7a7d6d71edd5226d910771a17e026eb0355488fa",
+        "member": "phase2_256m_all_techniques/phase2_256m_all_techniques_test_predictions.csv",
+        "sha256": "d58ffee906bb1263e7e79ee75f5097cc8c9168aa094b671466abf45dece38873"
+      },
+      "metrics": {
+        "images": 3579,
+        "correct_predictions": 3009,
+        "accuracy_percent": 84.07376362112322,
+        "balanced_accuracy_percent": 78.00562226588363,
+        "macro_f1_percent": 73.08443965979706,
+        "macro_f1_definition": "Unweighted mean across the four fixed target labels",
+        "unsafe_to_safe_miss_count": 184,
+        "unsafe_to_safe_miss_rate_percent": 12.88515406162465,
+        "unsafe_class_error_rate_percent": 25.210084033613445,
+        "false_alarm_count": 210,
+        "false_alarm_rate_percent": 9.762900976290098,
+        "invalid_prediction_count": 0,
+        "per_class": {
+          "NORMAL": {
+            "precision": 0.9134117647058824,
+            "recall": 0.902370990237099,
+            "f1": 0.9078578110383536,
+            "support": 2151
+          },
+          "DROWSY": {
+            "precision": 0.48847926267281105,
+            "recall": 0.6309523809523809,
+            "f1": 0.5506493506493506,
+            "support": 168
+          },
+          "LOOKING_AWAY": {
+            "precision": 0.48582230623818523,
+            "recall": 0.8509933774834437,
+            "f1": 0.618531889290012,
+            "support": 302
+          },
+          "PHONE_USAGE": {
+            "precision": 0.9957627118644068,
+            "recall": 0.7359081419624217,
+            "f1": 0.8463385354141657,
+            "support": 958
+          }
+        },
+        "confusion_matrix": {
+          "true_labels": [
+            "NORMAL",
+            "DROWSY",
+            "LOOKING_AWAY",
+            "PHONE_USAGE"
+          ],
+          "predicted_labels": [
+            "NORMAL",
+            "DROWSY",
+            "LOOKING_AWAY",
+            "PHONE_USAGE",
+            "INVALID"
+          ],
+          "matrix": [
+            [
+              1941,
+              65,
+              143,
+              2,
+              0
+            ],
+            [
+              53,
+              106,
+              8,
+              1,
+              0
+            ],
+            [
+              39,
+              6,
+              257,
+              0,
+              0
+            ],
+            [
+              92,
+              40,
+              121,
+              705,
+              0
+            ]
+          ]
+        },
+        "exact_label_valid_percent": 100.0,
+        "recorded_latency": {
+          "latency_ms": {
+            "mean_ms": 306.1146730571136,
+            "p95_ms": 421.1566789075732
+          }
+        }
+      },
+      "full_rows": 5558,
+      "matched_rows": 3579,
+      "missing_reference_paths": 0,
+      "label_mismatches": 0
+    },
+    "revised_no_mediapipe": {
+      "source": {
+        "archive": "phase2_selected.tar.gz",
+        "archive_sha256": "701ad8298aad059d3e5589af7a7d6d71edd5226d910771a17e026eb0355488fa",
+        "member": "phase2_256m_improved_sqrt_lookawayaug_1_lr5e-05/phase2_256m_all_techniques_test_predictions.csv",
+        "sha256": "026dae73b7a20606f46f239537bc55ef72813808e80d471fb9867ab3ae34fe4f"
+      },
+      "metrics": {
+        "images": 3579,
+        "correct_predictions": 3040,
+        "accuracy_percent": 84.9399273540095,
+        "balanced_accuracy_percent": 75.13277973801358,
+        "macro_f1_percent": 73.42992251387179,
+        "macro_f1_definition": "Unweighted mean across the four fixed target labels",
+        "unsafe_to_safe_miss_count": 247,
+        "unsafe_to_safe_miss_rate_percent": 17.296918767507,
+        "unsafe_class_error_rate_percent": 27.100840336134453,
+        "false_alarm_count": 152,
+        "false_alarm_rate_percent": 7.066480706648071,
+        "invalid_prediction_count": 0,
+        "per_class": {
+          "NORMAL": {
+            "precision": 0.890026714158504,
+            "recall": 0.9293351929335193,
+            "f1": 0.909256311121219,
+            "support": 2151
+          },
+          "DROWSY": {
+            "precision": 0.5166666666666667,
+            "recall": 0.5535714285714286,
+            "f1": 0.5344827586206896,
+            "support": 168
+          },
+          "LOOKING_AWAY": {
+            "precision": 0.556872037914692,
+            "recall": 0.7781456953642384,
+            "f1": 0.649171270718232,
+            "support": 302
+          },
+          "PHONE_USAGE": {
+            "precision": 0.9753761969904241,
+            "recall": 0.744258872651357,
+            "f1": 0.8442865600947306,
+            "support": 958
+          }
+        },
+        "confusion_matrix": {
+          "true_labels": [
+            "NORMAL",
+            "DROWSY",
+            "LOOKING_AWAY",
+            "PHONE_USAGE"
+          ],
+          "predicted_labels": [
+            "NORMAL",
+            "DROWSY",
+            "LOOKING_AWAY",
+            "PHONE_USAGE",
+            "INVALID"
+          ],
+          "matrix": [
+            [
+              1999,
+              54,
+              85,
+              13,
+              0
+            ],
+            [
+              72,
+              93,
+              3,
+              0,
+              0
+            ],
+            [
+              56,
+              6,
+              235,
+              5,
+              0
+            ],
+            [
+              119,
+              27,
+              99,
+              713,
+              0
+            ]
+          ]
+        },
+        "exact_label_valid_percent": 100.0,
+        "recorded_latency": {
+          "latency_ms": {
+            "mean_ms": 438.712785552878,
+            "p95_ms": 608.8825233280659
+          }
+        }
+      },
+      "full_rows": 5558,
+      "matched_rows": 3579,
+      "missing_reference_paths": 0,
+      "label_mismatches": 0
+    },
+    "mediapipe": {
+      "source": {
+        "archive": "phase2_selected.tar.gz",
+        "archive_sha256": "701ad8298aad059d3e5589af7a7d6d71edd5226d910771a17e026eb0355488fa",
+        "member": "phase2_256m_mediapipe_targetaug_sqrt_150_per_class_patience3/phase2_256m_all_techniques_mediapipe_test_predictions.csv",
+        "sha256": "4664d438601dd6c75af7f9c726a5bea047eeca61a1a11073db9c0e7b4254f85f"
+      },
+      "metrics": {
+        "images": 3579,
+        "correct_predictions": 3089,
+        "accuracy_percent": 86.30902486728137,
+        "balanced_accuracy_percent": 75.07757785607996,
+        "macro_f1_percent": 74.87182958942746,
+        "macro_f1_definition": "Unweighted mean across the four fixed target labels",
+        "unsafe_to_safe_miss_count": 246,
+        "unsafe_to_safe_miss_rate_percent": 17.22689075630252,
+        "unsafe_class_error_rate_percent": 26.470588235294116,
+        "false_alarm_count": 112,
+        "false_alarm_rate_percent": 5.206880520688052,
+        "invalid_prediction_count": 0,
+        "per_class": {
+          "NORMAL": {
+            "precision": 0.8923413566739606,
+            "recall": 0.9479311947931195,
+            "f1": 0.9192966636609559,
+            "support": 2151
+          },
+          "DROWSY": {
+            "precision": 0.6159420289855072,
+            "recall": 0.5059523809523809,
+            "f1": 0.5555555555555556,
+            "support": 168
+          },
+          "LOOKING_AWAY": {
+            "precision": 0.5717703349282297,
+            "recall": 0.7913907284768212,
+            "f1": 0.6638888888888889,
+            "support": 302
+          },
+          "PHONE_USAGE": {
+            "precision": 0.983739837398374,
+            "recall": 0.7578288100208769,
+            "f1": 0.8561320754716981,
+            "support": 958
+          }
+        },
+        "confusion_matrix": {
+          "true_labels": [
+            "NORMAL",
+            "DROWSY",
+            "LOOKING_AWAY",
+            "PHONE_USAGE"
+          ],
+          "predicted_labels": [
+            "NORMAL",
+            "DROWSY",
+            "LOOKING_AWAY",
+            "PHONE_USAGE",
+            "INVALID"
+          ],
+          "matrix": [
+            [
+              2039,
+              46,
+              58,
+              8,
+              0
+            ],
+            [
+              78,
+              85,
+              5,
+              0,
+              0
+            ],
+            [
+              57,
+              2,
+              239,
+              4,
+              0
+            ],
+            [
+              111,
+              5,
+              116,
+              726,
+              0
+            ]
+          ]
+        },
+        "exact_label_valid_percent": 100.0,
+        "recorded_latency": {
+          "latency_ms": {
+            "mean_ms": 312.6617067845574,
+            "p95_ms": 434.3642272055149
+          }
+        }
+      },
+      "full_rows": 5558,
+      "matched_rows": 3579,
+      "missing_reference_paths": 0,
+      "label_mismatches": 0
+    }
+  }
+}

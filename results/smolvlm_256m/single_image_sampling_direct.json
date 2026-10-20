@@ -1,0 +1,105 @@
+{
+  "experiment": "single_image_sampling_direct",
+  "source": {
+    "original_filename": "finetuned_augmented_test_predictions.csv",
+    "sha256": "2f544873f86228aa1132a81af503d02d026db4cfd82830657a7a2a3f89903ad7"
+  },
+  "status": "Recomputed from downloaded saved predictions; no new training or inference.",
+  "metrics": {
+    "images": 3579,
+    "correct_predictions": 2795,
+    "accuracy_percent": 78.09443978765019,
+    "balanced_accuracy_percent": 51.305008155981604,
+    "macro_f1_percent": 51.91821736783021,
+    "macro_f1_definition": "Unweighted mean across the four fixed target labels",
+    "unsafe_to_safe_miss_count": 524,
+    "unsafe_to_safe_miss_rate_percent": 36.69467787114846,
+    "unsafe_class_error_rate_percent": 40.7563025210084,
+    "false_alarm_count": 202,
+    "false_alarm_rate_percent": 9.390980939098094,
+    "invalid_prediction_count": 0,
+    "per_class": {
+      "NORMAL": {
+        "precision": 0.7881116053376466,
+        "recall": 0.9060901906090191,
+        "f1": 0.8429930795847751,
+        "support": 2151
+      },
+      "DROWSY": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 168
+      },
+      "LOOKING_AWAY": {
+        "precision": 0.5132743362831859,
+        "recall": 0.3841059602649007,
+        "f1": 0.4393939393939394,
+        "support": 302
+      },
+      "PHONE_USAGE": {
+        "precision": 0.8295454545454546,
+        "recall": 0.7620041753653445,
+        "f1": 0.794341675734494,
+        "support": 958
+      }
+    },
+    "confusion_matrix": {
+      "true_labels": [
+        "NORMAL",
+        "DROWSY",
+        "LOOKING_AWAY",
+        "PHONE_USAGE"
+      ],
+      "predicted_labels": [
+        "NORMAL",
+        "DROWSY",
+        "LOOKING_AWAY",
+        "PHONE_USAGE",
+        "INVALID"
+      ],
+      "matrix": [
+        [
+          1949,
+          0,
+          86,
+          116,
+          0
+        ],
+        [
+          162,
+          0,
+          4,
+          2,
+          0
+        ],
+        [
+          154,
+          0,
+          116,
+          32,
+          0
+        ],
+        [
+          208,
+          0,
+          20,
+          730,
+          0
+        ]
+      ]
+    },
+    "exact_label_valid_percent": 99.86029617211511,
+    "recorded_latency": {
+      "latency_ms": {
+        "mean_ms": 228.8199726962642,
+        "p95_ms": 352.58120261132717
+      }
+    }
+  },
+  "limitations": [
+    "Image contents and producing checkpoint hashes are not verified.",
+    "Split manifests were not supplied for this repository task; no independent train/test leakage claim.",
+    "Recorded latency columns retain their original timing boundaries, not an end-to-end speed benchmark."
+  ]
+}

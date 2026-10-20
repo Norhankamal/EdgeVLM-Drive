@@ -1,0 +1,182 @@
+{
+  "experiment": "revised_no_mediapipe",
+  "source": {
+    "archive": "phase2_selected.tar.gz",
+    "archive_sha256": "701ad8298aad059d3e5589af7a7d6d71edd5226d910771a17e026eb0355488fa",
+    "member": "phase2_256m_improved_sqrt_lookawayaug_1_lr5e-05/phase2_256m_all_techniques_test_predictions.csv",
+    "sha256": "026dae73b7a20606f46f239537bc55ef72813808e80d471fb9867ab3ae34fe4f"
+  },
+  "status": "Recomputed from downloaded saved predictions; no new training or inference.",
+  "metrics": {
+    "images": 5558,
+    "correct_predictions": 4733,
+    "accuracy_percent": 85.15653112630443,
+    "balanced_accuracy_percent": 81.88765318414184,
+    "macro_f1_percent": 79.63466761479847,
+    "macro_f1_definition": "Unweighted mean across the four fixed target labels",
+    "unsafe_to_safe_miss_count": 305,
+    "unsafe_to_safe_miss_rate_percent": 13.371328364752301,
+    "unsafe_class_error_rate_percent": 19.552827707145987,
+    "false_alarm_count": 379,
+    "false_alarm_rate_percent": 11.565456209948124,
+    "invalid_prediction_count": 0,
+    "per_class": {
+      "NORMAL": {
+        "precision": 0.9047767717764595,
+        "recall": 0.8843454379005188,
+        "f1": 0.8944444444444445,
+        "support": 3277
+      },
+      "DROWSY": {
+        "precision": 0.7385512073272273,
+        "recall": 0.8687561214495593,
+        "f1": 0.7983798379837984,
+        "support": 1021
+      },
+      "LOOKING_AWAY": {
+        "precision": 0.5555555555555556,
+        "recall": 0.7781456953642384,
+        "f1": 0.6482758620689655,
+        "support": 302
+      },
+      "PHONE_USAGE": {
+        "precision": 0.9753761969904241,
+        "recall": 0.744258872651357,
+        "f1": 0.8442865600947306,
+        "support": 958
+      }
+    },
+    "confusion_matrix": {
+      "true_labels": [
+        "NORMAL",
+        "DROWSY",
+        "LOOKING_AWAY",
+        "PHONE_USAGE"
+      ],
+      "predicted_labels": [
+        "NORMAL",
+        "DROWSY",
+        "LOOKING_AWAY",
+        "PHONE_USAGE",
+        "INVALID"
+      ],
+      "matrix": [
+        [
+          2898,
+          281,
+          85,
+          13,
+          0
+        ],
+        [
+          130,
+          887,
+          4,
+          0,
+          0
+        ],
+        [
+          56,
+          6,
+          235,
+          5,
+          0
+        ],
+        [
+          119,
+          27,
+          99,
+          713,
+          0
+        ]
+      ]
+    },
+    "exact_label_valid_percent": 100.0,
+    "recorded_latency": {
+      "latency_ms": {
+        "mean_ms": 436.40091419072513,
+        "p95_ms": 568.8333161175249
+      }
+    }
+  },
+  "validation_history": [
+    {
+      "epoch": 0.9997684291779236,
+      "macro_f1": 0.7395029496582672,
+      "per_class_f1": {
+        "NORMAL": 0.6871508379888268,
+        "DROWSY": 0.7678018575851393,
+        "LOOKING_AWAY": 0.7076923076923077,
+        "PHONE_USAGE": 0.7953667953667953
+      },
+      "improved": true,
+      "seconds": 352.63492153584957
+    },
+    {
+      "epoch": 1.999845619451949,
+      "macro_f1": 0.7539434609781313,
+      "per_class_f1": {
+        "NORMAL": 0.7013698630136986,
+        "DROWSY": 0.7903780068728522,
+        "LOOKING_AWAY": 0.7285714285714285,
+        "PHONE_USAGE": 0.7954545454545454
+      },
+      "improved": true,
+      "seconds": 272.5029420442879
+    },
+    {
+      "epoch": 2.9999228097259745,
+      "macro_f1": 0.7477506826353795,
+      "per_class_f1": {
+        "NORMAL": 0.6910994764397905,
+        "DROWSY": 0.7946127946127947,
+        "LOOKING_AWAY": 0.7099236641221374,
+        "PHONE_USAGE": 0.7953667953667953
+      },
+      "improved": false,
+      "seconds": 280.7054791804403
+    },
+    {
+      "epoch": 4.0,
+      "macro_f1": 0.7535804330201201,
+      "per_class_f1": {
+        "NORMAL": 0.702247191011236,
+        "DROWSY": 0.7687296416938111,
+        "LOOKING_AWAY": 0.7418181818181818,
+        "PHONE_USAGE": 0.8015267175572519
+      },
+      "improved": false,
+      "seconds": 275.2789005022496
+    },
+    {
+      "epoch": 4.999768429177924,
+      "macro_f1": 0.742792066930934,
+      "per_class_f1": {
+        "NORMAL": 0.6802030456852792,
+        "DROWSY": 0.8113879003558719,
+        "LOOKING_AWAY": 0.6842105263157895,
+        "PHONE_USAGE": 0.7953667953667953
+      },
+      "improved": false,
+      "seconds": 204.74557677656412
+    },
+    {
+      "epoch": 5.999768429177924,
+      "macro_f1": 0.7478139890799738,
+      "per_class_f1": {
+        "NORMAL": 0.680306905370844,
+        "DROWSY": 0.8131868131868132,
+        "LOOKING_AWAY": 0.7054545454545454,
+        "PHONE_USAGE": 0.7923076923076923
+      },
+      "improved": false,
+      "seconds": 206.5639992468059
+    }
+  ],
+  "validation_history_note": "Recorded evaluations, not necessarily unique epochs. Resumed evaluations may repeat an epoch.",
+  "limitations": [
+    "Image contents and producing checkpoint hashes are not verified.",
+    "Split manifests were not supplied for this repository task; no independent train/test leakage claim.",
+    "Recorded latency columns retain their original timing boundaries, not an end-to-end speed benchmark."
+  ]
+}

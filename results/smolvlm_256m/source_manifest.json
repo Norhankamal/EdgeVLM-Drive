@@ -1,0 +1,181 @@
+{
+  "archive": {
+    "filename": "phase2_selected.tar.gz",
+    "sha256": "701ad8298aad059d3e5589af7a7d6d71edd5226d910771a17e026eb0355488fa",
+    "members": [
+      {
+        "name": "phase2_256m_all_techniques/macro_f1_epoch_log.json",
+        "sha256": "e9e375f4d04a975e31595fb7a9ed8af75acad4ebbf912c2ea268a02ec1dd6f20",
+        "bytes": 952
+      },
+      {
+        "name": "phase2_256m_all_techniques/phase2_256m_all_techniques_test_predictions.csv",
+        "sha256": "d58ffee906bb1263e7e79ee75f5097cc8c9168aa094b671466abf45dece38873",
+        "bytes": 833690
+      },
+      {
+        "name": "phase2_256m_all_techniques/training_progress.txt",
+        "sha256": "8a2e952b9443f2662cc57417268c6e10cdf7bdcc0d46fece7c5d9216994fa68d",
+        "bytes": 104
+      },
+      {
+        "name": "phase2_256m_all_techniques/training_progress_history.log",
+        "sha256": "96081f290f61615aae4278f283f5534b9cc71018c26199eff527071934e5d1c2",
+        "bytes": 40260
+      },
+      {
+        "name": "phase2_256m_improved_sqrt_lookawayaug_1_lr5e-05/evaluation_only_confusion_matrix.csv",
+        "sha256": "4113fceda39fe8fc82dd6c6488f58e3f870a4bf49b3774a5c9a4d70ea15a1483",
+        "bytes": 175
+      },
+      {
+        "name": "phase2_256m_improved_sqrt_lookawayaug_1_lr5e-05/test_misclassification_review.csv",
+        "sha256": "c619cce19e6f0c65c0dc6786a280c59b44beb1f512bc0c879332256094803254",
+        "bytes": 125081
+      },
+      {
+        "name": "phase2_256m_improved_sqrt_lookawayaug_1_lr5e-05/preprocessing_quality_audit.csv",
+        "sha256": "ba6a05e7a513706519785c62ca77fbb26b12ff03ac530486b294ecca706a3e5b",
+        "bytes": 58503
+      },
+      {
+        "name": "phase2_256m_improved_sqrt_lookawayaug_1_lr5e-05/macro_f1_epoch_log.json",
+        "sha256": "50957c8821438bd564a3b6767d42d061d8820652143ae0f9ba999fb9dbefd217",
+        "bytes": 1883
+      },
+      {
+        "name": "phase2_256m_improved_sqrt_lookawayaug_1_lr5e-05/phase2_256m_all_techniques_test_predictions.csv",
+        "sha256": "026dae73b7a20606f46f239537bc55ef72813808e80d471fb9867ab3ae34fe4f",
+        "bytes": 831192
+      },
+      {
+        "name": "phase2_256m_improved_sqrt_lookawayaug_1_lr5e-05/evaluation_only_test_metrics.json",
+        "sha256": "3914178188ef17ba6cbd24de04ef4e8639374f3642b3da4039a8233a15c182d3",
+        "bytes": 372
+      },
+      {
+        "name": "phase2_256m_improved_sqrt_lookawayaug_1_lr5e-05/evaluation_only_per_class_metrics.csv",
+        "sha256": "1358c00d3c98049042026497ebd984c8d0f4554101f2e0f248f88e92f555606a",
+        "bytes": 318
+      },
+      {
+        "name": "phase2_256m_improved_sqrt_lookawayaug_1_lr5e-05/training_progress.txt",
+        "sha256": "b380a88e6b2e5717d5cd49393aed2e0b6806c8b3839c0d1762f24df06bc58916",
+        "bytes": 105
+      },
+      {
+        "name": "phase2_256m_improved_sqrt_lookawayaug_1_lr5e-05/training_progress_history.log",
+        "sha256": "41019d8a847bb2e3e8b499fff9b1df0088180d4a83f7b1e91ab0d76ae1ae3c31",
+        "bytes": 81535
+      },
+      {
+        "name": "phase2_256m_mediapipe_targetaug_sqrt_150_per_class_patience3/phase2_256m_all_techniques_mediapipe_test_predictions.csv",
+        "sha256": "4664d438601dd6c75af7f9c726a5bea047eeca61a1a11073db9c0e7b4254f85f",
+        "bytes": 832116
+      },
+      {
+        "name": "phase2_256m_mediapipe_targetaug_sqrt_150_per_class_patience3/evaluation_only_reports/20261018_183037_310200/validation_history.csv",
+        "sha256": "b072f458ab98d870f891c1d62f934b62c20901682b9a1b974bc34d2102a33d40",
+        "bytes": 955
+      },
+      {
+        "name": "phase2_256m_mediapipe_targetaug_sqrt_150_per_class_patience3/evaluation_only_reports/20261018_183037_310200/evaluation_complete.json",
+        "sha256": "8454f24180b981a1253a48c79d6455546db5359a718c547b3bfb44ecaa197f90",
+        "bytes": 530
+      },
+      {
+        "name": "phase2_256m_mediapipe_targetaug_sqrt_150_per_class_patience3/evaluation_only_reports/20261018_183037_310200/validation_macro_f1.png",
+        "sha256": "bc45fa56110fe3fb3066d5566b3ab4f7ca3b1e40ce0305245bc2e48a78702143",
+        "bytes": 66608
+      },
+      {
+        "name": "phase2_256m_mediapipe_targetaug_sqrt_150_per_class_patience3/evaluation_only_reports/20261018_183037_310200/test_misclassification_review.csv",
+        "sha256": "99613e9edadc82df9f736ff688e81e87dc7094367c000136bdcd6835e82348fc",
+        "bytes": 117719
+      },
+      {
+        "name": "phase2_256m_mediapipe_targetaug_sqrt_150_per_class_patience3/evaluation_only_reports/20261018_183037_310200/latency_histogram.png",
+        "sha256": "9bb9d10970f27ddf640c62b2b74764a55ec82f875c7de71c934299212818c338",
+        "bytes": 41466
+      },
+      {
+        "name": "phase2_256m_mediapipe_targetaug_sqrt_150_per_class_patience3/evaluation_only_reports/20261018_183037_310200/per_class_metrics.csv",
+        "sha256": "2a3cfbb78bc0695a3dcf77464cb6da3b98b0d984964ff1f7172df14900494b2f",
+        "bytes": 330
+      },
+      {
+        "name": "phase2_256m_mediapipe_targetaug_sqrt_150_per_class_patience3/evaluation_only_reports/20261018_183037_310200/evaluation_only_test_metrics.json",
+        "sha256": "b6187cd6e61ee55055a34076266ad1278dd7b09d2fe3fb34dbc840b570194d77",
+        "bytes": 502
+      },
+      {
+        "name": "phase2_256m_mediapipe_targetaug_sqrt_150_per_class_patience3/evaluation_only_reports/20261018_183037_310200/per_class_scores.png",
+        "sha256": "74a248ef300a297a3e00dd4d7a10826ce0dbbc191e4344ed9109b6b78e108768",
+        "bytes": 32306
+      },
+      {
+        "name": "phase2_256m_mediapipe_targetaug_sqrt_150_per_class_patience3/evaluation_only_reports/20261018_183037_310200/confusion_matrix.png",
+        "sha256": "3008aabf398f39513ec60587741844084c7bd01b128d2dfb9f65f2ce4c1951c9",
+        "bytes": 74481
+      },
+      {
+        "name": "phase2_256m_mediapipe_targetaug_sqrt_150_per_class_patience3/evaluation_only_reports/20261018_183037_310200/confusion_matrix.csv",
+        "sha256": "9df984262a580dd5af189a2f3e8498ff6ea8453e5e8c55c62c53d66d4316d4e1",
+        "bytes": 140
+      },
+      {
+        "name": "phase2_256m_mediapipe_targetaug_sqrt_150_per_class_patience3/macro_f1_epoch_log.json",
+        "sha256": "59e48f90783f3cabf54d199d95eb6766a818455a72f4f862b12c2ab2f3466ae1",
+        "bytes": 1878
+      },
+      {
+        "name": "phase2_256m_mediapipe_targetaug_sqrt_150_per_class_patience3/training_progress.txt",
+        "sha256": "2525344d023eba0f3ec8f25af2f7cac3950fa5b2299a887f879af38c3b955545",
+        "bytes": 103
+      },
+      {
+        "name": "phase2_256m_mediapipe_targetaug_sqrt_150_per_class_patience3/training_progress_history.log",
+        "sha256": "7b9eb7722a1d05ae7e81fecfcd4dc19e9624d40cc56838607d54604167da9fca",
+        "bytes": 66637
+      }
+    ]
+  },
+  "scored_exports": {
+    "single_image_sampling_direct": {
+      "original_filename": "finetuned_augmented_test_predictions.csv",
+      "sha256": "2f544873f86228aa1132a81af503d02d026db4cfd82830657a7a2a3f89903ad7"
+    },
+    "single_image_weighted_direct": {
+      "original_filename": "finetuned_classweighted_augmented_test_predictions.csv",
+      "sha256": "f05661547bb9d21b2f057cdfbe701d6ee9c6cc00bd237d9494f939c79bc2eb07"
+    },
+    "single_image_sampling_graph": {
+      "original_filename": "langgraph_test_predictions.csv",
+      "sha256": "ebf7c8419a9c5e2aefe7bffe663b0fc142db3886a47977d4c425cea366b25007"
+    },
+    "single_image_weighted_graph": {
+      "original_filename": "langgraph_classweighted_test_predictions.csv",
+      "sha256": "3be269296925d54840e11f13365a344c29c8817ed2ddf5cb0004131ec0451486"
+    },
+    "dual_crop_baseline": {
+      "archive": "phase2_selected.tar.gz",
+      "archive_sha256": "701ad8298aad059d3e5589af7a7d6d71edd5226d910771a17e026eb0355488fa",
+      "member": "phase2_256m_all_techniques/phase2_256m_all_techniques_test_predictions.csv",
+      "sha256": "d58ffee906bb1263e7e79ee75f5097cc8c9168aa094b671466abf45dece38873"
+    },
+    "revised_no_mediapipe": {
+      "archive": "phase2_selected.tar.gz",
+      "archive_sha256": "701ad8298aad059d3e5589af7a7d6d71edd5226d910771a17e026eb0355488fa",
+      "member": "phase2_256m_improved_sqrt_lookawayaug_1_lr5e-05/phase2_256m_all_techniques_test_predictions.csv",
+      "sha256": "026dae73b7a20606f46f239537bc55ef72813808e80d471fb9867ab3ae34fe4f"
+    },
+    "mediapipe": {
+      "archive": "phase2_selected.tar.gz",
+      "archive_sha256": "701ad8298aad059d3e5589af7a7d6d71edd5226d910771a17e026eb0355488fa",
+      "member": "phase2_256m_mediapipe_targetaug_sqrt_150_per_class_patience3/phase2_256m_all_techniques_mediapipe_test_predictions.csv",
+      "sha256": "4664d438601dd6c75af7f9c726a5bea047eeca61a1a11073db9c0e7b4254f85f"
+    }
+  },
+  "private_data_policy": "No raw prediction CSV, driver image, split manifest, weights or logs with image paths are copied into Git.",
+  "training_metadata_archive_received": false
+}
