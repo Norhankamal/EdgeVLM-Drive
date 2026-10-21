@@ -144,7 +144,7 @@ EOF
 
 ### Code
 
-Put the project in the folder `~/ros2_dms_code`. Keep this name, because the aliases below use it.
+Move the project in the folder `~/ros2_dms_code` into your jetson nano. Keep this name, because the aliases below use it.
 
 ### Dataset (1200 test images)
 
