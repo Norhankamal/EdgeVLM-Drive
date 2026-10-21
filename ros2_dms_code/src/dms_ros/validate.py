@@ -33,7 +33,8 @@ RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
 LABELS = ["NORMAL", "DROWSY", "LOOKING_AWAY", "PHONE_USAGE"]
 UNSAFE_LABELS = ["DROWSY", "LOOKING_AWAY", "PHONE_USAGE"]
-LIMIT_PER_CLASS = None
+LIMIT_PER_CLASS = int(os.environ.get("DMS_LIMIT", 0)) or None
+SUFFIX = f"_limit{LIMIT_PER_CLASS}" if LIMIT_PER_CLASS else ""
 SAVE_EVERY = 50
 
 
@@ -60,8 +61,8 @@ if MODEL_NAME not in MODEL_PROMPTS:
     )
 INSTRUCTION = str(MODEL_PROMPTS[MODEL_NAME]).strip()
 
-PREDICTIONS_CSV = RESULTS_DIR / f"{MODEL_NAME}_dualcrop_predictions.csv"
-SUMMARY_CSV = RESULTS_DIR / f"{MODEL_NAME}_dualcrop_summary.csv"
+PREDICTIONS_CSV = RESULTS_DIR / f"{MODEL_NAME}_dualcrop_predictions{SUFFIX}.csv"
+SUMMARY_CSV = RESULTS_DIR / f"{MODEL_NAME}_dualcrop_summary{SUFFIX}.csv"
 
 
 import dms_preprocess as lgp
