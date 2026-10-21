@@ -26,6 +26,7 @@ mesh_gate_summary.csv, the prediction CSVs).
 """
 import importlib
 import time
+import os
 from pathlib import Path
 
 import cv2
@@ -41,14 +42,16 @@ lgp = importlib.import_module(PIPELINE_MODULE)
 PROJECT_ROOT = Path(__file__).resolve().parent
 FRAME_ROOT = Path("/home/jetson/test_dataset")
 RESULTS_DIR = PROJECT_ROOT / "validation_results"
-SIGNALS_CSV = RESULTS_DIR / "mesh_signals.csv"
-SUMMARY_CSV = RESULTS_DIR / "mesh_gate_summary.csv"
+LIMIT_PER_CLASS = int(os.environ.get("DMS_LIMIT", 0)) or None
+SUFFIX = f"_limit{LIMIT_PER_CLASS}" if LIMIT_PER_CLASS else ""
+SIGNALS_CSV = RESULTS_DIR / f"mesh_signals{SUFFIX}.csv"
+SUMMARY_CSV = RESULTS_DIR / f"mesh_gate_summary{SUFFIX}.csv"
 RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
 LABELS = ["NORMAL", "DROWSY", "LOOKING_AWAY", "PHONE_USAGE"]
 UNSAFE_LABELS = LABELS[1:]
 MODELS = ["SmolVLM-256M-Finetuned", "SmolVLM-500M-Finetuned"]
-LIMIT_PER_CLASS = None
+
 SKIP_REASON = "confidently_normal"
 SIM_EPOCH = 1.7e9
 GATES = {"rules only": None, "rules + any-doubt triage": "default"}
@@ -164,7 +167,7 @@ def score(y_true, y_pred):
 
 
 def evaluate_model(name, gate_name, signals, reason):
-    path = RESULTS_DIR / f"{name}_dualcrop_predictions.csv"
+    path = RESULTS_DIR / f"{name}_dualcrop_predictions{SUFFIX}.csv"
     if not path.is_file():
         print(f"\n{name}: no predictions file, skipped.")
         return None
