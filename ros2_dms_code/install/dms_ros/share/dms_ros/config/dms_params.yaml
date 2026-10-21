@@ -1,0 +1,44 @@
+# ================================================================
+# DMS Configuration File
+# Change values here → rebuild → run
+# ================================================================
+
+# ── Camera Node ───────────────────────────────────────────────────
+camera_node:
+  ros__parameters:
+    camera_index: 0
+    width: 640
+    height: 480
+    frame_sampling_interval_sec: 5.0
+    queue_size: 1
+
+# ── Preprocess Node ───────────────────────────────────────────────
+preprocess_node:
+  ros__parameters:
+    queue_size: 1
+    mesh_enabled: true
+
+# ── Inference Node ────────────────────────────────────────────────
+inference_node:
+  ros__parameters:
+    models_dir: "/home/jetson/models"
+    active_model: "SmolVLM-256M-Finetuned"
+    max_new_tokens: 12
+    longest_edge: 512
+    queue_size: 1
+    do_sample: false
+
+# ── Alert Node (fires on every DROWSY) ───────────────────────────
+alert_node:
+  ros__parameters:
+    buzzer_pin: 0          # Jetson board pin of a buzzer/LED. 0 = no buzzer
+    beep_sec: 2.0
+    cooldown_sec: 0.0      # 0 = alert on every DROWSY frame
+    sound_enabled: false
+    terminal_bell: true
+# ── Post Benchmark Node ───────────────────────────────────────────
+post_benchmark_node:
+  ros__parameters:
+    output_csv_path: "/home/jetson/dms_benchmark.csv"
+    flush_interval_sec: 15.0
+    ram_monitor_interval_sec: 1.0

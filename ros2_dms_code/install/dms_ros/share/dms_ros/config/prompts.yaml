@@ -1,0 +1,5 @@
+# Training prompts, one per model. Used by inference_node and validate.py.
+# Do not change the text: it must match the prompt used in training.
+model_prompts:
+  SmolVLM-256M-Finetuned: 'You are shown two images of the same moment from an in-cabin driver camera. The first image is the full available frame. The second image is a close-up of the driver''s face for eye and head-pose detail. Using both images together, return exactly one label from: NORMAL, DROWSY, LOOKING_AWAY, or PHONE_USAGE. Do not provide an explanation or punctuation.'
+  SmolVLM-500M-Finetuned: 'You are shown two images of the same moment from an in-cabin driver camera. The first image is the full scene. The second image is a close-up crop of the driver''s face, showing more detail of the eyes and head position. Using both images together, classify the driver''s visible state. Return exactly one label from: NORMAL, DROWSY, LOOKING_AWAY, or PHONE_USAGE. Do not provide an explanation or punctuation.'
