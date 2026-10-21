@@ -5,7 +5,7 @@
 | `phase1_baseline.json` | Phase 1 test metrics, per-class table, confusion matrix, per-epoch validation history (the run reported in the interim report) |
 | `phase2_v1.json` | Phase 2 v1 (extended data, LoRA r = 16) |
 | `phase2_final.json` | Phase 2 final (current preprocessing and prompt) |
-| `jetson_validation_phase1.json` | On-device results of the Phase 1 model (120-image subset), transcribed from the interim report |
+| [`../jetson/`](../jetson) | on-device results (Jetson Nano) for the 256M and 500M models |
 
 The three `phase*.json` files were extracted programmatically from the saved outputs of the
 evaluation cell of the corresponding notebook (`source.notebook` in each file). Percentages are

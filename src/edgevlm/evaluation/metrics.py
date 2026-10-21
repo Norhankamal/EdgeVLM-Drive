@@ -67,6 +67,9 @@ def compute_metrics(
         "balanced_accuracy": float(recall.mean()),
         "macro_f1": float(f1_score(y_true, y_pred, labels=labels, average="macro", zero_division=0)),
         "unsafe_miss_rate": _rate(y_pred[unsafe_mask] != y_true[unsafe_mask]),
+        # Same quantity under its explicit name, plus the stricter "unsafe frame labelled NORMAL" rate.
+        "unsafe_class_error_rate": _rate(y_pred[unsafe_mask] != y_true[unsafe_mask]),
+        "unsafe_to_normal_rate": _rate(y_pred[unsafe_mask] == "NORMAL"),
         "false_alarm_rate": _rate(np.isin(y_pred[normal_mask], list(UNSAFE_LABELS))),
         "parser_failure_rate": float(np.mean(y_pred == INVALID_LABEL)),
         "per_class": {

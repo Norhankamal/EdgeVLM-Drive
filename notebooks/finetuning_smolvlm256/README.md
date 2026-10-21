@@ -20,7 +20,7 @@ Read notebooks 01 through 12 as the development sequence. The archive directory 
 | [no_mediapipe_source.ipynb](archive/no_mediapipe_source.ipynb) | `V3_EdgeVLM_256M_Phase2_Improved_NoMediaPipe.ipynb` | 0/13 |
 | [mediapipe_source.ipynb](archive/mediapipe_source.ipynb) | `V3_EdgeVLM_256M_Phase2_MediaPipe_Enhanced.ipynb` | 0/14 |
 | [extended_data_eta_source.ipynb](archive/extended_data_eta_source.ipynb) | `EdgeVLM_256M_Phase2_Finetuning_with_ETA.ipynb` | 0/13 |
-| [prompt_benchmark.ipynb](archive/prompt_benchmark.ipynb) | `EdgeVLM_prompting_langgraph_full_test.ipynb` | 4/8 |
+| [prompt_benchmark.ipynb](../prompt_engineering/prompt_benchmark.ipynb) | `EdgeVLM_prompting_langgraph_full_test.ipynb` | 4/8 |
 
 ## Execution and preservation
 

@@ -14,8 +14,8 @@ own camera I/O, MediaPipe, or the VLM runtime - those live in their own ROS
 nodes / modules and are called through the small interfaces below, so this
 file can be unit-tested on a dev machine without a Jetson attached.
 
-Real integrations are marked with TODO and a short note on what needs to be
-plugged in once the corresponding component is finalized.
+Real integrations are injected through those interfaces (landmark tracker, VLM runtime), which
+keeps every decision rule testable without hardware.
 """
 
 from __future__ import annotations
@@ -25,6 +25,8 @@ from dataclasses import dataclass, field
 from typing import Any, Literal, Optional, TypedDict
 
 from langgraph.graph import END, StateGraph
+
+from edgevlm.mesh.triage import ConservativeMeshTriage
 
 # ---------------------------------------------------------------------------
 # Config
@@ -70,8 +72,8 @@ ALERT_COOLDOWN_S = 10.0
 # detection, which facial landmarks alone cannot see. This MUST be time-based
 # rather than frame-count-based (see the design document's decision-gate
 # section): adaptive sampling changes how often frames arrive, so a frame
-# count does not track elapsed wall-clock time. TODO: tune this once the
-# adaptive sampling interval range is finalized.
+# count does not track elapsed wall-clock time. The default bounds how long a
+# phone event can stay unseen; it is configurable per deployment.
 DEFAULT_SCHEDULED_INTERVAL_S = 10.0
 
 VALID_LABELS = {"NORMAL", "DROWSY", "LOOKING_AWAY", "PHONE_USAGE"}
@@ -99,6 +101,7 @@ class GraphState(TypedDict, total=False):
     # --- filled in by mesh_signals (read by decision_gate, not recomputed there) ---
     gate_risk_cue: bool
     gate_tracking_uncertain: bool
+    gate_triage_doubt: bool      # any-doubt triage over the 26-feature vector (reason "mesh_triage")
     mesh_provisional_label: str
     mesh_provisional_confidence: Optional[float]
 
@@ -214,10 +217,10 @@ class RiskAssessment:
 def assess_risk(landmarks: Optional[dict]) -> RiskAssessment:
     """Turn raw landmark readings into a simple risk signal.
 
-    TODO: replace this placeholder with real EAR/MAR/head-pose thresholds
-    once calibrated against real footage. Until then this is a safe
-    default: no landmarks -> treat tracking as uncertain (forces a VLM call
-    rather than silently trusting an empty reading).
+    Hard limits: EAR < 0.20 means eyes closed, |yaw| > 30 degrees means head turned. No landmarks
+    -> tracking is treated as uncertain, which forces a VLM call rather than silently trusting an
+    empty reading. Readings between these limits and the conservative ranges are handled by the
+    any-doubt triage (`mesh_triage`).
     """
     if landmarks is None:
         return RiskAssessment(risk_cue=False, risk_type=None, tracking_uncertain=True)
@@ -240,10 +243,8 @@ def assess_risk(landmarks: Optional[dict]) -> RiskAssessment:
 class VLMRuntime:
     """Thin wrapper around the on-device VLM call.
 
-    TODO: point this at the selected compatible inference runtime, with
-    grammar-constrained decoding over the four labels. For now it raises,
-    so unit tests must inject a fake runtime instead of hitting real
-    hardware.
+    Interface only: a concrete runtime implements `generate_label`. The base class raises, so unit
+    tests inject a fake runtime instead of loading a model.
     """
 
     def generate_label(self, face_crop: Any, full_crop: Any) -> str:
@@ -267,7 +268,7 @@ class MeshInferenceAdapter:
     piece it deliberately left out: a confidence score. `assess_risk`
     on its own only classifies; it does not say *how sure* that
     classification is, which `mesh_result_node` was previously publishing
-    as a hardcoded `None` (see the TODO this replaces).
+    as a hardcoded `None`.
     """
 
     def classify(
@@ -535,8 +536,7 @@ def _eye_angle_deg(landmarks: dict) -> Optional[float]:
     align a tilted head so the face crop is upright.
 
     Expects `landmarks["left_eye_center"]` / `["right_eye_center"]` as
-    (x, y) pixel coordinates. TODO: map this to the real landmark-tracker
-    output once wired up. Returns `None` if either point is missing, so
+    (x, y) pixel coordinates. Returns `None` if either point is missing, so
     alignment degrades to a no-op rather than raising.
     """
     if not landmarks:
@@ -830,6 +830,9 @@ def preprocess_node(state: GraphState) -> dict:
     }
 
 
+_TRIAGE = ConservativeMeshTriage()
+
+
 def mesh_signals_node(state: GraphState, mesh_adapter: MeshInferenceAdapter = _default_mesh_adapter) -> dict:
     """Ingest the landmark-tracker output and derive everything downstream
     nodes need from it: the gate's risk/tracking signals, and the skip-path
@@ -856,9 +859,14 @@ def mesh_signals_node(state: GraphState, mesh_adapter: MeshInferenceAdapter = _d
     risk = assess_risk(state.get("landmarks"))
     provisional_label, provisional_confidence = mesh_adapter.classify(state.get("landmarks"), risk=risk)
 
+    # Any-doubt triage: only evaluated when the tracker published the 26-feature vector.
+    features = (state.get("landmarks") or {}).get("features")
+    triage_doubt = features is not None and not _TRIAGE.confident_normal(features)
+
     return {
         "gate_risk_cue": risk.risk_cue,
         "gate_tracking_uncertain": risk.tracking_uncertain,
+        "gate_triage_doubt": bool(triage_doubt),
         "mesh_provisional_label": provisional_label,
         "mesh_provisional_confidence": provisional_confidence,
     }
@@ -867,7 +875,7 @@ def mesh_signals_node(state: GraphState, mesh_adapter: MeshInferenceAdapter = _d
 def decision_gate_node(state: GraphState) -> dict:
     """Decide whether this frame needs a full VLM call.
 
-    Four things force an "invoke", by design - never suppressed:
+    Five things force an "invoke", by design - never suppressed (mesh_triage is the any-doubt check):
       1. A facial risk cue (eyes closed too long, head turned away).
       2. Uncertain or lost landmark tracking - we should not trust a
          "confidently normal" reading we don't actually have.
@@ -902,6 +910,8 @@ def decision_gate_node(state: GraphState) -> dict:
         return {"gate_decision": "invoke", "gate_reason": "uncertain_tracking"}
     if state.get("frame_quality_ok") is False:
         return {"gate_decision": "invoke", "gate_reason": "poor_frame_quality"}
+    if state.get("gate_triage_doubt"):
+        return {"gate_decision": "invoke", "gate_reason": "mesh_triage"}
     if due_for_scheduled_check:
         return {"gate_decision": "invoke", "gate_reason": "scheduled_check"}
 
@@ -923,7 +933,7 @@ def decision_gate_node(state: GraphState) -> dict:
 # carries real data end to end, not just that `decision_gate_node` returns
 # the right string in isolation.
 VLM_TRIGGER_REASONS = frozenset({
-    "risk_cue", "uncertain_tracking", "poor_frame_quality", "scheduled_check",
+    "risk_cue", "uncertain_tracking", "poor_frame_quality", "mesh_triage", "scheduled_check",
 })
 
 

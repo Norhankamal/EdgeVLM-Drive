@@ -12,7 +12,9 @@ NOTEBOOKS = sorted(NB_DIR.rglob("*.ipynb"))
 
 def _instruction_from(nb_path):
     nb = json.load(open(nb_path))
-    src = "".join(nb["cells"][19]["source"])  # banner shifts original cell 18 -> 19
+    # Locate the prompt cell by content, so adding or removing documentation cells cannot break the test.
+    src = next("".join(c["source"]) for c in nb["cells"]
+               if c["cell_type"] == "code" and "INSTRUCTION = (" in "".join(c["source"]))
     m = re.search(r"INSTRUCTION = \((.*?)\n\)\n", src, re.S)
     ns = {}
     exec("INSTRUCTION = (" + m.group(1) + "\n)", ns)
@@ -20,7 +22,7 @@ def _instruction_from(nb_path):
 
 
 def test_prompts_match_notebooks():
-    d = NB_DIR / "04_finetuning_smolvlm_500m"
+    d = NB_DIR / "finetuning_smolvlm500"
     assert _instruction_from(d / "01_phase1_baseline_dualcrop_lora.ipynb") == INSTRUCTION_V1
     assert _instruction_from(d / "02_phase2_extended_data_v1.ipynb") == INSTRUCTION_V1
     assert _instruction_from(d / "04_phase2_extended_data_final.ipynb") == INSTRUCTION_V2

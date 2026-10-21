@@ -1,0 +1,173 @@
+{
+  "evaluation": "Phase 1 on-device validation",
+  "images": 120,
+  "per_class": 30,
+  "environment": {
+    "device": "NVIDIA Jetson Nano 4 GB developer kit",
+    "python": "3.8",
+    "pytorch": "1.13",
+    "transformers": "4.46.0",
+    "opencv": "4.8.0",
+    "precision": "FP16 (GPU)",
+    "decoding": "greedy, max 12 new tokens",
+    "parser": "strict: output must equal one class name exactly"
+  },
+  "models": {
+    "SmolVLM-256M_Phase1_V1": {
+      "n": 120,
+      "correct": 79,
+      "accuracy_pct": 65.83,
+      "accuracy_ci95_pct": [
+        57.0,
+        73.7
+      ],
+      "macro_f1_pct": 59.16,
+      "unsafe_to_normal_rate_pct": 42.22,
+      "unsafe_class_error_rate_pct": 43.33,
+      "false_alarm_rate_pct": 6.67,
+      "per_class": {
+        "NORMAL": {
+          "precision": 0.424,
+          "recall": 0.933,
+          "f1": 0.583,
+          "support": 30
+        },
+        "DROWSY": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 30
+        },
+        "LOOKING_AWAY": {
+          "precision": 0.88,
+          "recall": 0.733,
+          "f1": 0.8,
+          "support": 30
+        },
+        "PHONE_USAGE": {
+          "precision": 1.0,
+          "recall": 0.967,
+          "f1": 0.983,
+          "support": 30
+        }
+      },
+      "confusion_matrix": {
+        "labels": [
+          "NORMAL",
+          "DROWSY",
+          "LOOKING_AWAY",
+          "PHONE_USAGE"
+        ],
+        "rows_true_cols_pred": [
+          [
+            28,
+            0,
+            2,
+            0
+          ],
+          [
+            29,
+            0,
+            1,
+            0
+          ],
+          [
+            8,
+            0,
+            22,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            29
+          ]
+        ]
+      },
+      "label_validity_pct": 100.0,
+      "latency_ms": {
+        "mean": 4193,
+        "p95": 4833
+      }
+    },
+    "SmolVLM-500M_Phase1_V1": {
+      "n": 120,
+      "correct": 96,
+      "accuracy_pct": 80.0,
+      "accuracy_ci95_pct": [
+        72.0,
+        86.2
+      ],
+      "macro_f1_pct": 78.87,
+      "unsafe_to_normal_rate_pct": 25.56,
+      "unsafe_class_error_rate_pct": 26.67,
+      "false_alarm_rate_pct": 0.0,
+      "per_class": {
+        "NORMAL": {
+          "precision": 0.566,
+          "recall": 1.0,
+          "f1": 0.723,
+          "support": 30
+        },
+        "DROWSY": {
+          "precision": 1.0,
+          "recall": 0.367,
+          "f1": 0.537,
+          "support": 30
+        },
+        "LOOKING_AWAY": {
+          "precision": 0.963,
+          "recall": 0.867,
+          "f1": 0.912,
+          "support": 30
+        },
+        "PHONE_USAGE": {
+          "precision": 1.0,
+          "recall": 0.967,
+          "f1": 0.983,
+          "support": 30
+        }
+      },
+      "confusion_matrix": {
+        "labels": [
+          "NORMAL",
+          "DROWSY",
+          "LOOKING_AWAY",
+          "PHONE_USAGE"
+        ],
+        "rows_true_cols_pred": [
+          [
+            30,
+            0,
+            0,
+            0
+          ],
+          [
+            19,
+            11,
+            0,
+            0
+          ],
+          [
+            4,
+            0,
+            26,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            29
+          ]
+        ]
+      },
+      "label_validity_pct": 100.0,
+      "latency_ms": {
+        "mean": 5709,
+        "p95": 6881
+      }
+    }
+  }
+}

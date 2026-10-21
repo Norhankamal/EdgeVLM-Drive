@@ -1,0 +1,33 @@
+{
+  "evaluation": "Phase 2 pilot",
+  "model": "SmolVLM-256M_Phase2_V1",
+  "images": 80,
+  "per_class": 20,
+  "environment": {
+    "device": "NVIDIA Jetson Nano 4 GB developer kit",
+    "python": "3.8",
+    "pytorch": "1.13",
+    "transformers": "4.46.0",
+    "opencv": "4.8.0",
+    "precision": "FP16 (GPU)",
+    "decoding": "greedy, max 12 new tokens",
+    "parser": "strict: output must equal one class name exactly"
+  },
+  "reported": {
+    "accuracy_pct": 78.75,
+    "accuracy_ci95_pct": [
+      68.6,
+      86.3
+    ],
+    "macro_f1_pct": 76.56,
+    "drowsy_recall": 0.35,
+    "drowsy_detected": "7 of 20",
+    "unsafe_to_normal_rate_pct": 10.0,
+    "false_alarm_rate_pct": 10.0,
+    "latency_ms": {
+      "mean": 4647,
+      "p95": 5037
+    }
+  },
+  "note": "20 images per class: one image moves a class recall by 5 points; used as an indication only."
+}

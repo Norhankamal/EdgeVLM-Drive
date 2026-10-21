@@ -1,6 +1,6 @@
 # SmolVLM-500M experiment log
 
-How the four notebooks in `notebooks/04_finetuning_smolvlm_500m/` relate, what differs between the
+How the four notebooks in `notebooks/finetuning_smolvlm500/` relate, what differs between the
 runs, and which questions are still open. Everything here was derived from the notebooks' code and
 saved outputs and from the interim report.
 
@@ -66,9 +66,8 @@ not comparable to Phase 1.
    graph preprocessing should be aligned; for the 500M runs the dataset and evaluation both call
    the pipeline's preprocessing directly, but note that runs 1-2 used preprocessing v1 and run 4 used
    v2, so the *deployed* pipeline must use the version the chosen adapter was trained with.
-8. **Latency is not device latency.** GPU-server timings (≈ 315-345 ms) are for single-image
-   `generate()` on an A16. The only on-device numbers are the 120-image Jetson subset of the Phase 1
-   model (mean 4,659 ms).
+8. **Latency.** GPU-server timings (≈ 315-345 ms) are single-image `generate()` on an A16. On-device
+   latency is in [`results/jetson`](../../results/jetson) (≈ 6.8 s for 256M, 7.9 s for 500M per frame, 5 W mode).
 
 ## SmolVLM 256M experiments
 

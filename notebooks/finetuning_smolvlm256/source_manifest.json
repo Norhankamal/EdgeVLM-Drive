@@ -193,7 +193,7 @@
       "notes": "ETA source variant; partial execution is recorded in notebook 07."
     },
     {
-      "repository_file": "notebooks/finetuning_smolvlm256/archive/prompt_benchmark.ipynb",
+      "repository_file": "notebooks/prompt_engineering/prompt_benchmark.ipynb",
       "original_filename": "EdgeVLM_prompting_langgraph_full_test.ipynb",
       "original_sha256": "4e3c00ab0af44be96bfd46b7b4d9ca7df99a83512df4230c4be71f6318f35aab",
       "repository_sha256": "622d1400338b056367b3581cbf34408e0c62f6c74c58333e84b6389a16cadd1f",

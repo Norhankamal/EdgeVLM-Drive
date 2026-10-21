@@ -19,7 +19,7 @@ For the training split, augmented images of the DROWSY and LOOKING_AWAY classes 
 `augmented_drowsy_images/` and `augmented_looking_away_images/` under the splits folder.
 Validation and test splits contain original frames only.
 
-## How the labels were built (summary of the interim report, Sec. VI-C)
+## How the labels were built
 
 - Face-camera video sampled every 0.5 s; body, hands, mosaic and infrared streams discarded.
 - **Subject-level split** (not frame-level) to prevent identity leakage; rare classes balanced across splits.
@@ -41,3 +41,27 @@ Validation and test splits contain original frames only.
 
 Phase 2 class counts (final): train 13,992 / 6,287 / 3,088 / 4,565, validation 3,418 / 1,161 / 310 / 872,
 test 3,277 / 1,021 / 302 / 958 (NORMAL / DROWSY / LOOKING_AWAY / PHONE_USAGE).
+
+
+## External sources
+
+**NTHU-DDD (DROWSY).** 18 training subjects, 356 videos; frames every 0.5 s. A frame is DROWSY if it lies
+in a run of 1s in `_eye.txt` lasting at least 0.8 s (the same definition as DMD). Only the
+`slowBlinkWithNodding` scenario is used (89 videos, 12,203 frames), because the other scenarios are
+annotated per acted segment. DROWSY frames are verified with the eye aspect ratio (MediaPipe, threshold
+0.24, calibrated on 60 + 60 frames): of 9,920 DROWSY frames, 5,080 are confirmed, 4,393 (44.3 %) become NORMAL and
+447 without a face are set aside. Result: 11,756 frames (5,080 DROWSY, 6,676 NORMAL). Subjects are split
+70/15/15 at subject level (12/3/3 subjects; 7,957 / 1,820 / 1,979 frames), IDs are prefixed `NTHU_`.
+
+**DrivFace (LOOKING_AWAY).** 606 images of 4 drivers; only head pose is labelled. The 60 left/right
+images (27 + 33) are used as LOOKING_AWAY after manual review; the 546 frontal images are excluded.
+With 4 subjects no subject-level split is meaningful, so all 60 frames go to the training split.
+
+| Split | DROWSY from NTHU-DDD | NORMAL from NTHU-DDD | DROWSY in extended split |
+|---|---:|---:|---:|
+| Train | 3,355 | 4,602 | 6,287 (2,932 from DMD) |
+| Val | 872 | 948 | 1,161 |
+| Test | 853 | 1,126 | 1,021 |
+
+Extended training set: 27,932 rows (NORMAL 13,992 · DROWSY 6,287 · PHONE_USAGE 4,565 · LOOKING_AWAY 3,088).
+Validation and test are not augmented: DMD frames plus NTHU-DDD frames from three subjects each.

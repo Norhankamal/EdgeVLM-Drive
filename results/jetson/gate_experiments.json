@@ -1,0 +1,133 @@
+{
+  "evaluation": "Face-mesh gating experiments",
+  "images": 1200,
+  "note": "Offline evaluation on the 1,200-image balanced set: a frame takes the model's saved prediction when the gate calls the model and NORMAL otherwise. Time per frame = (1 - skip rate) x model time + 115 ms mesh time.",
+  "mesh": {
+    "detector": "MediaPipe FaceLandmarker (CPU)",
+    "mean_ms_per_frame": 115,
+    "faces_found": 1155,
+    "frames_flagged_blurred": 190
+  },
+  "gates": {
+    "hard_rules": "call the model if no face, EAR < 0.20, |yaw| > 30 deg, or blurred frame",
+    "rules_plus_triage": "hard rules, plus any feature outside a conservative range for a clearly attentive frontal face (eyes not fully open, head turned or tilted, gaze off-centre, mouth open)"
+  },
+  "skipped_frames_by_class": {
+    "hard_rules": {
+      "NORMAL": 154,
+      "DROWSY": 9,
+      "LOOKING_AWAY": 50,
+      "PHONE_USAGE": 170
+    },
+    "rules_plus_triage": {
+      "NORMAL": 19,
+      "DROWSY": 0,
+      "LOOKING_AWAY": 0,
+      "PHONE_USAGE": 15
+    }
+  },
+  "results": [
+    {
+      "model": "SmolVLM-256M_Phase2_V2",
+      "configuration": "model only",
+      "accuracy_pct": 82.83,
+      "macro_f1_pct": 83.01,
+      "frames_skipped_pct": 0.0,
+      "unsafe_frames_skipped": 0,
+      "unsafe_to_normal_rate_pct": 11.67,
+      "false_alarm_rate_pct": 15.0,
+      "estimated_ms_per_frame": 6807,
+      "recall": {
+        "NORMAL": 0.85,
+        "DROWSY": 0.88,
+        "LOOKING_AWAY": 0.85,
+        "PHONE_USAGE": 0.733
+      }
+    },
+    {
+      "model": "SmolVLM-256M_Phase2_V2",
+      "configuration": "mesh, hard rules",
+      "accuracy_pct": 68.75,
+      "macro_f1_pct": 66.54,
+      "frames_skipped_pct": 31.9,
+      "unsafe_frames_skipped": 229,
+      "unsafe_to_normal_rate_pct": 31.44,
+      "false_alarm_rate_pct": 13.0,
+      "estimated_ms_per_frame": 4749,
+      "recall": {
+        "NORMAL": 0.87,
+        "DROWSY": 0.873,
+        "LOOKING_AWAY": 0.773,
+        "PHONE_USAGE": 0.233
+      }
+    },
+    {
+      "model": "SmolVLM-256M_Phase2_V2",
+      "configuration": "mesh, rules + triage",
+      "accuracy_pct": 81.83,
+      "macro_f1_pct": 81.98,
+      "frames_skipped_pct": 2.8,
+      "unsafe_frames_skipped": 15,
+      "unsafe_to_normal_rate_pct": 13.0,
+      "false_alarm_rate_pct": 15.0,
+      "estimated_ms_per_frame": 6729,
+      "recall": {
+        "NORMAL": 0.85,
+        "DROWSY": 0.88,
+        "LOOKING_AWAY": 0.85,
+        "PHONE_USAGE": 0.693
+      }
+    },
+    {
+      "model": "SmolVLM-500M_Phase2_V1",
+      "configuration": "model only",
+      "accuracy_pct": 79.08,
+      "macro_f1_pct": 79.57,
+      "frames_skipped_pct": 0.0,
+      "unsafe_frames_skipped": 0,
+      "unsafe_to_normal_rate_pct": 18.56,
+      "false_alarm_rate_pct": 10.33,
+      "estimated_ms_per_frame": 7869,
+      "recall": {
+        "NORMAL": 0.897,
+        "DROWSY": 0.817,
+        "LOOKING_AWAY": 0.713,
+        "PHONE_USAGE": 0.737
+      }
+    },
+    {
+      "model": "SmolVLM-500M_Phase2_V1",
+      "configuration": "mesh, hard rules",
+      "accuracy_pct": 65.5,
+      "macro_f1_pct": 64.0,
+      "frames_skipped_pct": 31.9,
+      "unsafe_frames_skipped": 229,
+      "unsafe_to_normal_rate_pct": 37.67,
+      "false_alarm_rate_pct": 8.33,
+      "estimated_ms_per_frame": 5472,
+      "recall": {
+        "NORMAL": 0.917,
+        "DROWSY": 0.807,
+        "LOOKING_AWAY": 0.663,
+        "PHONE_USAGE": 0.233
+      }
+    },
+    {
+      "model": "SmolVLM-500M_Phase2_V1",
+      "configuration": "mesh, rules + triage",
+      "accuracy_pct": 78.08,
+      "macro_f1_pct": 78.6,
+      "frames_skipped_pct": 2.8,
+      "unsafe_frames_skipped": 15,
+      "unsafe_to_normal_rate_pct": 19.89,
+      "false_alarm_rate_pct": 10.33,
+      "estimated_ms_per_frame": 7761,
+      "recall": {
+        "NORMAL": 0.897,
+        "DROWSY": 0.817,
+        "LOOKING_AWAY": 0.713,
+        "PHONE_USAGE": 0.697
+      }
+    }
+  ]
+}

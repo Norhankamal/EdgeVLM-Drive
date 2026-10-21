@@ -5,15 +5,13 @@
 For the 500M experiments, fine-tuning first produces a LoRA adapter. The selected adapter is
 then merged into the base model and exported as the standalone package described below.
 
-Weights are **not** stored in Git (the merged FP16 package is ~968 MB, above GitHub's 100 MB file
-limit). Produce them with the export script, or download them once they are published.
+Weights are not stored in Git (the merged FP16 package is ~968 MB, above GitHub's 100 MB file
+limit). Build them with the export script below.
 
 | Artefact | Content | Size | Where |
 |---|---|---:|---|
 | LoRA adapter | `best_by_macro_f1/` (`adapter_model.safetensors`, `adapter_config.json`, processor files) | a few MB | produced by `scripts/train.py` |
 | Merged deployment package | base model + adapter merged, FP16 safetensors, tokenizer/processor, `deployment_info.txt` | ~968 MB | produced by `scripts/export_model.py` |
-
-Public download link: *to be added once the package is uploaded (for example to the Hugging Face Hub).*
 
 ```bash
 python scripts/export_model.py --adapter runs/<run>/best_by_macro_f1 --out export/smolvlm_500m --zip
@@ -73,5 +71,5 @@ That CLI is not verified for the chained 256M initialization described above. No
 or inference-equivalence test was run during repository preparation; no 256M package size
 or Jetson performance is inferred from the other model's measurements.
 
-See the [256M model dependency notes](../docs/smalvlm256/smolvlm256m_model_loading.md) and
+See the [256M model dependency notes](../docs/smolvlm256/smolvlm256m_model_loading.md) and
 [results guide](../results/smolvlm_256m/README.md) for provenance and evaluation details.

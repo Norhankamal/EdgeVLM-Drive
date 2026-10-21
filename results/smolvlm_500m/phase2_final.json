@@ -2,7 +2,7 @@
   "experiment": "phase2_final",
   "model": "HuggingFaceTB/SmolVLM-500M-Instruct (dual-crop, vision+text LoRA)",
   "source": {
-    "notebook": "notebooks/04_finetuning_smolvlm_500m/04_phase2_extended_data_final.ipynb",
+    "notebook": "notebooks/finetuning_smolvlm500/04_phase2_extended_data_final.ipynb",
     "config": "configs/smolvlm500m_phase2_final.yaml",
     "extracted_from": "saved cell outputs (evaluation cell)"
   },

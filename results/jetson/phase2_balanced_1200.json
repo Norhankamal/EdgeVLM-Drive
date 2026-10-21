@@ -1,0 +1,186 @@
+{
+  "evaluation": "Phase 2 main evaluation",
+  "images": 1200,
+  "per_class": 300,
+  "sampling": "even spacing over the held-out test split of 5,558 images, 300 per class",
+  "environment": {
+    "device": "NVIDIA Jetson Nano 4 GB developer kit",
+    "python": "3.8",
+    "pytorch": "1.13",
+    "transformers": "4.46.0",
+    "opencv": "4.8.0",
+    "precision": "FP16 (GPU)",
+    "decoding": "greedy, max 12 new tokens",
+    "parser": "strict: output must equal one class name exactly",
+    "power_mode": "5 W"
+  },
+  "models": {
+    "SmolVLM-256M_Phase2_V2": {
+      "n": 1200,
+      "correct": 994,
+      "accuracy_pct": 82.83,
+      "accuracy_ci95_pct": [
+        80.6,
+        84.9
+      ],
+      "macro_f1_pct": 83.01,
+      "unsafe_to_normal_rate_pct": 11.67,
+      "unsafe_class_error_rate_pct": 17.89,
+      "false_alarm_rate_pct": 15.0,
+      "per_class": {
+        "NORMAL": {
+          "precision": 0.708,
+          "recall": 0.85,
+          "f1": 0.773,
+          "support": 300
+        },
+        "DROWSY": {
+          "precision": 0.846,
+          "recall": 0.88,
+          "f1": 0.863,
+          "support": 300
+        },
+        "LOOKING_AWAY": {
+          "precision": 0.828,
+          "recall": 0.85,
+          "f1": 0.839,
+          "support": 300
+        },
+        "PHONE_USAGE": {
+          "precision": 1.0,
+          "recall": 0.733,
+          "f1": 0.846,
+          "support": 300
+        }
+      },
+      "confusion_matrix": {
+        "labels": [
+          "NORMAL",
+          "DROWSY",
+          "LOOKING_AWAY",
+          "PHONE_USAGE"
+        ],
+        "rows_true_cols_pred": [
+          [
+            255,
+            31,
+            14,
+            0
+          ],
+          [
+            34,
+            264,
+            2,
+            0
+          ],
+          [
+            39,
+            6,
+            255,
+            0
+          ],
+          [
+            32,
+            11,
+            37,
+            220
+          ]
+        ]
+      },
+      "label_validity_pct": 100.0,
+      "latency_ms": {
+        "mean": 6807,
+        "p95": 7521
+      },
+      "throughput_frames_per_min": 8.8,
+      "peak_gpu_memory_mb": 724
+    },
+    "SmolVLM-500M_Phase2_V1": {
+      "n": 1200,
+      "correct": 949,
+      "accuracy_pct": 79.08,
+      "accuracy_ci95_pct": [
+        76.7,
+        81.3
+      ],
+      "macro_f1_pct": 79.57,
+      "unsafe_to_normal_rate_pct": 18.56,
+      "unsafe_class_error_rate_pct": 24.44,
+      "false_alarm_rate_pct": 10.33,
+      "per_class": {
+        "NORMAL": {
+          "precision": 0.617,
+          "recall": 0.897,
+          "f1": 0.731,
+          "support": 300
+        },
+        "DROWSY": {
+          "precision": 0.897,
+          "recall": 0.817,
+          "f1": 0.855,
+          "support": 300
+        },
+        "LOOKING_AWAY": {
+          "precision": 0.823,
+          "recall": 0.713,
+          "f1": 0.764,
+          "support": 300
+        },
+        "PHONE_USAGE": {
+          "precision": 0.957,
+          "recall": 0.737,
+          "f1": 0.832,
+          "support": 300
+        }
+      },
+      "confusion_matrix": {
+        "labels": [
+          "NORMAL",
+          "DROWSY",
+          "LOOKING_AWAY",
+          "PHONE_USAGE"
+        ],
+        "rows_true_cols_pred": [
+          [
+            269,
+            21,
+            4,
+            6
+          ],
+          [
+            52,
+            245,
+            1,
+            2
+          ],
+          [
+            81,
+            3,
+            214,
+            2
+          ],
+          [
+            34,
+            4,
+            41,
+            221
+          ]
+        ]
+      },
+      "label_validity_pct": 100.0,
+      "latency_ms": {
+        "mean": 7869,
+        "p95": 8653
+      },
+      "throughput_frames_per_min": 7.6,
+      "peak_gpu_memory_mb": 1217
+    }
+  },
+  "paired_comparison": {
+    "both_correct": 912,
+    "only_256m_correct": 82,
+    "only_500m_correct": 37,
+    "both_wrong": 169,
+    "mcnemar_exact_p": 4.525134723461956e-05
+  }
+}

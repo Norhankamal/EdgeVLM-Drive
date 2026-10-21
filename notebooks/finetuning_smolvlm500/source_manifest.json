@@ -1,0 +1,107 @@
+{
+  "notebooks": [
+    {
+      "repository_file": "notebooks/finetuning_smolvlm500/01_phase1_baseline_dualcrop_lora.ipynb",
+      "original_filename": "EdgeVLM_finetuning_smolvlm500m_dualcrop_V1Phase1.ipynb",
+      "original_sha256": "987d36492ecf394f558fe0459373539b5cd6acc1f540e9d7c6f337931d37a8fb",
+      "repository_sha256": "a4656c355828855d0d4ca313dbce1276fe374a69de4f0a024e73ae0c3439fbc6",
+      "executed_code_cells": 29,
+      "code_cells": 30,
+      "empty_code_cells": 1,
+      "error_output_count": 0,
+      "removed_rich_output_items": 1,
+      "credential_redactions": 0,
+      "repository_copy_edits": {
+        "executable_code_identical_to_original": true,
+        "code_cells_with_comment_or_docstring_edits": 3,
+        "markdown_cells": "title cell reworded and explanatory markdown lightly edited",
+        "removed": "driver-frame preview image output, widget metadata, empty trailing cells"
+      },
+      "notes": "Initial baseline reported in the interim report: 17,893/3,941/3,579 rows, LoRA r=8, 160-image macro-F1 check, preprocessing v1, INSTRUCTION_V1."
+    },
+    {
+      "repository_file": "notebooks/finetuning_smolvlm500/02_phase2_extended_data_v1.ipynb",
+      "original_filename": "EdgeVLM_finetuning_smolvlm500m_dualcrop_Phase2V1.ipynb",
+      "original_sha256": "dc6a82dc96e152a161880cca72644439a9d25dcd856fe7c08fc5943723a97bbe",
+      "repository_sha256": "c3a210d4ac6aeaeb01a8d9c64f746d9a4950894ade699fb8a04fa2802241f904",
+      "executed_code_cells": 29,
+      "code_cells": 33,
+      "empty_code_cells": 4,
+      "error_output_count": 0,
+      "removed_rich_output_items": 1,
+      "credential_redactions": 0,
+      "repository_copy_edits": {
+        "executable_code_identical_to_original": true,
+        "code_cells_with_comment_or_docstring_edits": 1,
+        "markdown_cells": "title cell reworded and explanatory markdown lightly edited",
+        "removed": "driver-frame preview image output, widget metadata, empty trailing cells"
+      },
+      "notes": "Extended data (27,872/5,761/5,558 rows), LoRA r=16, 320-image check, preprocessing v1, INSTRUCTION_V1."
+    },
+    {
+      "repository_file": "notebooks/finetuning_smolvlm500/03_phase2_extended_data_v2.ipynb",
+      "original_filename": "EdgeVLM_finetuning_smolvlm500m_dualcrop_Phase2V2.ipynb",
+      "original_sha256": "efe6ab001af43c64aa595f97a1a38b4b241161e52ffdeb6db59cf1d43e7a50d3",
+      "repository_sha256": "7f94339035dd206b910a925b71e339fb00e2dc2680c1aeab06aaf30fba81a46b",
+      "executed_code_cells": 29,
+      "code_cells": 33,
+      "empty_code_cells": 4,
+      "error_output_count": 0,
+      "removed_rich_output_items": 1,
+      "credential_redactions": 0,
+      "repository_copy_edits": {
+        "executable_code_identical_to_original": true,
+        "code_cells_with_comment_or_docstring_edits": 1,
+        "markdown_cells": "title cell reworded and explanatory markdown lightly edited",
+        "removed": "driver-frame preview image output, widget metadata, empty trailing cells"
+      },
+      "notes": "Code snapshot: edited relative to notebook 02, but its saved outputs are identical to notebook 02's. Not an independent result."
+    },
+    {
+      "repository_file": "notebooks/finetuning_smolvlm500/04_phase2_extended_data_final.ipynb",
+      "original_filename": "EdgeVLM_finetuning_smolvlm500m_dualcrop_Phase2_Final.ipynb",
+      "original_sha256": "d6c24ed50acbe90d089eaba3a4380878378a5c778149d6143772f0f777a857d1",
+      "repository_sha256": "f7a1397fb8dc855482e91bddfefa62b3e1a9981a1ffbfdea414c5c45abb60e0b",
+      "executed_code_cells": 29,
+      "code_cells": 33,
+      "empty_code_cells": 4,
+      "error_output_count": 0,
+      "removed_rich_output_items": 1,
+      "credential_redactions": 0,
+      "repository_copy_edits": {
+        "executable_code_identical_to_original": true,
+        "code_cells_with_comment_or_docstring_edits": 1,
+        "markdown_cells": "title cell reworded and explanatory markdown lightly edited",
+        "removed": "driver-frame preview image output, widget metadata, empty trailing cells"
+      },
+      "notes": "Final extended-data run: preprocessing v2, INSTRUCTION_V2, square-root-damped sampler, 600-image check, resume support. Resumed from checkpoint-24440; training length not reconcilable from the saved output (see docs/smolvlm500m/experiment_log.md)."
+    }
+  ],
+  "duplicate_downloads": [
+    {
+      "filename": "EdgeVLM_finetuning_smolvlm500m_dualcrop_Phase2_Final_1.ipynb",
+      "sha256": "d6c24ed50acbe90d089eaba3a4380878378a5c778149d6143772f0f777a857d1",
+      "identical_to": "EdgeVLM_finetuning_smolvlm500m_dualcrop_Phase2_Final.ipynb",
+      "note": "Byte-identical re-download of the final notebook; not added to the repository."
+    }
+  ],
+  "shared_helper_files": {
+    "current_pipeline": {
+      "repository_file": "src/edgevlm/pipeline/langgraph_pipeline.py",
+      "original_filename": "langgraph_pipeline.py",
+      "sha256": "b1e258d9c7ec8c3df03374c198b9a8384854392ea700fd1ae70dfed28fdd64f2",
+      "used_by": "04_phase2_extended_data_final"
+    },
+    "legacy_pipeline": {
+      "repository_file": "src/edgevlm/pipeline/legacy/langgraph_pipeline_v1.py",
+      "original_filename": "langgraph_pipelineV1_Phase1___V1Phase2.py",
+      "sha256": "6f1f65227f63abd9f6447a1ff3aba017491d520b43f5aa5778771c068d63c464",
+      "used_by": "01 and 02 (03 inherits 02's saved outputs)"
+    }
+  },
+  "notes": [
+    "Executable code in every repository copy was compared with the original after removing comments and docstrings: no difference.",
+    "Credential scan of the originals (Hugging Face, OpenAI-style, GitHub, AWS token patterns, e-mail addresses, IP addresses): no secrets found; the version string 4.10.0.84 is OpenCV.",
+    "Absolute server paths (/home/jovyan/...) remain in code cells as part of the record."
+  ]
+}
