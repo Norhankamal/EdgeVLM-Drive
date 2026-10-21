@@ -1,0 +1,190 @@
+[0.051s] Invoking command in '/home/jetson/ros2_dms_code/build/dms_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jetson/ros2_dms_code/install/dms_ros:/opt/ros/foxy /usr/bin/cmake --build /home/jetson/ros2_dms_code/build/dms_interfaces -- -j4 -l4
+[0.441s] -- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.538s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[0.538s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[1.383s] -- Found rosidl_default_generators: 1.0.1 (/opt/ros/foxy/share/rosidl_default_generators/cmake)
+[1.402s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.426s] -- Found rosidl_adapter: 1.3.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[2.007s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.126s] -- Found std_msgs: 2.0.5 (/opt/ros/foxy/share/std_msgs/cmake)
+[2.274s] -- Found sensor_msgs: 2.0.5 (/opt/ros/foxy/share/sensor_msgs/cmake)
+[2.868s] -- Found PythonInterp: /usr/bin/python3 (found version "3.8.10") 
+[3.733s] -- Found ament_cmake_ros: 0.9.2 (/opt/ros/foxy/share/ament_cmake_ros/cmake)
+[5.081s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[5.819s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[5.922s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3.5") 
+[5.925s] -- Found python_cmake_module: 0.8.1 (/opt/ros/foxy/share/python_cmake_module/cmake)
+[6.018s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[6.018s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.8
+[6.019s] -- Using PYTHON_LIBRARIES: /usr/lib/aarch64-linux-gnu/libpython3.8.so
+[6.403s] -- Configuring done
+[6.896s] -- Generating done
+[6.992s] -- Build files have been written to: /home/jetson/ros2_dms_code/build/dms_interfaces
+[7.087s] [  3%] [34m[1mGenerating C code for ROS interfaces[0m
+[7.121s] [  6%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[8.357s] [  6%] Built target dms_interfaces__cpp
+[8.390s] [35m[1mScanning dependencies of target dms_interfaces__rosidl_generator_c[0m
+[8.413s] [  9%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[8.415s] [ 12%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[8.431s] [ 16%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[8.490s] [ 19%] [32mBuilding C object CMakeFiles/dms_interfaces__rosidl_generator_c.dir/rosidl_generator_c/dms_interfaces/msg/detail/frame_pair__functions.c.o[0m
+[9.189s] [ 22%] [32m[1mLinking C shared library libdms_interfaces__rosidl_generator_c.so[0m
+[9.509s] [ 22%] Built target dms_interfaces__rosidl_generator_c
+[9.572s] [ 25%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[10.068s] [35m[1mScanning dependencies of target dms_interfaces__rosidl_typesupport_introspection_cpp[0m
+[10.148s] [ 29%] [32mBuilding CXX object CMakeFiles/dms_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/dms_interfaces/msg/detail/frame_pair__type_support.cpp.o[0m
+[10.171s] [35m[1mScanning dependencies of target dms_interfaces__rosidl_typesupport_cpp[0m
+[10.247s] [ 32%] [32mBuilding CXX object CMakeFiles/dms_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/dms_interfaces/msg/frame_pair__type_support.cpp.o[0m
+[10.309s] [35m[1mScanning dependencies of target dms_interfaces__rosidl_typesupport_fastrtps_cpp[0m
+[10.431s] [ 35%] [32mBuilding CXX object CMakeFiles/dms_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/dms_interfaces/msg/detail/dds_fastrtps/frame_pair__type_support.cpp.o[0m
+[11.198s] [35m[1mScanning dependencies of target dms_interfaces__rosidl_typesupport_introspection_c[0m
+[11.276s] [ 38%] [32mBuilding C object CMakeFiles/dms_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/dms_interfaces/msg/detail/frame_pair__type_support.c.o[0m
+[11.463s] [ 41%] [32m[1mLinking C shared library libdms_interfaces__rosidl_typesupport_introspection_c.so[0m
+[11.625s] [ 41%] Built target dms_interfaces__rosidl_typesupport_introspection_c
+[11.682s] [ 45%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[11.783s] [ 48%] [32m[1mLinking CXX shared library libdms_interfaces__rosidl_typesupport_cpp.so[0m
+[11.942s] [ 51%] [32m[1mLinking CXX shared library libdms_interfaces__rosidl_typesupport_introspection_cpp.so[0m
+[11.992s] [ 51%] Built target dms_interfaces__rosidl_typesupport_cpp
+[12.217s] [ 51%] Built target dms_interfaces__rosidl_typesupport_introspection_cpp
+[12.437s] [ 54%] [32m[1mLinking CXX shared library libdms_interfaces__rosidl_typesupport_fastrtps_cpp.so[0m
+[12.862s] [ 54%] Built target dms_interfaces__rosidl_typesupport_fastrtps_cpp
+[12.906s] [ 58%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[12.952s] [35m[1mScanning dependencies of target dms_interfaces__rosidl_typesupport_c[0m
+[13.002s] [ 61%] [32mBuilding CXX object CMakeFiles/dms_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/dms_interfaces/msg/frame_pair__type_support.cpp.o[0m
+[13.114s] [ 64%] [32m[1mLinking CXX shared library libdms_interfaces__rosidl_typesupport_c.so[0m
+[13.250s] [ 64%] Built target dms_interfaces__rosidl_typesupport_c
+[14.024s] [35m[1mScanning dependencies of target dms_interfaces__rosidl_typesupport_fastrtps_c[0m
+[14.086s] [ 67%] [32mBuilding CXX object CMakeFiles/dms_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/dms_interfaces/msg/detail/frame_pair__type_support_c.cpp.o[0m
+[15.198s] [ 70%] [32m[1mLinking CXX shared library libdms_interfaces__rosidl_typesupport_fastrtps_c.so[0m
+[15.490s] [ 70%] Built target dms_interfaces__rosidl_typesupport_fastrtps_c
+[15.558s] [ 70%] Built target dms_interfaces
+[15.633s] [ 74%] [34m[1mGenerating Python code for ROS interfaces[0m
+[17.896s] [ 74%] Built target dms_interfaces__py
+[17.939s] [35m[1mScanning dependencies of target dms_interfaces__python[0m
+[17.998s] [ 77%] [32mBuilding C object CMakeFiles/dms_interfaces__python.dir/rosidl_generator_py/dms_interfaces/msg/_frame_pair_s.c.o[0m
+[18.459s] [ 80%] [32m[1mLinking C shared library rosidl_generator_py/dms_interfaces/libdms_interfaces__python.so[0m
+[18.632s] [ 80%] Built target dms_interfaces__python
+[18.709s] [35m[1mScanning dependencies of target dms_interfaces__rosidl_typesupport_introspection_c__pyext[0m
+[18.709s] [35m[1mScanning dependencies of target dms_interfaces__rosidl_typesupport_fastrtps_c__pyext[0m
+[18.710s] [35m[1mScanning dependencies of target dms_interfaces__rosidl_typesupport_c__pyext[0m
+[18.796s] [ 83%] [32mBuilding C object CMakeFiles/dms_interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/dms_interfaces/_dms_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[18.820s] [ 87%] [32mBuilding C object CMakeFiles/dms_interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/dms_interfaces/_dms_interfaces_s.ep.rosidl_typesupport_c.c.o[0m
+[18.822s] [ 90%] [32mBuilding C object CMakeFiles/dms_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/dms_interfaces/_dms_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[19.202s] [ 93%] [32m[1mLinking C shared library rosidl_generator_py/dms_interfaces/dms_interfaces_s__rosidl_typesupport_introspection_c.cpython-38-aarch64-linux-gnu.so[0m
+[19.210s] [ 96%] [32m[1mLinking C shared library rosidl_generator_py/dms_interfaces/dms_interfaces_s__rosidl_typesupport_c.cpython-38-aarch64-linux-gnu.so[0m
+[19.236s] [100%] [32m[1mLinking CXX shared library rosidl_generator_py/dms_interfaces/dms_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-38-aarch64-linux-gnu.so[0m
+[19.434s] [100%] Built target dms_interfaces__rosidl_typesupport_introspection_c__pyext
+[19.456s] [100%] Built target dms_interfaces__rosidl_typesupport_c__pyext
+[19.564s] [100%] Built target dms_interfaces__rosidl_typesupport_fastrtps_c__pyext
+[19.602s] Invoked command in '/home/jetson/ros2_dms_code/build/dms_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jetson/ros2_dms_code/install/dms_ros:/opt/ros/foxy /usr/bin/cmake --build /home/jetson/ros2_dms_code/build/dms_interfaces -- -j4 -l4
+[19.646s] Invoking command in '/home/jetson/ros2_dms_code/build/dms_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jetson/ros2_dms_code/install/dms_ros:/opt/ros/foxy /usr/bin/cmake --install /home/jetson/ros2_dms_code/build/dms_interfaces
+[19.675s] -- Install configuration: ""
+[19.677s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/ament_index/resource_index/rosidl_interfaces/dms_interfaces
+[19.678s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces
+[19.678s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg
+[19.679s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail
+[19.679s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail/frame_pair__struct.h
+[19.680s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail/frame_pair__type_support.h
+[19.681s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail/frame_pair__functions.h
+[19.681s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail/frame_pair__functions.c
+[19.682s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/frame_pair.h
+[19.682s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/rosidl_generator_c__visibility_control.h
+[19.683s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/environment/library_path.sh
+[19.683s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/environment/library_path.dsv
+[19.685s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/lib/libdms_interfaces__rosidl_generator_c.so
+[19.686s] -- Set runtime path of "/home/jetson/ros2_dms_code/install/dms_interfaces/lib/libdms_interfaces__rosidl_generator_c.so" to ""
+[19.687s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces
+[19.687s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg
+[19.687s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail
+[19.688s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail/frame_pair__rosidl_typesupport_fastrtps_c.h
+[19.688s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[19.689s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/lib/libdms_interfaces__rosidl_typesupport_fastrtps_c.so
+[19.690s] -- Set runtime path of "/home/jetson/ros2_dms_code/install/dms_interfaces/lib/libdms_interfaces__rosidl_typesupport_fastrtps_c.so" to ""
+[19.691s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces
+[19.691s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg
+[19.692s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail
+[19.692s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail/frame_pair__rosidl_typesupport_fastrtps_cpp.hpp
+[19.692s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail/dds_fastrtps
+[19.693s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[19.693s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/lib/libdms_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[19.695s] -- Set runtime path of "/home/jetson/ros2_dms_code/install/dms_interfaces/lib/libdms_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""
+[19.695s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces
+[19.696s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg
+[19.696s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail
+[19.696s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail/frame_pair__rosidl_typesupport_introspection_c.h
+[19.697s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail/frame_pair__type_support.c
+[19.697s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[19.698s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/lib/libdms_interfaces__rosidl_typesupport_introspection_c.so
+[19.700s] -- Set runtime path of "/home/jetson/ros2_dms_code/install/dms_interfaces/lib/libdms_interfaces__rosidl_typesupport_introspection_c.so" to ""
+[19.701s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/lib/libdms_interfaces__rosidl_typesupport_c.so
+[19.702s] -- Set runtime path of "/home/jetson/ros2_dms_code/install/dms_interfaces/lib/libdms_interfaces__rosidl_typesupport_c.so" to ""
+[19.703s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces
+[19.703s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg
+[19.703s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail
+[19.704s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail/frame_pair__builder.hpp
+[19.704s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail/frame_pair__type_support.hpp
+[19.705s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail/frame_pair__traits.hpp
+[19.705s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail/frame_pair__struct.hpp
+[19.705s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp
+[19.706s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/frame_pair.hpp
+[19.706s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces
+[19.706s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg
+[19.707s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail
+[19.707s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail/frame_pair__type_support.cpp
+[19.707s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail/frame_pair__rosidl_typesupport_introspection_cpp.hpp
+[19.709s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/lib/libdms_interfaces__rosidl_typesupport_introspection_cpp.so
+[19.710s] -- Set runtime path of "/home/jetson/ros2_dms_code/install/dms_interfaces/lib/libdms_interfaces__rosidl_typesupport_introspection_cpp.so" to ""
+[19.711s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/lib/libdms_interfaces__rosidl_typesupport_cpp.so
+[19.713s] -- Set runtime path of "/home/jetson/ros2_dms_code/install/dms_interfaces/lib/libdms_interfaces__rosidl_typesupport_cpp.so" to ""
+[19.713s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/environment/pythonpath.sh
+[19.713s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/environment/pythonpath.dsv
+[19.714s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/lib/python3.8/site-packages/dms_interfaces/__init__.py
+[19.834s] Compiling '/home/jetson/ros2_dms_code/install/dms_interfaces/lib/python3.8/site-packages/dms_interfaces/__init__.py'...
+[19.854s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/lib/python3.8/site-packages/dms_interfaces/msg
+[19.854s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/lib/python3.8/site-packages/dms_interfaces/msg/_frame_pair_s.c
+[19.855s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/lib/python3.8/site-packages/dms_interfaces/msg/__init__.py
+[19.856s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/lib/python3.8/site-packages/dms_interfaces/msg/_frame_pair.py
+[19.858s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/lib/python3.8/site-packages/dms_interfaces/dms_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-38-aarch64-linux-gnu.so
+[19.860s] -- Set runtime path of "/home/jetson/ros2_dms_code/install/dms_interfaces/lib/python3.8/site-packages/dms_interfaces/dms_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-38-aarch64-linux-gnu.so" to ""
+[19.862s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/lib/python3.8/site-packages/dms_interfaces/dms_interfaces_s__rosidl_typesupport_introspection_c.cpython-38-aarch64-linux-gnu.so
+[19.863s] -- Set runtime path of "/home/jetson/ros2_dms_code/install/dms_interfaces/lib/python3.8/site-packages/dms_interfaces/dms_interfaces_s__rosidl_typesupport_introspection_c.cpython-38-aarch64-linux-gnu.so" to ""
+[19.865s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/lib/python3.8/site-packages/dms_interfaces/dms_interfaces_s__rosidl_typesupport_c.cpython-38-aarch64-linux-gnu.so
+[19.867s] -- Set runtime path of "/home/jetson/ros2_dms_code/install/dms_interfaces/lib/python3.8/site-packages/dms_interfaces/dms_interfaces_s__rosidl_typesupport_c.cpython-38-aarch64-linux-gnu.so" to ""
+[19.868s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/lib/libdms_interfaces__python.so
+[19.870s] -- Set runtime path of "/home/jetson/ros2_dms_code/install/dms_interfaces/lib/libdms_interfaces__python.so" to ""
+[19.871s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/msg/FramePair.idl
+[19.871s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/msg/FramePair.msg
+[19.872s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/ament_index/resource_index/package_run_dependencies/dms_interfaces
+[19.873s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/ament_index/resource_index/parent_prefix_path/dms_interfaces
+[19.873s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/environment/ament_prefix_path.sh
+[19.874s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/environment/ament_prefix_path.dsv
+[19.874s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/environment/path.sh
+[19.874s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/environment/path.dsv
+[19.875s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/local_setup.bash
+[19.875s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/local_setup.sh
+[19.875s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/local_setup.zsh
+[19.876s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/local_setup.dsv
+[19.876s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/package.dsv
+[19.877s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/ament_index/resource_index/packages/dms_interfaces
+[19.878s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/dms_interfaces__rosidl_generator_cExport.cmake
+[19.879s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/dms_interfaces__rosidl_generator_cExport-noconfig.cmake
+[19.881s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/dms_interfaces__rosidl_typesupport_introspection_cExport.cmake
+[19.881s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/dms_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[19.882s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/dms_interfaces__rosidl_typesupport_cExport.cmake
+[19.882s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/dms_interfaces__rosidl_typesupport_cExport-noconfig.cmake
+[19.884s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/dms_interfaces__rosidl_generator_cppExport.cmake
+[19.885s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/dms_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[19.886s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/dms_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[19.887s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/dms_interfaces__rosidl_typesupport_cppExport.cmake
+[19.887s] -- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/dms_interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+[19.888s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/rosidl_cmake-extras.cmake
+[19.888s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[19.889s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[19.889s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[19.890s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[19.890s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[19.890s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[19.891s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/dms_interfacesConfig.cmake
+[19.891s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/dms_interfacesConfig-version.cmake
+[19.891s] -- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/package.xml
+[19.897s] Invoked command in '/home/jetson/ros2_dms_code/build/dms_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jetson/ros2_dms_code/install/dms_ros:/opt/ros/foxy /usr/bin/cmake --install /home/jetson/ros2_dms_code/build/dms_interfaces

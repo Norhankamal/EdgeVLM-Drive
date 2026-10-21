@@ -1,0 +1,25 @@
+[3.028s] Invoking command in '/home/jetson/ros2_dms_code/src/dms_ros': PYTHONPATH=/home/jetson/ros2_dms_code/build/dms_ros/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/jetson/ros2_dms_code/install/dms_ros/lib/python3.8/site-packages:/home/jetson/ros2_dms_code/install/dms_interfaces/lib/python3.8/site-packages:/home/jetson/ros2_dms_code/install/dms_ros/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/dms_ros build --build-base /home/jetson/ros2_dms_code/build/dms_ros/build install --record /home/jetson/ros2_dms_code/build/dms_ros/install.log --install-scripts $base/lib/dms_ros --single-version-externally-managed install_data
+[4.021s] running egg_info
+[4.024s] writing ../../build/dms_ros/dms_ros.egg-info/PKG-INFO
+[4.026s] writing dependency_links to ../../build/dms_ros/dms_ros.egg-info/dependency_links.txt
+[4.027s] writing entry points to ../../build/dms_ros/dms_ros.egg-info/entry_points.txt
+[4.027s] writing requirements to ../../build/dms_ros/dms_ros.egg-info/requires.txt
+[4.028s] writing top-level names to ../../build/dms_ros/dms_ros.egg-info/top_level.txt
+[4.072s] reading manifest file '../../build/dms_ros/dms_ros.egg-info/SOURCES.txt'
+[4.077s] writing manifest file '../../build/dms_ros/dms_ros.egg-info/SOURCES.txt'
+[4.077s] running build
+[4.077s] running build_py
+[4.082s] running install
+[4.085s] running install_lib
+[4.092s] running install_data
+[4.094s] running install_egg_info
+[4.100s] removing '/home/jetson/ros2_dms_code/install/dms_ros/lib/python3.8/site-packages/dms_ros-0.0.1-py3.8.egg-info' (and everything under it)
+[4.101s] Copying ../../build/dms_ros/dms_ros.egg-info to /home/jetson/ros2_dms_code/install/dms_ros/lib/python3.8/site-packages/dms_ros-0.0.1-py3.8.egg-info
+[4.105s] running install_scripts
+[4.173s] Installing alert_node script to /home/jetson/ros2_dms_code/install/dms_ros/lib/dms_ros
+[4.174s] Installing camera_node script to /home/jetson/ros2_dms_code/install/dms_ros/lib/dms_ros
+[4.174s] Installing inference_node script to /home/jetson/ros2_dms_code/install/dms_ros/lib/dms_ros
+[4.175s] Installing post_benchmark_node script to /home/jetson/ros2_dms_code/install/dms_ros/lib/dms_ros
+[4.175s] Installing preprocess_node script to /home/jetson/ros2_dms_code/install/dms_ros/lib/dms_ros
+[4.177s] writing list of installed files to '/home/jetson/ros2_dms_code/build/dms_ros/install.log'
+[4.269s] Invoked command in '/home/jetson/ros2_dms_code/src/dms_ros' returned '0': PYTHONPATH=/home/jetson/ros2_dms_code/build/dms_ros/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/jetson/ros2_dms_code/install/dms_ros/lib/python3.8/site-packages:/home/jetson/ros2_dms_code/install/dms_interfaces/lib/python3.8/site-packages:/home/jetson/ros2_dms_code/install/dms_ros/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/dms_ros build --build-base /home/jetson/ros2_dms_code/build/dms_ros/build install --record /home/jetson/ros2_dms_code/build/dms_ros/install.log --install-scripts $base/lib/dms_ros --single-version-externally-managed install_data

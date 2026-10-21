@@ -1,0 +1,62 @@
+running egg_info
+creating ../../build/dms_ros/dms_ros.egg-info
+writing ../../build/dms_ros/dms_ros.egg-info/PKG-INFO
+writing dependency_links to ../../build/dms_ros/dms_ros.egg-info/dependency_links.txt
+writing entry points to ../../build/dms_ros/dms_ros.egg-info/entry_points.txt
+writing requirements to ../../build/dms_ros/dms_ros.egg-info/requires.txt
+writing top-level names to ../../build/dms_ros/dms_ros.egg-info/top_level.txt
+writing manifest file '../../build/dms_ros/dms_ros.egg-info/SOURCES.txt'
+reading manifest file '../../build/dms_ros/dms_ros.egg-info/SOURCES.txt'
+writing manifest file '../../build/dms_ros/dms_ros.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/jetson/ros2_dms_code/build/dms_ros/build
+creating /home/jetson/ros2_dms_code/build/dms_ros/build/lib
+creating /home/jetson/ros2_dms_code/build/dms_ros/build/lib/dms_ros
+copying dms_ros/dms_preprocess.py -> /home/jetson/ros2_dms_code/build/dms_ros/build/lib/dms_ros
+copying dms_ros/preprocess_node.py -> /home/jetson/ros2_dms_code/build/dms_ros/build/lib/dms_ros
+copying dms_ros/inference_node.py -> /home/jetson/ros2_dms_code/build/dms_ros/build/lib/dms_ros
+copying dms_ros/camera_node.py -> /home/jetson/ros2_dms_code/build/dms_ros/build/lib/dms_ros
+copying dms_ros/post_benchmark_node.py -> /home/jetson/ros2_dms_code/build/dms_ros/build/lib/dms_ros
+copying dms_ros/common.py -> /home/jetson/ros2_dms_code/build/dms_ros/build/lib/dms_ros
+copying dms_ros/alert_node.py -> /home/jetson/ros2_dms_code/build/dms_ros/build/lib/dms_ros
+copying dms_ros/__init__.py -> /home/jetson/ros2_dms_code/build/dms_ros/build/lib/dms_ros
+running install
+running install_lib
+creating /home/jetson/ros2_dms_code/install/dms_ros/lib/python3.8/site-packages/dms_ros
+copying /home/jetson/ros2_dms_code/build/dms_ros/build/lib/dms_ros/dms_preprocess.py -> /home/jetson/ros2_dms_code/install/dms_ros/lib/python3.8/site-packages/dms_ros
+copying /home/jetson/ros2_dms_code/build/dms_ros/build/lib/dms_ros/preprocess_node.py -> /home/jetson/ros2_dms_code/install/dms_ros/lib/python3.8/site-packages/dms_ros
+copying /home/jetson/ros2_dms_code/build/dms_ros/build/lib/dms_ros/inference_node.py -> /home/jetson/ros2_dms_code/install/dms_ros/lib/python3.8/site-packages/dms_ros
+copying /home/jetson/ros2_dms_code/build/dms_ros/build/lib/dms_ros/camera_node.py -> /home/jetson/ros2_dms_code/install/dms_ros/lib/python3.8/site-packages/dms_ros
+copying /home/jetson/ros2_dms_code/build/dms_ros/build/lib/dms_ros/post_benchmark_node.py -> /home/jetson/ros2_dms_code/install/dms_ros/lib/python3.8/site-packages/dms_ros
+copying /home/jetson/ros2_dms_code/build/dms_ros/build/lib/dms_ros/common.py -> /home/jetson/ros2_dms_code/install/dms_ros/lib/python3.8/site-packages/dms_ros
+copying /home/jetson/ros2_dms_code/build/dms_ros/build/lib/dms_ros/alert_node.py -> /home/jetson/ros2_dms_code/install/dms_ros/lib/python3.8/site-packages/dms_ros
+copying /home/jetson/ros2_dms_code/build/dms_ros/build/lib/dms_ros/__init__.py -> /home/jetson/ros2_dms_code/install/dms_ros/lib/python3.8/site-packages/dms_ros
+byte-compiling /home/jetson/ros2_dms_code/install/dms_ros/lib/python3.8/site-packages/dms_ros/dms_preprocess.py to dms_preprocess.cpython-38.pyc
+byte-compiling /home/jetson/ros2_dms_code/install/dms_ros/lib/python3.8/site-packages/dms_ros/preprocess_node.py to preprocess_node.cpython-38.pyc
+byte-compiling /home/jetson/ros2_dms_code/install/dms_ros/lib/python3.8/site-packages/dms_ros/inference_node.py to inference_node.cpython-38.pyc
+byte-compiling /home/jetson/ros2_dms_code/install/dms_ros/lib/python3.8/site-packages/dms_ros/camera_node.py to camera_node.cpython-38.pyc
+byte-compiling /home/jetson/ros2_dms_code/install/dms_ros/lib/python3.8/site-packages/dms_ros/post_benchmark_node.py to post_benchmark_node.cpython-38.pyc
+byte-compiling /home/jetson/ros2_dms_code/install/dms_ros/lib/python3.8/site-packages/dms_ros/common.py to common.cpython-38.pyc
+byte-compiling /home/jetson/ros2_dms_code/install/dms_ros/lib/python3.8/site-packages/dms_ros/alert_node.py to alert_node.cpython-38.pyc
+byte-compiling /home/jetson/ros2_dms_code/install/dms_ros/lib/python3.8/site-packages/dms_ros/__init__.py to __init__.cpython-38.pyc
+running install_data
+creating /home/jetson/ros2_dms_code/install/dms_ros/share/ament_index
+creating /home/jetson/ros2_dms_code/install/dms_ros/share/ament_index/resource_index
+creating /home/jetson/ros2_dms_code/install/dms_ros/share/ament_index/resource_index/packages
+copying resource/dms_ros -> /home/jetson/ros2_dms_code/install/dms_ros/share/ament_index/resource_index/packages
+copying package.xml -> /home/jetson/ros2_dms_code/install/dms_ros/share/dms_ros
+creating /home/jetson/ros2_dms_code/install/dms_ros/share/dms_ros/config
+copying config/prompts.yaml -> /home/jetson/ros2_dms_code/install/dms_ros/share/dms_ros/config
+copying config/dms_params.yaml -> /home/jetson/ros2_dms_code/install/dms_ros/share/dms_ros/config
+creating /home/jetson/ros2_dms_code/install/dms_ros/share/dms_ros/launch
+copying launch/dms_launch.py -> /home/jetson/ros2_dms_code/install/dms_ros/share/dms_ros/launch
+running install_egg_info
+Copying ../../build/dms_ros/dms_ros.egg-info to /home/jetson/ros2_dms_code/install/dms_ros/lib/python3.8/site-packages/dms_ros-0.0.1-py3.8.egg-info
+running install_scripts
+Installing alert_node script to /home/jetson/ros2_dms_code/install/dms_ros/lib/dms_ros
+Installing camera_node script to /home/jetson/ros2_dms_code/install/dms_ros/lib/dms_ros
+Installing inference_node script to /home/jetson/ros2_dms_code/install/dms_ros/lib/dms_ros
+Installing post_benchmark_node script to /home/jetson/ros2_dms_code/install/dms_ros/lib/dms_ros
+Installing preprocess_node script to /home/jetson/ros2_dms_code/install/dms_ros/lib/dms_ros
+writing list of installed files to '/home/jetson/ros2_dms_code/build/dms_ros/install.log'

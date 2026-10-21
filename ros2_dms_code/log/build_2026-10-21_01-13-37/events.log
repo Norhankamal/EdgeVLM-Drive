@@ -1,0 +1,213 @@
+[0.000000] (-) TimerEvent: {}
+[0.001520] (dms_interfaces) JobQueued: {'identifier': 'dms_interfaces', 'dependencies': OrderedDict()}
+[0.001951] (dms_ros) JobQueued: {'identifier': 'dms_ros', 'dependencies': OrderedDict([('dms_interfaces', '/home/jetson/ros2_dms_code/install/dms_interfaces')])}
+[0.002494] (dms_interfaces) JobStarted: {'identifier': 'dms_interfaces'}
+[0.042872] (dms_interfaces) JobProgress: {'identifier': 'dms_interfaces', 'progress': 'cmake'}
+[0.047228] (dms_interfaces) JobProgress: {'identifier': 'dms_interfaces', 'progress': 'build'}
+[0.050058] (dms_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/jetson/ros2_dms_code/build/dms_interfaces', '--', '-j4', '-l4'], 'cwd': '/home/jetson/ros2_dms_code/build/dms_interfaces', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('CUDA_LAUNCH_BLOCKING', '1'), ('USER', 'jetson'), ('SSH_CLIENT', '192.168.1.14 51688 22'), ('LC_TIME', 'nl_NL.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/jetson/ros2_dms_code/install/dms_interfaces/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/lib/aarch64-linux-gnu:/opt/ros/foxy/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/jetson'), ('OLDPWD', '/home/jetson/ros2_dms_code'), ('SSH_TTY', '/dev/pts/0'), ('JETSON_L4T', '32.6.1'), ('ROS_PYTHON_VERSION', '3'), ('JETSON_MODEL', 'NVIDIA Jetson Nano Developer Kit'), ('LC_MONETARY', 'nl_NL.UTF-8'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLCON_PREFIX_PATH', '/home/jetson/ros2_dms_code/install'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'jetson'), ('JETSON_MODULE', 'NVIDIA Jetson Nano (4 GB ram)'), ('JETSON_SERIAL_NUMBER', '1423721003668'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('JETSON_CODENAME', 'Porg'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/usr/local/cuda/bin:/home/jetson/.local/bin:/opt/ros/foxy/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('LC_ADDRESS', 'nl_NL.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'nl_NL.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('JETSON_SOC', 'tegra210'), ('AMENT_PREFIX_PATH', '/home/jetson/ros2_dms_code/install/dms_ros:/home/jetson/ros2_dms_code/install/dms_interfaces:/opt/ros/foxy'), ('SHELL', '/bin/bash'), ('LC_NAME', 'nl_NL.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('JETSON_BOARDIDS', 'p3448'), ('LC_MEASUREMENT', 'nl_NL.UTF-8'), ('LC_IDENTIFICATION', 'nl_NL.UTF-8'), ('JETSON_CUDA_ARCH_BIN', '5.3'), ('PWD', '/home/jetson/ros2_dms_code/build/dms_interfaces'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.1.14 51688 192.168.1.12 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/jetson/ros2_dms_code/install/dms_ros/lib/python3.8/site-packages:/home/jetson/ros2_dms_code/install/dms_interfaces/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages'), ('LC_NUMERIC', 'nl_NL.UTF-8'), ('LC_PAPER', 'nl_NL.UTF-8'), ('COLCON', '1'), ('JETSON_JETPACK', '4.6'), ('CMAKE_PREFIX_PATH', '/home/jetson/ros2_dms_code/install/dms_interfaces:/home/jetson/ros2_dms_code/install/dms_ros:/opt/ros/foxy'), ('JETSON_P_NUMBER', 'p3448-0000')]), 'shell': False}
+[0.099037] (-) TimerEvent: {}
+[0.199707] (-) TimerEvent: {}
+[0.300266] (-) TimerEvent: {}
+[0.400851] (-) TimerEvent: {}
+[0.501577] (-) TimerEvent: {}
+[0.543806] (dms_interfaces) StdoutLine: {'line': b'[  3%] Built target dms_interfaces__cpp\n'}
+[0.577727] (dms_interfaces) StdoutLine: {'line': b'[ 12%] Built target dms_interfaces__rosidl_generator_c\n'}
+[0.601687] (-) TimerEvent: {}
+[0.658590] (dms_interfaces) StdoutLine: {'line': b'[ 22%] Built target dms_interfaces__rosidl_typesupport_cpp\n'}
+[0.661318] (dms_interfaces) StdoutLine: {'line': b'[ 32%] Built target dms_interfaces__rosidl_typesupport_introspection_cpp\n'}
+[0.691207] (dms_interfaces) StdoutLine: {'line': b'[ 41%] Built target dms_interfaces__rosidl_typesupport_fastrtps_cpp\n'}
+[0.693349] (dms_interfaces) StdoutLine: {'line': b'[ 51%] Built target dms_interfaces__rosidl_typesupport_introspection_c\n'}
+[0.701846] (-) TimerEvent: {}
+[0.753539] (dms_interfaces) StdoutLine: {'line': b'[ 61%] Built target dms_interfaces__rosidl_typesupport_c\n'}
+[0.802010] (-) TimerEvent: {}
+[0.806084] (dms_interfaces) StdoutLine: {'line': b'[ 70%] Built target dms_interfaces__rosidl_typesupport_fastrtps_c\n'}
+[0.878170] (dms_interfaces) StdoutLine: {'line': b'[ 70%] Built target dms_interfaces\n'}
+[0.902180] (-) TimerEvent: {}
+[0.957594] (dms_interfaces) StdoutLine: {'line': b'[ 74%] Built target dms_interfaces__py\n'}
+[1.002327] (-) TimerEvent: {}
+[1.065291] (dms_interfaces) StdoutLine: {'line': b'[ 80%] Built target dms_interfaces__python\n'}
+[1.102510] (-) TimerEvent: {}
+[1.176743] (dms_interfaces) StdoutLine: {'line': b'[100%] Built target dms_interfaces__rosidl_typesupport_introspection_c__pyext\n'}
+[1.177499] (dms_interfaces) StdoutLine: {'line': b'[100%] Built target dms_interfaces__rosidl_typesupport_c__pyext\n'}
+[1.177971] (dms_interfaces) StdoutLine: {'line': b'[100%] Built target dms_interfaces__rosidl_typesupport_fastrtps_c__pyext\n'}
+[1.202666] (-) TimerEvent: {}
+[1.214775] (dms_interfaces) CommandEnded: {'returncode': 0}
+[1.220787] (dms_interfaces) JobProgress: {'identifier': 'dms_interfaces', 'progress': 'install'}
+[1.256202] (dms_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/jetson/ros2_dms_code/build/dms_interfaces'], 'cwd': '/home/jetson/ros2_dms_code/build/dms_interfaces', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('CUDA_LAUNCH_BLOCKING', '1'), ('USER', 'jetson'), ('SSH_CLIENT', '192.168.1.14 51688 22'), ('LC_TIME', 'nl_NL.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/jetson/ros2_dms_code/install/dms_interfaces/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/lib/aarch64-linux-gnu:/opt/ros/foxy/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/jetson'), ('OLDPWD', '/home/jetson/ros2_dms_code'), ('SSH_TTY', '/dev/pts/0'), ('JETSON_L4T', '32.6.1'), ('ROS_PYTHON_VERSION', '3'), ('JETSON_MODEL', 'NVIDIA Jetson Nano Developer Kit'), ('LC_MONETARY', 'nl_NL.UTF-8'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLCON_PREFIX_PATH', '/home/jetson/ros2_dms_code/install'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'jetson'), ('JETSON_MODULE', 'NVIDIA Jetson Nano (4 GB ram)'), ('JETSON_SERIAL_NUMBER', '1423721003668'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('JETSON_CODENAME', 'Porg'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/usr/local/cuda/bin:/home/jetson/.local/bin:/opt/ros/foxy/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('LC_ADDRESS', 'nl_NL.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'nl_NL.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('JETSON_SOC', 'tegra210'), ('AMENT_PREFIX_PATH', '/home/jetson/ros2_dms_code/install/dms_ros:/home/jetson/ros2_dms_code/install/dms_interfaces:/opt/ros/foxy'), ('SHELL', '/bin/bash'), ('LC_NAME', 'nl_NL.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('JETSON_BOARDIDS', 'p3448'), ('LC_MEASUREMENT', 'nl_NL.UTF-8'), ('LC_IDENTIFICATION', 'nl_NL.UTF-8'), ('JETSON_CUDA_ARCH_BIN', '5.3'), ('PWD', '/home/jetson/ros2_dms_code/build/dms_interfaces'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.1.14 51688 192.168.1.12 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/jetson/ros2_dms_code/install/dms_ros/lib/python3.8/site-packages:/home/jetson/ros2_dms_code/install/dms_interfaces/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages'), ('LC_NUMERIC', 'nl_NL.UTF-8'), ('LC_PAPER', 'nl_NL.UTF-8'), ('COLCON', '1'), ('JETSON_JETPACK', '4.6'), ('CMAKE_PREFIX_PATH', '/home/jetson/ros2_dms_code/install/dms_interfaces:/home/jetson/ros2_dms_code/install/dms_ros:/opt/ros/foxy'), ('JETSON_P_NUMBER', 'p3448-0000')]), 'shell': False}
+[1.290180] (dms_interfaces) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[1.291066] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/ament_index/resource_index/rosidl_interfaces/dms_interfaces\n'}
+[1.291636] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces\n'}
+[1.292148] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg\n'}
+[1.292670] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail\n'}
+[1.293266] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail/frame_pair__struct.h\n'}
+[1.293740] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail/frame_pair__type_support.h\n'}
+[1.294176] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail/frame_pair__functions.h\n'}
+[1.294603] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail/frame_pair__functions.c\n'}
+[1.295011] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/frame_pair.h\n'}
+[1.295396] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/rosidl_generator_c__visibility_control.h\n'}
+[1.295770] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/environment/library_path.sh\n'}
+[1.296143] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/environment/library_path.dsv\n'}
+[1.296524] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/lib/libdms_interfaces__rosidl_generator_c.so\n'}
+[1.297176] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces\n'}
+[1.297608] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg\n'}
+[1.298013] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail\n'}
+[1.298410] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail/frame_pair__rosidl_typesupport_fastrtps_c.h\n'}
+[1.298804] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[1.299476] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/lib/libdms_interfaces__rosidl_typesupport_fastrtps_c.so\n'}
+[1.300322] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces\n'}
+[1.300725] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg\n'}
+[1.301221] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail\n'}
+[1.301633] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail/frame_pair__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[1.301952] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail/dds_fastrtps\n'}
+[1.302339] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[1.302645] (-) TimerEvent: {}
+[1.303088] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/lib/libdms_interfaces__rosidl_typesupport_fastrtps_cpp.so\n'}
+[1.303665] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces\n'}
+[1.304214] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg\n'}
+[1.304706] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail\n'}
+[1.305389] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail/frame_pair__rosidl_typesupport_introspection_c.h\n'}
+[1.305838] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail/frame_pair__type_support.c\n'}
+[1.306191] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[1.306506] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/lib/libdms_interfaces__rosidl_typesupport_introspection_c.so\n'}
+[1.307620] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/lib/libdms_interfaces__rosidl_typesupport_c.so\n'}
+[1.308394] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces\n'}
+[1.308808] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg\n'}
+[1.309349] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail\n'}
+[1.309767] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail/frame_pair__builder.hpp\n'}
+[1.310208] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail/frame_pair__type_support.hpp\n'}
+[1.310607] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail/frame_pair__traits.hpp\n'}
+[1.311009] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail/frame_pair__struct.hpp\n'}
+[1.311318] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[1.311701] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/frame_pair.hpp\n'}
+[1.312018] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces\n'}
+[1.312376] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg\n'}
+[1.312683] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail\n'}
+[1.313089] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail/frame_pair__type_support.cpp\n'}
+[1.313484] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/include/dms_interfaces/msg/detail/frame_pair__rosidl_typesupport_introspection_cpp.hpp\n'}
+[1.313815] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/lib/libdms_interfaces__rosidl_typesupport_introspection_cpp.so\n'}
+[1.314190] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/lib/libdms_interfaces__rosidl_typesupport_cpp.so\n'}
+[1.314737] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/environment/pythonpath.sh\n'}
+[1.315102] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/environment/pythonpath.dsv\n'}
+[1.315836] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/lib/python3.8/site-packages/dms_interfaces/__init__.py\n'}
+[1.402807] (-) TimerEvent: {}
+[1.448315] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/lib/python3.8/site-packages/dms_interfaces/msg\n'}
+[1.449270] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/lib/python3.8/site-packages/dms_interfaces/msg/_frame_pair_s.c\n'}
+[1.449800] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/lib/python3.8/site-packages/dms_interfaces/msg/__init__.py\n'}
+[1.450139] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/lib/python3.8/site-packages/dms_interfaces/msg/_frame_pair.py\n'}
+[1.451508] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/lib/python3.8/site-packages/dms_interfaces/dms_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-38-aarch64-linux-gnu.so\n'}
+[1.454367] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/lib/python3.8/site-packages/dms_interfaces/dms_interfaces_s__rosidl_typesupport_introspection_c.cpython-38-aarch64-linux-gnu.so\n'}
+[1.457209] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/lib/python3.8/site-packages/dms_interfaces/dms_interfaces_s__rosidl_typesupport_c.cpython-38-aarch64-linux-gnu.so\n'}
+[1.459590] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/lib/libdms_interfaces__python.so\n'}
+[1.460965] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/msg/FramePair.idl\n'}
+[1.461412] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/msg/FramePair.msg\n'}
+[1.461806] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/ament_index/resource_index/package_run_dependencies/dms_interfaces\n'}
+[1.462242] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/ament_index/resource_index/parent_prefix_path/dms_interfaces\n'}
+[1.462620] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/environment/ament_prefix_path.sh\n'}
+[1.462991] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/environment/ament_prefix_path.dsv\n'}
+[1.463395] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/environment/path.sh\n'}
+[1.463791] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/environment/path.dsv\n'}
+[1.464141] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/local_setup.bash\n'}
+[1.464545] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/local_setup.sh\n'}
+[1.464872] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/local_setup.zsh\n'}
+[1.465241] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/local_setup.dsv\n'}
+[1.465578] (dms_interfaces) StdoutLine: {'line': b'-- Installing: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/package.dsv\n'}
+[1.466056] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/ament_index/resource_index/packages/dms_interfaces\n'}
+[1.469736] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/dms_interfaces__rosidl_generator_cExport.cmake\n'}
+[1.470171] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/dms_interfaces__rosidl_generator_cExport-noconfig.cmake\n'}
+[1.471798] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/dms_interfaces__rosidl_typesupport_introspection_cExport.cmake\n'}
+[1.472192] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/dms_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[1.473729] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/dms_interfaces__rosidl_typesupport_cExport.cmake\n'}
+[1.474139] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/dms_interfaces__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[1.475574] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/dms_interfaces__rosidl_generator_cppExport.cmake\n'}
+[1.477237] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/dms_interfaces__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[1.477651] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/dms_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[1.479060] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/dms_interfaces__rosidl_typesupport_cppExport.cmake\n'}
+[1.479510] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/dms_interfaces__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[1.479935] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/rosidl_cmake-extras.cmake\n'}
+[1.480302] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[1.480707] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[1.481125] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[1.481580] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[1.481953] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[1.482268] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[1.482589] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/dms_interfacesConfig.cmake\n'}
+[1.482948] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/cmake/dms_interfacesConfig-version.cmake\n'}
+[1.483318] (dms_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/package.xml\n'}
+[1.488629] (dms_interfaces) CommandEnded: {'returncode': 0}
+[1.502920] (-) TimerEvent: {}
+[1.603557] (-) TimerEvent: {}
+[1.646572] (dms_interfaces) JobEnded: {'identifier': 'dms_interfaces', 'rc': 0}
+[1.650275] (dms_ros) JobStarted: {'identifier': 'dms_ros'}
+[1.703791] (-) TimerEvent: {}
+[1.804814] (-) TimerEvent: {}
+[1.905627] (-) TimerEvent: {}
+[2.006197] (-) TimerEvent: {}
+[2.106738] (-) TimerEvent: {}
+[2.207258] (-) TimerEvent: {}
+[2.307789] (-) TimerEvent: {}
+[2.408314] (-) TimerEvent: {}
+[2.508856] (-) TimerEvent: {}
+[2.609454] (-) TimerEvent: {}
+[2.710026] (-) TimerEvent: {}
+[2.810810] (-) TimerEvent: {}
+[2.911759] (-) TimerEvent: {}
+[3.012489] (-) TimerEvent: {}
+[3.113087] (-) TimerEvent: {}
+[3.213622] (-) TimerEvent: {}
+[3.314164] (-) TimerEvent: {}
+[3.414706] (-) TimerEvent: {}
+[3.515215] (-) TimerEvent: {}
+[3.615760] (-) TimerEvent: {}
+[3.716321] (-) TimerEvent: {}
+[3.816876] (-) TimerEvent: {}
+[3.917462] (-) TimerEvent: {}
+[4.017981] (-) TimerEvent: {}
+[4.118497] (-) TimerEvent: {}
+[4.219019] (-) TimerEvent: {}
+[4.319551] (-) TimerEvent: {}
+[4.420097] (-) TimerEvent: {}
+[4.520657] (-) TimerEvent: {}
+[4.621335] (-) TimerEvent: {}
+[4.686927] (dms_ros) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/dms_ros', 'build', '--build-base', '/home/jetson/ros2_dms_code/build/dms_ros/build', 'install', '--record', '/home/jetson/ros2_dms_code/build/dms_ros/install.log', '--install-scripts', '$base/lib/dms_ros', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/jetson/ros2_dms_code/src/dms_ros', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'CUDA_LAUNCH_BLOCKING': '1', 'USER': 'jetson', 'SSH_CLIENT': '192.168.1.14 51688 22', 'LC_TIME': 'nl_NL.UTF-8', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/jetson/ros2_dms_code/install/dms_interfaces/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/lib/aarch64-linux-gnu:/opt/ros/foxy/lib', 'MOTD_SHOWN': 'pam', 'HOME': '/home/jetson', 'OLDPWD': '/home/jetson/ros2_dms_code', 'SSH_TTY': '/dev/pts/0', 'JETSON_L4T': '32.6.1', 'ROS_PYTHON_VERSION': '3', 'JETSON_MODEL': 'NVIDIA Jetson Nano Developer Kit', 'LC_MONETARY': 'nl_NL.UTF-8', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/jetson/ros2_dms_code/install', 'ROS_DISTRO': 'foxy', 'LOGNAME': 'jetson', 'JETSON_MODULE': 'NVIDIA Jetson Nano (4 GB ram)', 'JETSON_SERIAL_NUMBER': '1423721003668', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'JETSON_CODENAME': 'Porg', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '1', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/usr/local/cuda/bin:/home/jetson/.local/bin:/opt/ros/foxy/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'LC_ADDRESS': 'nl_NL.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'nl_NL.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'JETSON_SOC': 'tegra210', 'AMENT_PREFIX_PATH': '/home/jetson/ros2_dms_code/install/dms_ros:/home/jetson/ros2_dms_code/install/dms_interfaces:/opt/ros/foxy', 'SHELL': '/bin/bash', 'LC_NAME': 'nl_NL.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'JETSON_BOARDIDS': 'p3448', 'LC_MEASUREMENT': 'nl_NL.UTF-8', 'LC_IDENTIFICATION': 'nl_NL.UTF-8', 'JETSON_CUDA_ARCH_BIN': '5.3', 'PWD': '/home/jetson/ros2_dms_code/build/dms_ros', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': '192.168.1.14 51688 192.168.1.12 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/jetson/ros2_dms_code/build/dms_ros/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/jetson/ros2_dms_code/install/dms_ros/lib/python3.8/site-packages:/home/jetson/ros2_dms_code/install/dms_interfaces/lib/python3.8/site-packages:/home/jetson/ros2_dms_code/install/dms_ros/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages', 'LC_NUMERIC': 'nl_NL.UTF-8', 'LC_PAPER': 'nl_NL.UTF-8', 'COLCON': '1', 'JETSON_JETPACK': '4.6', 'CMAKE_PREFIX_PATH': '/home/jetson/ros2_dms_code/install/dms_interfaces', 'JETSON_P_NUMBER': 'p3448-0000'}, 'shell': False}
+[4.721519] (-) TimerEvent: {}
+[4.822154] (-) TimerEvent: {}
+[4.922695] (-) TimerEvent: {}
+[5.023243] (-) TimerEvent: {}
+[5.123786] (-) TimerEvent: {}
+[5.224314] (-) TimerEvent: {}
+[5.324856] (-) TimerEvent: {}
+[5.425441] (-) TimerEvent: {}
+[5.525972] (-) TimerEvent: {}
+[5.626533] (-) TimerEvent: {}
+[5.687170] (dms_ros) StdoutLine: {'line': b'running egg_info\n'}
+[5.689451] (dms_ros) StdoutLine: {'line': b'writing ../../build/dms_ros/dms_ros.egg-info/PKG-INFO\n'}
+[5.691990] (dms_ros) StdoutLine: {'line': b'writing dependency_links to ../../build/dms_ros/dms_ros.egg-info/dependency_links.txt\n'}
+[5.692580] (dms_ros) StdoutLine: {'line': b'writing entry points to ../../build/dms_ros/dms_ros.egg-info/entry_points.txt\n'}
+[5.692986] (dms_ros) StdoutLine: {'line': b'writing requirements to ../../build/dms_ros/dms_ros.egg-info/requires.txt\n'}
+[5.693497] (dms_ros) StdoutLine: {'line': b'writing top-level names to ../../build/dms_ros/dms_ros.egg-info/top_level.txt\n'}
+[5.711713] (dms_ros) StdoutLine: {'line': b"reading manifest file '../../build/dms_ros/dms_ros.egg-info/SOURCES.txt'\n"}
+[5.716434] (dms_ros) StdoutLine: {'line': b"writing manifest file '../../build/dms_ros/dms_ros.egg-info/SOURCES.txt'\n"}
+[5.716976] (dms_ros) StdoutLine: {'line': b'running build\n'}
+[5.717400] (dms_ros) StdoutLine: {'line': b'running build_py\n'}
+[5.720814] (dms_ros) StdoutLine: {'line': b'copying dms_ros/alert_node.py -> /home/jetson/ros2_dms_code/build/dms_ros/build/lib/dms_ros\n'}
+[5.722128] (dms_ros) StdoutLine: {'line': b'running install\n'}
+[5.725029] (dms_ros) StdoutLine: {'line': b'running install_lib\n'}
+[5.726635] (-) TimerEvent: {}
+[5.729206] (dms_ros) StdoutLine: {'line': b'copying /home/jetson/ros2_dms_code/build/dms_ros/build/lib/dms_ros/alert_node.py -> /home/jetson/ros2_dms_code/install/dms_ros/lib/python3.8/site-packages/dms_ros\n'}
+[5.732532] (dms_ros) StdoutLine: {'line': b'byte-compiling /home/jetson/ros2_dms_code/install/dms_ros/lib/python3.8/site-packages/dms_ros/alert_node.py to alert_node.cpython-38.pyc\n'}
+[5.736744] (dms_ros) StdoutLine: {'line': b'running install_data\n'}
+[5.741805] (dms_ros) StdoutLine: {'line': b'running install_egg_info\n'}
+[5.747327] (dms_ros) StdoutLine: {'line': b"removing '/home/jetson/ros2_dms_code/install/dms_ros/lib/python3.8/site-packages/dms_ros-0.0.1-py3.8.egg-info' (and everything under it)\n"}
+[5.748390] (dms_ros) StdoutLine: {'line': b'Copying ../../build/dms_ros/dms_ros.egg-info to /home/jetson/ros2_dms_code/install/dms_ros/lib/python3.8/site-packages/dms_ros-0.0.1-py3.8.egg-info\n'}
+[5.752209] (dms_ros) StdoutLine: {'line': b'running install_scripts\n'}
+[5.821082] (dms_ros) StdoutLine: {'line': b'Installing alert_node script to /home/jetson/ros2_dms_code/install/dms_ros/lib/dms_ros\n'}
+[5.822662] (dms_ros) StdoutLine: {'line': b'Installing camera_node script to /home/jetson/ros2_dms_code/install/dms_ros/lib/dms_ros\n'}
+[5.823120] (dms_ros) StdoutLine: {'line': b'Installing inference_node script to /home/jetson/ros2_dms_code/install/dms_ros/lib/dms_ros\n'}
+[5.823462] (dms_ros) StdoutLine: {'line': b'Installing post_benchmark_node script to /home/jetson/ros2_dms_code/install/dms_ros/lib/dms_ros\n'}
+[5.823775] (dms_ros) StdoutLine: {'line': b'Installing preprocess_node script to /home/jetson/ros2_dms_code/install/dms_ros/lib/dms_ros\n'}
+[5.824254] (dms_ros) StdoutLine: {'line': b"writing list of installed files to '/home/jetson/ros2_dms_code/build/dms_ros/install.log'\n"}
+[5.826787] (-) TimerEvent: {}
+[5.915138] (dms_ros) CommandEnded: {'returncode': 0}
+[5.927041] (-) TimerEvent: {}
+[5.942632] (dms_ros) JobEnded: {'identifier': 'dms_ros', 'rc': 0}
+[5.945155] (-) EventReactorShutdown: {}

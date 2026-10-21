@@ -1,0 +1,34 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from dms_interfaces/msg/FramePair.msg
+// generated code does not contain a copyright notice
+
+#include "sensor_msgs/msg/Image.idl"
+#include "std_msgs/msg/Header.idl"
+
+module dms_interfaces {
+  module msg {
+    struct FramePair {
+      std_msgs::msg::Header header;
+
+      uint32 seq;
+
+      sensor_msgs::msg::Image full_crop;
+
+      sensor_msgs::msg::Image face_crop;
+
+      float preprocess_ms;
+
+      boolean mesh_enabled;
+
+      boolean skip;
+
+      string gate_reason;
+
+      float mesh_ms;
+
+      float ear;
+
+      float yaw;
+    };
+  };
+};

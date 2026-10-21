@@ -1,0 +1,205 @@
+[2.455s] [34mcolcon[0m [1;30mDEBUG[0m [32mCommand line arguments: ['/usr/bin/colcon', 'build'][0m
+[2.455s] [34mcolcon[0m [1;30mDEBUG[0m [32mParsed command line arguments: Namespace(allow_overriding=[], ament_cmake_args=None, base_paths=['.'], build_base='build', catkin_cmake_args=None, catkin_skip_building_tests=False, cmake_args=None, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, cmake_target=None, cmake_target_skip_unavailable=False, continue_on_error=False, event_handlers=None, executor='parallel', ignore_user_meta=False, install_base='install', log_base=None, log_level=None, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7f8f4fc670>>, merge_install=False, metas=['./colcon.meta'], packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_end=None, packages_ignore=None, packages_ignore_regex=None, packages_select=None, packages_select_build_failed=False, packages_select_by_dep=None, packages_select_regex=None, packages_select_test_failures=False, packages_skip=None, packages_skip_build_finished=False, packages_skip_by_dep=None, packages_skip_regex=None, packages_skip_test_passed=False, packages_skip_up_to=None, packages_start=None, packages_up_to=None, packages_up_to_regex=None, parallel_workers=4, paths=None, symlink_install=False, test_result_base=None, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7f8f4fc670>, verb_name='build', verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7f8f3dad30>)[0m
+[3.436s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(colcon_meta) check parameters
+[3.436s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) check parameters
+[3.436s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) check parameters
+[3.436s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) check parameters
+[3.437s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(colcon_meta) discover
+[3.437s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) discover
+[3.437s] [34mcolcon.colcon_core.package_discovery[0m [1;30mINFO[0m Crawling recursively for packages in '/home/jetson/ros2_dms_code'
+[3.437s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['ignore', 'ignore_ament_install']
+[3.438s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ignore'
+[3.438s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ignore_ament_install'
+[3.438s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['colcon_pkg']
+[3.438s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'colcon_pkg'
+[3.439s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['colcon_meta']
+[3.439s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'colcon_meta'
+[3.439s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['ros']
+[3.439s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ros'
+[3.538s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['cmake', 'python']
+[3.538s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'cmake'
+[3.538s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'python'
+[3.538s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['python_setup_py']
+[3.538s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'python_setup_py'
+[3.539s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(build) by extensions ['ignore', 'ignore_ament_install']
+[3.539s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(build) by extension 'ignore'
+[3.540s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(build) ignored
+[3.540s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(install) by extensions ['ignore', 'ignore_ament_install']
+[3.540s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(install) by extension 'ignore'
+[3.541s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(install) ignored
+[3.541s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(log) by extensions ['ignore', 'ignore_ament_install']
+[3.541s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(log) by extension 'ignore'
+[3.541s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(log) ignored
+[3.544s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['ignore', 'ignore_ament_install']
+[3.544s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'ignore'
+[3.544s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'ignore_ament_install'
+[3.544s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['colcon_pkg']
+[3.545s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'colcon_pkg'
+[3.545s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['colcon_meta']
+[3.545s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'colcon_meta'
+[3.545s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['ros']
+[3.545s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'ros'
+[3.546s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['cmake', 'python']
+[3.546s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'cmake'
+[3.546s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'python'
+[3.546s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['python_setup_py']
+[3.546s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'python_setup_py'
+[3.547s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/dms_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[3.548s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/dms_interfaces) by extension 'ignore'
+[3.548s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/dms_interfaces) by extension 'ignore_ament_install'
+[3.548s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/dms_interfaces) by extensions ['colcon_pkg']
+[3.548s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/dms_interfaces) by extension 'colcon_pkg'
+[3.548s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/dms_interfaces) by extensions ['colcon_meta']
+[3.548s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/dms_interfaces) by extension 'colcon_meta'
+[3.549s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/dms_interfaces) by extensions ['ros']
+[3.549s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/dms_interfaces) by extension 'ros'
+[3.562s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/dms_interfaces' with type 'ros.ament_cmake' and name 'dms_interfaces'[0m
+[3.563s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/dms_ros) by extensions ['ignore', 'ignore_ament_install']
+[3.564s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/dms_ros) by extension 'ignore'
+[3.564s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/dms_ros) by extension 'ignore_ament_install'
+[3.564s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/dms_ros) by extensions ['colcon_pkg']
+[3.565s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/dms_ros) by extension 'colcon_pkg'
+[3.565s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/dms_ros) by extensions ['colcon_meta']
+[3.565s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/dms_ros) by extension 'colcon_meta'
+[3.565s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/dms_ros) by extensions ['ros']
+[3.565s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/dms_ros) by extension 'ros'
+[3.569s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/dms_ros' with type 'ros.ament_python' and name 'dms_ros'[0m
+[3.570s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) using defaults
+[3.570s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) discover
+[3.570s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) using defaults
+[3.570s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) discover
+[3.570s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) using defaults
+[3.654s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(prefix_path) check parameters
+[3.654s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(prefix_path) discover
+[3.668s] [34mcolcon.colcon_installed_package_information.package_discovery[0m [1;30mDEBUG[0m [32mFound 2 installed packages in /home/jetson/ros2_dms_code/install[0m
+[3.673s] [34mcolcon.colcon_installed_package_information.package_discovery[0m [1;30mDEBUG[0m [32mFound 168 installed packages in /opt/ros/foxy[0m
+[3.678s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(prefix_path) using defaults
+[3.873s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'dms_interfaces' build argument 'cmake_args' from command line to 'None'
+[3.873s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'dms_interfaces' build argument 'cmake_target' from command line to 'None'
+[3.873s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'dms_interfaces' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[3.873s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'dms_interfaces' build argument 'cmake_clean_cache' from command line to 'False'
+[3.873s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'dms_interfaces' build argument 'cmake_clean_first' from command line to 'False'
+[3.874s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'dms_interfaces' build argument 'cmake_force_configure' from command line to 'False'
+[3.874s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'dms_interfaces' build argument 'ament_cmake_args' from command line to 'None'
+[3.874s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'dms_interfaces' build argument 'catkin_cmake_args' from command line to 'None'
+[3.874s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'dms_interfaces' build argument 'catkin_skip_building_tests' from command line to 'False'
+[3.874s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'dms_interfaces' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jetson/ros2_dms_code/build/dms_interfaces', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jetson/ros2_dms_code/install/dms_interfaces', 'merge_install': False, 'path': '/home/jetson/ros2_dms_code/src/dms_interfaces', 'symlink_install': False, 'test_result_base': None}[0m
+[3.876s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'dms_ros' build argument 'cmake_args' from command line to 'None'
+[3.876s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'dms_ros' build argument 'cmake_target' from command line to 'None'
+[3.876s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'dms_ros' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[3.876s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'dms_ros' build argument 'cmake_clean_cache' from command line to 'False'
+[3.876s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'dms_ros' build argument 'cmake_clean_first' from command line to 'False'
+[3.876s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'dms_ros' build argument 'cmake_force_configure' from command line to 'False'
+[3.876s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'dms_ros' build argument 'ament_cmake_args' from command line to 'None'
+[3.876s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'dms_ros' build argument 'catkin_cmake_args' from command line to 'None'
+[3.877s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'dms_ros' build argument 'catkin_skip_building_tests' from command line to 'False'
+[3.877s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'dms_ros' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jetson/ros2_dms_code/build/dms_ros', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jetson/ros2_dms_code/install/dms_ros', 'merge_install': False, 'path': '/home/jetson/ros2_dms_code/src/dms_ros', 'symlink_install': False, 'test_result_base': None}[0m
+[3.877s] [34mcolcon.colcon_core.executor[0m [1;30mINFO[0m Executing jobs using 'parallel' executor
+[3.881s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mrun_until_complete[0m
+[3.882s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/home/jetson/ros2_dms_code/src/dms_interfaces' with build type 'ament_cmake'
+[3.882s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/home/jetson/ros2_dms_code/src/dms_interfaces'
+[3.901s] [34mcolcon.colcon_core.plugin_system[0m [1;30mINFO[0m Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[3.902s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.902s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[3.945s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/jetson/ros2_dms_code/build/dms_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jetson/ros2_dms_code/install/dms_ros:/opt/ros/foxy /usr/bin/cmake --build /home/jetson/ros2_dms_code/build/dms_interfaces -- -j4 -l4[0m
+[5.198s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/jetson/ros2_dms_code/build/dms_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jetson/ros2_dms_code/install/dms_ros:/opt/ros/foxy /usr/bin/cmake --build /home/jetson/ros2_dms_code/build/dms_interfaces -- -j4 -l4[0m
+[5.242s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/jetson/ros2_dms_code/build/dms_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jetson/ros2_dms_code/install/dms_ros:/opt/ros/foxy /usr/bin/cmake --install /home/jetson/ros2_dms_code/build/dms_interfaces[0m
+[5.470s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(dms_interfaces)
+[5.472s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/jetson/ros2_dms_code/build/dms_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jetson/ros2_dms_code/install/dms_ros:/opt/ros/foxy /usr/bin/cmake --install /home/jetson/ros2_dms_code/build/dms_interfaces[0m
+[5.517s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/jetson/ros2_dms_code/install/dms_interfaces' for CMake module files
+[5.521s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/jetson/ros2_dms_code/install/dms_interfaces' for CMake config files
+[5.526s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('dms_interfaces', 'cmake_prefix_path')
+[5.528s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/hook/cmake_prefix_path.ps1'
+[5.533s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/hook/cmake_prefix_path.dsv'
+[5.539s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/hook/cmake_prefix_path.sh'
+[5.544s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/jetson/ros2_dms_code/install/dms_interfaces/lib'
+[5.545s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('dms_interfaces', 'ld_library_path_lib')
+[5.546s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/hook/ld_library_path_lib.ps1'
+[5.547s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/hook/ld_library_path_lib.dsv'
+[5.549s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/hook/ld_library_path_lib.sh'
+[5.550s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/jetson/ros2_dms_code/install/dms_interfaces/bin'
+[5.550s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/jetson/ros2_dms_code/install/dms_interfaces/lib/pkgconfig/dms_interfaces.pc'
+[5.551s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/jetson/ros2_dms_code/install/dms_interfaces/lib/python3.8/site-packages'
+[5.551s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('dms_interfaces', 'pythonpath')
+[5.552s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/hook/pythonpath.ps1'
+[5.554s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/hook/pythonpath.dsv'
+[5.555s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/hook/pythonpath.sh'
+[5.557s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/jetson/ros2_dms_code/install/dms_interfaces/bin'
+[5.559s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/package.ps1'
+[5.567s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/package.dsv'
+[5.573s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/package.sh'
+[5.579s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/package.bash'
+[5.584s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/package.zsh'
+[5.589s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/jetson/ros2_dms_code/install/dms_interfaces/share/colcon-core/packages/dms_interfaces)
+[5.592s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(dms_interfaces)
+[5.593s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/jetson/ros2_dms_code/install/dms_interfaces' for CMake module files
+[5.596s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/jetson/ros2_dms_code/install/dms_interfaces' for CMake config files
+[5.598s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('dms_interfaces', 'cmake_prefix_path')
+[5.599s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/hook/cmake_prefix_path.ps1'
+[5.600s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/hook/cmake_prefix_path.dsv'
+[5.601s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/hook/cmake_prefix_path.sh'
+[5.603s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/jetson/ros2_dms_code/install/dms_interfaces/lib'
+[5.604s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('dms_interfaces', 'ld_library_path_lib')
+[5.605s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/hook/ld_library_path_lib.ps1'
+[5.606s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/hook/ld_library_path_lib.dsv'
+[5.607s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/hook/ld_library_path_lib.sh'
+[5.609s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/jetson/ros2_dms_code/install/dms_interfaces/bin'
+[5.609s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/jetson/ros2_dms_code/install/dms_interfaces/lib/pkgconfig/dms_interfaces.pc'
+[5.610s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/jetson/ros2_dms_code/install/dms_interfaces/lib/python3.8/site-packages'
+[5.610s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('dms_interfaces', 'pythonpath')
+[5.611s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/hook/pythonpath.ps1'
+[5.612s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/hook/pythonpath.dsv'
+[5.614s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/hook/pythonpath.sh'
+[5.616s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/jetson/ros2_dms_code/install/dms_interfaces/bin'
+[5.618s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/package.ps1'
+[5.620s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/package.dsv'
+[5.623s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/package.sh'
+[5.625s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/package.bash'
+[5.626s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/jetson/ros2_dms_code/install/dms_interfaces/share/dms_interfaces/package.zsh'
+[5.628s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/jetson/ros2_dms_code/install/dms_interfaces/share/colcon-core/packages/dms_interfaces)
+[5.629s] [34mcolcon.colcon_ros.task.ament_python.build[0m [1;30mINFO[0m Building ROS package in '/home/jetson/ros2_dms_code/src/dms_ros' with build type 'ament_python'
+[5.629s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('dms_ros', 'ament_prefix_path')
+[5.630s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/jetson/ros2_dms_code/install/dms_ros/share/dms_ros/hook/ament_prefix_path.ps1'
+[5.635s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/jetson/ros2_dms_code/install/dms_ros/share/dms_ros/hook/ament_prefix_path.dsv'
+[5.637s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/jetson/ros2_dms_code/install/dms_ros/share/dms_ros/hook/ament_prefix_path.sh'
+[5.639s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.639s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[6.764s] [34mcolcon.colcon_core.task.python.build[0m [1;30mINFO[0m Building Python package in '/home/jetson/ros2_dms_code/src/dms_ros'
+[6.765s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[6.766s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[8.848s] [34mcolcon.colcon_core.task.python.build[0m [1;30mDEBUG[0m [32mAvailable setuptools commands: bdist_dumb, dist_info, bdist_egg, bdist_wheel, install_lib, egg_info, symlink_data, install_scripts, build_clib, build_scripts, install_egg_info, install, upload_docs, register, install_headers, develop, bdist, install_data, upload, easy_install, saveopts, clean, build_ext, bdist_wininst, bdist_rpm, check, test, alias, flake8, nosetests, sdist, build, rotate, setopt, build_py[0m
+[8.858s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/jetson/ros2_dms_code/src/dms_ros': PYTHONPATH=/home/jetson/ros2_dms_code/build/dms_ros/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/jetson/ros2_dms_code/install/dms_ros/lib/python3.8/site-packages:/home/jetson/ros2_dms_code/install/dms_interfaces/lib/python3.8/site-packages:/home/jetson/ros2_dms_code/install/dms_ros/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/dms_ros build --build-base /home/jetson/ros2_dms_code/build/dms_ros/build install --record /home/jetson/ros2_dms_code/build/dms_ros/install.log --install-scripts $base/lib/dms_ros --single-version-externally-managed install_data[0m
+[10.086s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/jetson/ros2_dms_code/install/dms_ros' for CMake module files
+[10.089s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/jetson/ros2_dms_code/src/dms_ros' returned '0': PYTHONPATH=/home/jetson/ros2_dms_code/build/dms_ros/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/jetson/ros2_dms_code/install/dms_ros/lib/python3.8/site-packages:/home/jetson/ros2_dms_code/install/dms_interfaces/lib/python3.8/site-packages:/home/jetson/ros2_dms_code/install/dms_ros/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/dms_ros build --build-base /home/jetson/ros2_dms_code/build/dms_ros/build install --record /home/jetson/ros2_dms_code/build/dms_ros/install.log --install-scripts $base/lib/dms_ros --single-version-externally-managed install_data[0m
+[10.090s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/jetson/ros2_dms_code/install/dms_ros' for CMake config files
+[10.095s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/jetson/ros2_dms_code/install/dms_ros/lib'
+[10.095s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/jetson/ros2_dms_code/install/dms_ros/bin'
+[10.095s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/jetson/ros2_dms_code/install/dms_ros/lib/pkgconfig/dms_ros.pc'
+[10.096s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/jetson/ros2_dms_code/install/dms_ros/lib/python3.8/site-packages'
+[10.096s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('dms_ros', 'pythonpath')
+[10.097s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/jetson/ros2_dms_code/install/dms_ros/share/dms_ros/hook/pythonpath.ps1'
+[10.099s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/jetson/ros2_dms_code/install/dms_ros/share/dms_ros/hook/pythonpath.dsv'
+[10.101s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/jetson/ros2_dms_code/install/dms_ros/share/dms_ros/hook/pythonpath.sh'
+[10.103s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/jetson/ros2_dms_code/install/dms_ros/bin'
+[10.103s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(dms_ros)
+[10.105s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/jetson/ros2_dms_code/install/dms_ros/share/dms_ros/package.ps1'
+[10.107s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/jetson/ros2_dms_code/install/dms_ros/share/dms_ros/package.dsv'
+[10.109s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/jetson/ros2_dms_code/install/dms_ros/share/dms_ros/package.sh'
+[10.111s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/jetson/ros2_dms_code/install/dms_ros/share/dms_ros/package.bash'
+[10.112s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/jetson/ros2_dms_code/install/dms_ros/share/dms_ros/package.zsh'
+[10.113s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/jetson/ros2_dms_code/install/dms_ros/share/colcon-core/packages/dms_ros)
+[10.114s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mclosing loop[0m
+[10.115s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mloop closed[0m
+[10.115s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mrun_until_complete finished with '0'[0m
+[10.116s] [34mcolcon.colcon_core.event_reactor[0m [1;30mDEBUG[0m [32mjoining thread[0m
+[10.118s] [34mcolcon.colcon_core.event_reactor[0m [1;30mDEBUG[0m [32mjoined thread[0m
+[10.119s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/jetson/ros2_dms_code/install/local_setup.ps1'
+[10.124s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix util module '/home/jetson/ros2_dms_code/install/_local_setup_util_ps1.py'
+[10.132s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/jetson/ros2_dms_code/install/setup.ps1'
+[10.138s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/jetson/ros2_dms_code/install/local_setup.sh'
+[10.145s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix util module '/home/jetson/ros2_dms_code/install/_local_setup_util_sh.py'
+[10.147s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/jetson/ros2_dms_code/install/setup.sh'
+[10.153s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/jetson/ros2_dms_code/install/local_setup.bash'
+[10.157s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/jetson/ros2_dms_code/install/setup.bash'
+[10.162s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/jetson/ros2_dms_code/install/local_setup.zsh'
+[10.166s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/jetson/ros2_dms_code/install/setup.zsh'

@@ -1,0 +1,53 @@
+# ================================================================
+# DMS Configuration File
+# Change values here, rebuild (colcon build), then run.
+# ================================================================
+
+# ── Camera Node ───────────────────────────────────────────────────
+# source: "camera" = live camera, "replay" = send the images of replay_dir
+# one by one and wait for each result (use this to test without a driver).
+camera_node:
+  ros__parameters:
+    source: "replay"
+    camera_index: 0
+    width: 640
+    height: 480
+    frame_sampling_interval_sec: 20.0
+    queue_size: 1
+    replay_dir: "/home/jetson/test_dataset"
+    replay_limit_per_class: 0
+    replay_timeout_sec: 300.0
+
+# ── Preprocess Node ───────────────────────────────────────────────
+# mesh_enabled: false = the model looks at every frame.
+# mesh_enabled: true  = the face mesh decides which frames can skip the model.
+# Calibrate the mesh limits with:  ros2 run dms_ros mesh_calibrate
+# A limit of 0.0 for the optional triage limits switches that limit off.
+preprocess_node:
+  ros__parameters:
+    queue_size: 1
+    mesh_enabled: true
+    scheduled_interval_sec: 60.0
+    face_landmarker_path: "/home/jetson/.cache/mediapipe/face_landmarker.task"
+    debug_dir: "/home/jetson/live_debug"
+    
+# ── Inference Node ────────────────────────────────────────────────
+# The prompt for the active model is read from prompts.yaml (same folder).
+inference_node:
+  ros__parameters:
+    models_dir: "/home/jetson/models"
+    active_model: "SmolVLM-256M-Finetuned"
+    max_new_tokens: 12
+    do_sample: false
+    longest_edge: 512
+    queue_size: 1
+
+# ── Post Benchmark Node ───────────────────────────────────────────
+# Every run writes its own files into output_dir:
+#   <date>_<time>_<model>_q<queue>_mesh-<on|off>_<source>_summary.csv
+#   <date>_<time>_<model>_q<queue>_mesh-<on|off>_<source>_frames.csv
+post_benchmark_node:
+  ros__parameters:
+    output_dir: "/home/jetson/dms_benchmarks"
+    flush_interval_sec: 15.0
+    monitor_interval_sec: 1.0

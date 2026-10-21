@@ -1,0 +1,11 @@
+std_msgs/Header header
+uint32 seq
+sensor_msgs/Image full_crop
+sensor_msgs/Image face_crop
+float32 preprocess_ms
+bool mesh_enabled
+bool skip
+string gate_reason
+float32 mesh_ms
+float32 ear
+float32 yaw
